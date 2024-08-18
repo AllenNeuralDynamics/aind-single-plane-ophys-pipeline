@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:5768e26b4cf3d08fcfd69a0ad225d5e524b2433f5d7b5eba3e570fe4943738a6
+// hash:sha256:d8401e615cc55fb230021e8001458f9b36d573048b5b3af785e5cbe1eecdeb5f
 
 nextflow.enable.dsl = 1
 
@@ -12,15 +12,18 @@ capsule_aind_ophys_bergamo_stitcher_1_to_capsule_aind_ophys_motion_correctioncop
 // capsule - aind-ophys-bergamo-stitcher
 process capsule_aind_ophys_bergamo_stitcher_1 {
 	tag 'capsule-4194956'
-	container "$REGISTRY_HOST/capsule/a8876b73-5b9f-40dd-90df-1af29add6807:53d4e8c61b977fb18b2e478f537bdb11"
+	container "$REGISTRY_HOST/capsule/a8876b73-5b9f-40dd-90df-1af29add6807"
 
 	cpus 4
 	memory '32 GB'
+
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
 	path 'capsule/data' from single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_bergamo_stitcher_1.collect()
 
 	output:
+	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_aind_ophys_bergamo_stitcher_1_to_capsule_aind_ophys_motion_correctioncopysingleplanetest_2_3
 
 	script:
@@ -55,7 +58,7 @@ process capsule_aind_ophys_bergamo_stitcher_1 {
 // capsule - aind-ophys-motion-correction copy single plane test
 process capsule_aind_ophys_motion_correctioncopysingleplanetest_2 {
 	tag 'capsule-8090753'
-	container "$REGISTRY_HOST/capsule/8a59647f-9d6b-40c1-979e-a0039f8e0071:43277c4dfb290c9cc8e8e8d70de07fa2"
+	container "$REGISTRY_HOST/capsule/8a59647f-9d6b-40c1-979e-a0039f8e0071"
 
 	cpus 16
 	memory '128 GB'
