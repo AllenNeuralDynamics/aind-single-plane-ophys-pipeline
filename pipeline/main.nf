@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:c1f814a0bca491310c06623030c4e76c9f94543538d2453cd8c6414be57b8c44
+// hash:sha256:b82ff52a14a6de80b5d6fa7288a27f8f4ecc2b885e9bc9080570d079dee602fb
 
 nextflow.enable.dsl = 1
 
@@ -14,6 +14,7 @@ single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_extraction_suite2p_a
 capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_extraction_suite_2_paltest_3_7 = channel.create()
 capsule_aind_ophys_extraction_suite_2_paltest_3_to_capsule_aind_ophys_dff_4_8 = channel.create()
 capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_9 = channel.create()
+capsule_aind_ophys_oasis_event_detection_6_to_capsule_processingjsonaggregator_7_10 = channel.create()
 
 // capsule - aind-ophys-bergamo-stitcher
 process capsule_aind_ophys_bergamo_stitcher_1 {
@@ -217,6 +218,7 @@ process capsule_aind_ophys_oasis_event_detection_6 {
 
 	output:
 	path 'capsule/results/*'
+	path 'capsule/results/*' into capsule_aind_ophys_oasis_event_detection_6_to_capsule_processingjsonaggregator_7_10
 
 	script:
 	"""
@@ -234,6 +236,45 @@ process capsule_aind_ophys_oasis_event_detection_6 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone --branch v1.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8957649.git" capsule-repo
+	mv capsule-repo/code capsule/code
+	rm -rf capsule-repo
+
+	echo "[${task.tag}] running capsule..."
+	cd capsule/code
+	chmod +x run
+	./run
+
+	echo "[${task.tag}] completed!"
+	"""
+}
+
+// capsule - Processing json aggregator
+process capsule_processingjsonaggregator_7 {
+	tag 'capsule-1054292'
+	container "$REGISTRY_HOST/published/2fafe85f-e0fa-41a7-b2a6-9ac24b88605d:v8"
+
+	cpus 1
+	memory '8 GB'
+
+	input:
+	path 'capsule/data/' from capsule_aind_ophys_oasis_event_detection_6_to_capsule_processingjsonaggregator_7_10
+
+	script:
+	"""
+	#!/usr/bin/env bash
+	set -e
+
+	export CO_CAPSULE_ID=2fafe85f-e0fa-41a7-b2a6-9ac24b88605d
+	export CO_CPUS=1
+	export CO_MEMORY=8589934592
+
+	mkdir -p capsule
+	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
+	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
+	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	echo "[${task.tag}] cloning git repo..."
+	git clone --branch v8.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1054292.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
