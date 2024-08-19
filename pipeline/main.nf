@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:02d43775b0e26d71190204739349caef07662e71689f13e339192f78dbafc0fc
+// hash:sha256:b0c1073e68f23c48cc4c65f8abc58f978bbe11fa63c86be441c88e2d0e3a06da
 
 nextflow.enable.dsl = 1
 
@@ -81,7 +81,7 @@ process capsule_aind_ophys_motion_correctioncopysingleplanetest_2 {
 	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_segmentation_cellpose_flattened_3_7
 	path 'capsule/results/motion_correction/*.h5' into capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_trace_extraction_4_8
-	path 'capsule/results/motion_correction/motion_transform.csv' into capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_trace_extraction_4_9
+	path 'capsule/results/motion_correction/*transform.csv' into capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_trace_extraction_4_9
 
 	script:
 	"""
