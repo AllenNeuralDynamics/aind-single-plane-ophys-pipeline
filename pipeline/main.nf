@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:0b74b9d4fe0c7d3e975b4a858002bc5b75533c0076376dac3724b5d0c21f5264
+// hash:sha256:d80d4f9f18cdd0c2272c40b2067f19d49327b0a917a0af222d040214a46dfcfb
 
 nextflow.enable.dsl = 1
 
@@ -13,7 +13,7 @@ capsule_aind_ophys_bergamo_stitcher_1_to_capsule_aind_ophys_motion_correctioncop
 // capsule - aind-ophys-bergamo-stitcher
 process capsule_aind_ophys_bergamo_stitcher_1 {
 	tag 'capsule-4194956'
-	container "$REGISTRY_HOST/capsule/a8876b73-5b9f-40dd-90df-1af29add6807"
+	container "$REGISTRY_HOST/capsule/a8876b73-5b9f-40dd-90df-1af29add6807:53d4e8c61b977fb18b2e478f537bdb11"
 
 	cpus 4
 	memory '32 GB'
@@ -59,7 +59,7 @@ process capsule_aind_ophys_bergamo_stitcher_1 {
 // capsule - aind-ophys-motion-correction copy single plane test
 process capsule_aind_ophys_motion_correctioncopysingleplanetest_2 {
 	tag 'capsule-8090753'
-	container "$REGISTRY_HOST/capsule/8a59647f-9d6b-40c1-979e-a0039f8e0071"
+	container "$REGISTRY_HOST/capsule/8a59647f-9d6b-40c1-979e-a0039f8e0071:43277c4dfb290c9cc8e8e8d70de07fa2"
 
 	cpus 16
 	memory '128 GB'
