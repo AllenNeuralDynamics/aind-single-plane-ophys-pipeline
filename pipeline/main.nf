@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:1f6fc23a20e748243ea385b84ca2b050346cb7076470315ff93e48c02f9457a2
+// hash:sha256:85b8d92008823034831cff04cfb8f0af51324bba55fb3cf3d9b6a3a7ae3d1d2f
 
 nextflow.enable.dsl = 1
 
@@ -12,6 +12,7 @@ capsule_aind_ophys_bergamo_stitcher_1_to_capsule_aind_ophys_motion_correctioncop
 single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_segmentation_cellpose_flattened_5 = channel.fromPath(params.single_plane_ophys_731012_2024_08_13_23_49_46_url + "/data_description.json", type: 'any')
 single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_segmentation_cellpose_flattened_6 = channel.fromPath(params.single_plane_ophys_731012_2024_08_13_23_49_46_url + "/session.json", type: 'any')
 capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_segmentation_cellpose_flattened_3_7 = channel.create()
+capsule_aind_ophys_segmentation_cellpose_flattened_3_to_capsule_aind_ophys_trace_extraction_4_8 = channel.create()
 
 // capsule - aind-ophys-bergamo-stitcher
 process capsule_aind_ophys_bergamo_stitcher_1 {
@@ -124,6 +125,7 @@ process capsule_aind_ophys_segmentation_cellpose_flattened_3 {
 
 	output:
 	path 'capsule/results/*'
+	path 'capsule/results/*' into capsule_aind_ophys_segmentation_cellpose_flattened_3_to_capsule_aind_ophys_trace_extraction_4_8
 
 	script:
 	"""
@@ -161,6 +163,9 @@ process capsule_aind_ophys_trace_extraction_4 {
 
 	cpus 2
 	memory '16 GB'
+
+	input:
+	path 'capsule/data/' from capsule_aind_ophys_segmentation_cellpose_flattened_3_to_capsule_aind_ophys_trace_extraction_4_8
 
 	script:
 	"""
