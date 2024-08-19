@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:e60bc6b148f9fe2ba53db8556f058cad4ab6d8897fec891485e98ecf3194ceb9
+// hash:sha256:6dfb77c7ff7f6a5e34992c69fd6e648ac18d25b375349f54651ba97f09f7f2ca
 
 nextflow.enable.dsl = 1
 
@@ -13,6 +13,7 @@ single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_extraction_suite2p_a
 single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_extraction_suite2p_al_test_6 = channel.fromPath(params.single_plane_ophys_731012_2024_08_13_23_49_46_url + "/session.json", type: 'any')
 capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_extraction_suite_2_paltest_3_7 = channel.create()
 capsule_aind_ophys_extraction_suite_2_paltest_3_to_capsule_aind_ophys_dff_4_8 = channel.create()
+capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_9 = channel.create()
 
 // capsule - aind-ophys-bergamo-stitcher
 process capsule_aind_ophys_bergamo_stitcher_1 {
@@ -171,6 +172,7 @@ process capsule_aind_ophys_dff_4 {
 
 	output:
 	path 'capsule/results/*'
+	path 'capsule/results/*' into capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_9
 
 	script:
 	"""
@@ -201,21 +203,24 @@ process capsule_aind_ophys_dff_4 {
 }
 
 // capsule - aind-ophys-oasis-event-detection
-process capsule_aind_ophys_oasis_event_detection_5 {
-	tag 'capsule-0220837'
-	container "$REGISTRY_HOST/published/6c92f2cd-6898-480b-9665-ca298bf0c71c:v1"
+process capsule_aind_ophys_oasis_event_detection_6 {
+	tag 'capsule-8957649'
+	container "$REGISTRY_HOST/published/c6394aab-0db7-47b2-90ba-864866d6755e:v1"
 
-	cpus 4
-	memory '32 GB'
+	cpus 1
+	memory '8 GB'
+
+	input:
+	path 'capsule/data/' from capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_9
 
 	script:
 	"""
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=6c92f2cd-6898-480b-9665-ca298bf0c71c
-	export CO_CPUS=4
-	export CO_MEMORY=34359738368
+	export CO_CAPSULE_ID=c6394aab-0db7-47b2-90ba-864866d6755e
+	export CO_CPUS=1
+	export CO_MEMORY=8589934592
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -223,7 +228,7 @@ process capsule_aind_ophys_oasis_event_detection_5 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v1.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0220837.git" capsule-repo
+	git clone --branch v1.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8957649.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
