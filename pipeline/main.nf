@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:f4126599c7bb4b6684c2e88cdb3e16d004ea4d5f9159fa95ea08755be171c7c2
+// hash:sha256:7e9efba9c0e65835683cf1474a2fdee41993f182a825e2cbd02b186f7a2151ed
 
 nextflow.enable.dsl = 1
 
@@ -13,7 +13,7 @@ capsule_aind_ophys_bergamo_stitcher_1_to_capsule_aind_ophys_motion_correctioncop
 // capsule - aind-ophys-bergamo-stitcher
 process capsule_aind_ophys_bergamo_stitcher_1 {
 	tag 'capsule-4194956'
-	container "$REGISTRY_HOST/capsule/a8876b73-5b9f-40dd-90df-1af29add6807:53d4e8c61b977fb18b2e478f537bdb11"
+	container "$REGISTRY_HOST/capsule/a8876b73-5b9f-40dd-90df-1af29add6807"
 
 	cpus 4
 	memory '32 GB'
@@ -59,7 +59,7 @@ process capsule_aind_ophys_bergamo_stitcher_1 {
 // capsule - aind-ophys-motion-correction copy single plane test
 process capsule_aind_ophys_motion_correctioncopysingleplanetest_2 {
 	tag 'capsule-8090753'
-	container "$REGISTRY_HOST/capsule/8a59647f-9d6b-40c1-979e-a0039f8e0071:43277c4dfb290c9cc8e8e8d70de07fa2"
+	container "$REGISTRY_HOST/capsule/8a59647f-9d6b-40c1-979e-a0039f8e0071"
 
 	cpus 16
 	memory '128 GB'
@@ -98,6 +98,42 @@ process capsule_aind_ophys_motion_correctioncopysingleplanetest_2 {
 	cd capsule/code
 	chmod +x run
 	./run
+
+	echo "[${task.tag}] completed!"
+	"""
+}
+
+// capsule - aind-ophys-segmentation-cellpose-bergamo RR
+process capsule_aind_ophys_segmentation_cellpose_bergamo_rr_3 {
+	tag 'capsule-1527707'
+	container "$REGISTRY_HOST/capsule/6fec0a64-6d57-491f-8819-039121bd2e2f"
+
+	cpus 1
+	memory '8 GB'
+
+	script:
+	"""
+	#!/usr/bin/env bash
+	set -e
+
+	export CO_CAPSULE_ID=6fec0a64-6d57-491f-8819-039121bd2e2f
+	export CO_CPUS=1
+	export CO_MEMORY=8589934592
+
+	mkdir -p capsule
+	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
+	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
+	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	echo "[${task.tag}] cloning git repo..."
+	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1527707.git" capsule-repo
+	mv capsule-repo/code capsule/code
+	rm -rf capsule-repo
+
+	echo "[${task.tag}] running capsule..."
+	cd capsule/code
+	chmod +x run
+	./run ${params.capsule_aind_ophys_segmentation_cellpose_bergamo_rr_3_args}
 
 	echo "[${task.tag}] completed!"
 	"""
