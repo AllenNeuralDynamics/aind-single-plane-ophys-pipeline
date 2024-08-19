@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:060bfc1c0f503501a9dd5350eb3a285ae3807e3f9f234a79f01ea5218c519af5
+// hash:sha256:7194c7850974097127d7d8fa5c8423f5842773927467abb4c48de35a247c5819
 
 nextflow.enable.dsl = 1
 
@@ -164,8 +164,13 @@ process capsule_aind_ophys_dff_4 {
 	cpus 1
 	memory '8 GB'
 
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_extraction_suite_2_paltest_3_to_capsule_aind_ophys_dff_4_8
+
+	output:
+	path 'capsule/results/*'
 
 	script:
 	"""
