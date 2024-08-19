@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:c8efbb4e07a29a1a741fc95eaf2c7d58ae012cad8ac25b51c3039f1d408392fd
+// hash:sha256:f92c1d4de48e851e66f5b986d47b39c4d3a353d70a38947a5220d641e935c546
 
 nextflow.enable.dsl = 1
 
@@ -208,10 +208,13 @@ process capsule_aind_ophys_oasis_event_detection_6 {
 	cpus 1
 	memory '8 GB'
 
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_9
 
 	output:
+	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_aind_ophys_oasis_event_detection_6_to_capsule_processingjsonaggregator_7_10
 
 	script:
