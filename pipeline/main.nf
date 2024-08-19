@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:109b7016d99ddb1ee62e0a27286e5a0214e30b10e65581195ad1abd8ca099f63
+// hash:sha256:94aa3e8b3a4f76ab08b0a81295c9f93e0f529fe0873ef00bb249d9b898cb5187
 
 nextflow.enable.dsl = 1
 
@@ -9,7 +9,9 @@ single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_bergamo_stitcher_1 =
 single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_motion_correction_copy_single_plane_test_2 = channel.fromPath(params.single_plane_ophys_731012_2024_08_13_23_49_46_url + "/session.json", type: 'any')
 single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_motion_correction_copy_single_plane_test_3 = channel.fromPath(params.single_plane_ophys_731012_2024_08_13_23_49_46_url + "/data_description.json", type: 'any')
 capsule_aind_ophys_bergamo_stitcher_1_to_capsule_aind_ophys_motion_correctioncopysingleplanetest_2_4 = channel.create()
-capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_segmentation_cellpose_bergamo_rr_3_5 = channel.create()
+single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_segmentation_cellpose_bergamo_rr_5 = channel.fromPath(params.single_plane_ophys_731012_2024_08_13_23_49_46_url + "/data_description.json", type: 'any')
+single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_segmentation_cellpose_bergamo_rr_6 = channel.fromPath(params.single_plane_ophys_731012_2024_08_13_23_49_46_url + "/session.json", type: 'any')
+capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_segmentation_cellpose_bergamo_rr_3_7 = channel.create()
 
 // capsule - aind-ophys-bergamo-stitcher
 process capsule_aind_ophys_bergamo_stitcher_1 {
@@ -74,7 +76,7 @@ process capsule_aind_ophys_motion_correctioncopysingleplanetest_2 {
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*' into capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_segmentation_cellpose_bergamo_rr_3_5
+	path 'capsule/results/*' into capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_segmentation_cellpose_bergamo_rr_3_7
 
 	script:
 	"""
@@ -116,7 +118,9 @@ process capsule_aind_ophys_segmentation_cellpose_bergamo_rr_3 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_segmentation_cellpose_bergamo_rr_3_5
+	path 'capsule/data/' from single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_segmentation_cellpose_bergamo_rr_5.collect()
+	path 'capsule/data/' from single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_segmentation_cellpose_bergamo_rr_6.collect()
+	path 'capsule/data/' from capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_segmentation_cellpose_bergamo_rr_3_7
 
 	output:
 	path 'capsule/results/*'
