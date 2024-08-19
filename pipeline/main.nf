@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:94aa3e8b3a4f76ab08b0a81295c9f93e0f529fe0873ef00bb249d9b898cb5187
+// hash:sha256:90d93a40d05bfd827e4c2b8655dd1ba6aa45a33cc7e040bbcef148dd789a5b2c
 
 nextflow.enable.dsl = 1
 
@@ -16,7 +16,7 @@ capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_
 // capsule - aind-ophys-bergamo-stitcher
 process capsule_aind_ophys_bergamo_stitcher_1 {
 	tag 'capsule-4194956'
-	container "$REGISTRY_HOST/capsule/a8876b73-5b9f-40dd-90df-1af29add6807"
+	container "$REGISTRY_HOST/capsule/a8876b73-5b9f-40dd-90df-1af29add6807:53d4e8c61b977fb18b2e478f537bdb11"
 
 	cpus 4
 	memory '32 GB'
@@ -62,7 +62,7 @@ process capsule_aind_ophys_bergamo_stitcher_1 {
 // capsule - aind-ophys-motion-correction copy single plane test
 process capsule_aind_ophys_motion_correctioncopysingleplanetest_2 {
 	tag 'capsule-8090753'
-	container "$REGISTRY_HOST/capsule/8a59647f-9d6b-40c1-979e-a0039f8e0071"
+	container "$REGISTRY_HOST/capsule/8a59647f-9d6b-40c1-979e-a0039f8e0071:43277c4dfb290c9cc8e8e8d70de07fa2"
 
 	cpus 16
 	memory '128 GB'
@@ -110,7 +110,7 @@ process capsule_aind_ophys_motion_correctioncopysingleplanetest_2 {
 // capsule - aind-ophys-segmentation-cellpose-bergamo RR
 process capsule_aind_ophys_segmentation_cellpose_bergamo_rr_3 {
 	tag 'capsule-1527707'
-	container "$REGISTRY_HOST/capsule/6fec0a64-6d57-491f-8819-039121bd2e2f"
+	container "$REGISTRY_HOST/capsule/6fec0a64-6d57-491f-8819-039121bd2e2f:a1cc4d765c1e5a8c26395519488db6e9"
 
 	cpus 1
 	memory '8 GB'
@@ -141,6 +141,7 @@ process capsule_aind_ophys_segmentation_cellpose_bergamo_rr_3 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1527707.git" capsule-repo
+	git -C capsule-repo checkout 2d8c607aa4f039d8a84c645d8259001bb78c86fb --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
