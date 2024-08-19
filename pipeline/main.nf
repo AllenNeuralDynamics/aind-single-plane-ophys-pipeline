@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:df56e73d6377f7f5733b77ae3c2d75ce1f6e3b105c955bff875156a5664eda76
+// hash:sha256:109b7016d99ddb1ee62e0a27286e5a0214e30b10e65581195ad1abd8ca099f63
 
 nextflow.enable.dsl = 1
 
@@ -113,8 +113,13 @@ process capsule_aind_ophys_segmentation_cellpose_bergamo_rr_3 {
 	cpus 1
 	memory '8 GB'
 
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_segmentation_cellpose_bergamo_rr_3_5
+
+	output:
+	path 'capsule/results/*'
 
 	script:
 	"""
