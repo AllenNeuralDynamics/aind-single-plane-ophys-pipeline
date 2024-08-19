@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:90d93a40d05bfd827e4c2b8655dd1ba6aa45a33cc7e040bbcef148dd789a5b2c
+// hash:sha256:1f6fc23a20e748243ea385b84ca2b050346cb7076470315ff93e48c02f9457a2
 
 nextflow.enable.dsl = 1
 
@@ -9,14 +9,14 @@ single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_bergamo_stitcher_1 =
 single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_motion_correction_copy_single_plane_test_2 = channel.fromPath(params.single_plane_ophys_731012_2024_08_13_23_49_46_url + "/session.json", type: 'any')
 single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_motion_correction_copy_single_plane_test_3 = channel.fromPath(params.single_plane_ophys_731012_2024_08_13_23_49_46_url + "/data_description.json", type: 'any')
 capsule_aind_ophys_bergamo_stitcher_1_to_capsule_aind_ophys_motion_correctioncopysingleplanetest_2_4 = channel.create()
-single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_segmentation_cellpose_bergamo_rr_5 = channel.fromPath(params.single_plane_ophys_731012_2024_08_13_23_49_46_url + "/data_description.json", type: 'any')
-single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_segmentation_cellpose_bergamo_rr_6 = channel.fromPath(params.single_plane_ophys_731012_2024_08_13_23_49_46_url + "/session.json", type: 'any')
-capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_segmentation_cellpose_bergamo_rr_3_7 = channel.create()
+single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_segmentation_cellpose_flattened_5 = channel.fromPath(params.single_plane_ophys_731012_2024_08_13_23_49_46_url + "/data_description.json", type: 'any')
+single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_segmentation_cellpose_flattened_6 = channel.fromPath(params.single_plane_ophys_731012_2024_08_13_23_49_46_url + "/session.json", type: 'any')
+capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_segmentation_cellpose_flattened_3_7 = channel.create()
 
 // capsule - aind-ophys-bergamo-stitcher
 process capsule_aind_ophys_bergamo_stitcher_1 {
 	tag 'capsule-4194956'
-	container "$REGISTRY_HOST/capsule/a8876b73-5b9f-40dd-90df-1af29add6807:53d4e8c61b977fb18b2e478f537bdb11"
+	container "$REGISTRY_HOST/capsule/a8876b73-5b9f-40dd-90df-1af29add6807"
 
 	cpus 4
 	memory '32 GB'
@@ -62,7 +62,7 @@ process capsule_aind_ophys_bergamo_stitcher_1 {
 // capsule - aind-ophys-motion-correction copy single plane test
 process capsule_aind_ophys_motion_correctioncopysingleplanetest_2 {
 	tag 'capsule-8090753'
-	container "$REGISTRY_HOST/capsule/8a59647f-9d6b-40c1-979e-a0039f8e0071:43277c4dfb290c9cc8e8e8d70de07fa2"
+	container "$REGISTRY_HOST/capsule/8a59647f-9d6b-40c1-979e-a0039f8e0071"
 
 	cpus 16
 	memory '128 GB'
@@ -76,7 +76,7 @@ process capsule_aind_ophys_motion_correctioncopysingleplanetest_2 {
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*' into capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_segmentation_cellpose_bergamo_rr_3_7
+	path 'capsule/results/*' into capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_segmentation_cellpose_flattened_3_7
 
 	script:
 	"""
@@ -107,20 +107,20 @@ process capsule_aind_ophys_motion_correctioncopysingleplanetest_2 {
 	"""
 }
 
-// capsule - aind-ophys-segmentation-cellpose-bergamo RR
-process capsule_aind_ophys_segmentation_cellpose_bergamo_rr_3 {
-	tag 'capsule-1527707'
-	container "$REGISTRY_HOST/capsule/6fec0a64-6d57-491f-8819-039121bd2e2f:a1cc4d765c1e5a8c26395519488db6e9"
+// capsule - aind-ophys-segmentation-cellpose -- FLATTENED
+process capsule_aind_ophys_segmentation_cellpose_flattened_3 {
+	tag 'capsule-0136322'
+	container "$REGISTRY_HOST/capsule/84e6b3e3-e24b-450e-b275-589fc229087e"
 
-	cpus 1
-	memory '8 GB'
+	cpus 2
+	memory '16 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_segmentation_cellpose_bergamo_rr_5.collect()
-	path 'capsule/data/' from single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_segmentation_cellpose_bergamo_rr_6.collect()
-	path 'capsule/data/' from capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_segmentation_cellpose_bergamo_rr_3_7
+	path 'capsule/data/' from single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_segmentation_cellpose_flattened_5.collect()
+	path 'capsule/data/' from single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_segmentation_cellpose_flattened_6.collect()
+	path 'capsule/data/' from capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_segmentation_cellpose_flattened_3_7
 
 	output:
 	path 'capsule/results/*'
@@ -130,9 +130,9 @@ process capsule_aind_ophys_segmentation_cellpose_bergamo_rr_3 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=6fec0a64-6d57-491f-8819-039121bd2e2f
-	export CO_CPUS=1
-	export CO_MEMORY=8589934592
+	export CO_CAPSULE_ID=84e6b3e3-e24b-450e-b275-589fc229087e
+	export CO_CPUS=2
+	export CO_MEMORY=17179869184
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -140,15 +140,51 @@ process capsule_aind_ophys_segmentation_cellpose_bergamo_rr_3 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1527707.git" capsule-repo
-	git -C capsule-repo checkout 2d8c607aa4f039d8a84c645d8259001bb78c86fb --quiet
+	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0136322.git" capsule-repo
+	git -C capsule-repo checkout fa36c64240f4ba3122628c1d5353fee77a501945 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run ${params.capsule_aind_ophys_segmentation_cellpose_bergamo_rr_3_args}
+	./run
+
+	echo "[${task.tag}] completed!"
+	"""
+}
+
+// capsule - aind-ophys-trace-extraction
+process capsule_aind_ophys_trace_extraction_4 {
+	tag 'capsule-7646836'
+	container "$REGISTRY_HOST/published/929400ed-397b-4949-b18a-b4a427338508:v2"
+
+	cpus 2
+	memory '16 GB'
+
+	script:
+	"""
+	#!/usr/bin/env bash
+	set -e
+
+	export CO_CAPSULE_ID=929400ed-397b-4949-b18a-b4a427338508
+	export CO_CPUS=2
+	export CO_MEMORY=17179869184
+
+	mkdir -p capsule
+	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
+	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
+	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	echo "[${task.tag}] cloning git repo..."
+	git clone --branch v2.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7646836.git" capsule-repo
+	mv capsule-repo/code capsule/code
+	rm -rf capsule-repo
+
+	echo "[${task.tag}] running capsule..."
+	cd capsule/code
+	chmod +x run
+	./run
 
 	echo "[${task.tag}] completed!"
 	"""
