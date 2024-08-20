@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:671168f3ee4756720f6e1b2d72a6c518090404ebda7d6d6ac8499da6a5161451
+// hash:sha256:075b9029be0b39211d666f8c260696690d9222c07c844bd72151ebd62c312c39
 
 nextflow.enable.dsl = 1
 
@@ -14,7 +14,7 @@ single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_extraction_suite2p_a
 capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_extraction_suite_2_paltest_3_7 = channel.create()
 capsule_aind_ophys_extraction_suite_2_paltest_3_to_capsule_aind_ophys_dff_4_8 = channel.create()
 capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_9 = channel.create()
-single_plane_ophys_731012_2024_08_13_23_49_46_to_processing_json_aggregator_10 = channel.fromPath(params.single_plane_ophys_731012_2024_08_13_23_49_46_url + "/*", type: 'any')
+single_plane_ophys_731012_2024_08_13_23_49_46_to_processing_json_aggregator_10 = channel.fromPath(params.single_plane_ophys_731012_2024_08_13_23_49_46_url + "/*.json", type: 'any')
 capsule_aind_ophys_oasis_event_detection_6_to_capsule_processingjsonaggregator_7_11 = channel.create()
 
 // capsule - aind-ophys-bergamo-stitcher
@@ -261,7 +261,7 @@ process capsule_processingjsonaggregator_7 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from single_plane_ophys_731012_2024_08_13_23_49_46_to_processing_json_aggregator_10
+	path 'capsule/data/' from single_plane_ophys_731012_2024_08_13_23_49_46_to_processing_json_aggregator_10.collect()
 	path 'capsule/data/' from capsule_aind_ophys_oasis_event_detection_6_to_capsule_processingjsonaggregator_7_11
 
 	output:
