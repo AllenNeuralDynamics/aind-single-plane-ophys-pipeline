@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:acc023c0b4680ccb68d6287db577a1196c9d4c1bec871d5a4aa69789b15e4c63
+// hash:sha256:dc4b37a6c4b9d1f304ffe1c7541bfaf36a4c15e75915c0d72d3347354c008a81
 
 nextflow.enable.dsl = 1
 
@@ -160,11 +160,11 @@ process capsule_aind_ophys_extraction_suite_2_paltest_3 {
 
 // capsule - aind-ophys-dff
 process capsule_aind_ophys_dff_4 {
-	tag 'capsule-0818193'
-	container "$REGISTRY_HOST/published/56258629-f09d-4927-b73e-78e5ab2fb04f:v1"
+	tag 'capsule-5252030'
+	container "$REGISTRY_HOST/capsule/8511f8d7-ac43-4c63-ae00-dad820185c47:12e97cc1d769f84406fc4508341beb33"
 
-	cpus 1
-	memory '8 GB'
+	cpus 2
+	memory '16 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
@@ -180,9 +180,9 @@ process capsule_aind_ophys_dff_4 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=56258629-f09d-4927-b73e-78e5ab2fb04f
-	export CO_CPUS=1
-	export CO_MEMORY=8589934592
+	export CO_CAPSULE_ID=8511f8d7-ac43-4c63-ae00-dad820185c47
+	export CO_CPUS=2
+	export CO_MEMORY=17179869184
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -190,7 +190,8 @@ process capsule_aind_ophys_dff_4 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v1.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0818193.git" capsule-repo
+	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5252030.git" capsule-repo
+	git -C capsule-repo checkout bc8c894ca5d809b7830ed09e94782cc03453fa8b --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
