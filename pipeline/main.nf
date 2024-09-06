@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:075b9029be0b39211d666f8c260696690d9222c07c844bd72151ebd62c312c39
+// hash:sha256:25220ca21b7d97f90b7ad0dd6c459c1c12ccef31df2c6135fcea26d549f0f433
 
 nextflow.enable.dsl = 1
 
@@ -20,7 +20,7 @@ capsule_aind_ophys_oasis_event_detection_6_to_capsule_processingjsonaggregator_7
 // capsule - aind-ophys-bergamo-stitcher
 process capsule_aind_ophys_bergamo_stitcher_1 {
 	tag 'capsule-4194956'
-	container "$REGISTRY_HOST/capsule/a8876b73-5b9f-40dd-90df-1af29add6807"
+	container "$REGISTRY_HOST/capsule/a8876b73-5b9f-40dd-90df-1af29add6807:53d4e8c61b977fb18b2e478f537bdb11"
 
 	cpus 4
 	memory '32 GB'
@@ -50,7 +50,7 @@ process capsule_aind_ophys_bergamo_stitcher_1 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4194956.git" capsule-repo
-	git -C capsule-repo checkout 79d53e46613254ed5fafdf16a694409996fceb37 --quiet
+	git -C capsule-repo checkout 533a0bde3a50aab046f1c143081adad04409c8ca --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -66,7 +66,7 @@ process capsule_aind_ophys_bergamo_stitcher_1 {
 // capsule - aind-ophys-motion-correction copy single plane test
 process capsule_aind_ophys_motion_correctioncopysingleplanetest_2 {
 	tag 'capsule-8090753'
-	container "$REGISTRY_HOST/capsule/8a59647f-9d6b-40c1-979e-a0039f8e0071"
+	container "$REGISTRY_HOST/capsule/8a59647f-9d6b-40c1-979e-a0039f8e0071:43277c4dfb290c9cc8e8e8d70de07fa2"
 
 	cpus 16
 	memory '128 GB'
@@ -114,7 +114,7 @@ process capsule_aind_ophys_motion_correctioncopysingleplanetest_2 {
 // capsule - aind-ophys-extraction-suite2p al test
 process capsule_aind_ophys_extraction_suite_2_paltest_3 {
 	tag 'capsule-4591920'
-	container "$REGISTRY_HOST/capsule/9b5aca63-c509-4a2a-aeaf-92784bc2e842"
+	container "$REGISTRY_HOST/capsule/9b5aca63-c509-4a2a-aeaf-92784bc2e842:71ddbdc0a5d49642b6eb084ed4eee185"
 
 	cpus 2
 	memory '16 GB'
@@ -162,7 +162,7 @@ process capsule_aind_ophys_extraction_suite_2_paltest_3 {
 // capsule - aind-ophys-dff
 process capsule_aind_ophys_dff_4 {
 	tag 'capsule-5252030'
-	container "$REGISTRY_HOST/capsule/8511f8d7-ac43-4c63-ae00-dad820185c47"
+	container "$REGISTRY_HOST/capsule/8511f8d7-ac43-4c63-ae00-dad820185c47:12e97cc1d769f84406fc4508341beb33"
 
 	cpus 2
 	memory '16 GB'
