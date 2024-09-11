@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:474fb72f0f417301e6c0960ebb4c479fcc80c2db8da84b6b1980aca34345350b
+// hash:sha256:cec1f67a59b965b19316fe33d9366f39cd33ac27f5e52f785b5b9c31e0e78eaa
 
 nextflow.enable.dsl = 1
 
@@ -20,7 +20,7 @@ capsule_aind_ophys_oasis_event_detection_6_to_capsule_processingjsonaggregator_7
 // capsule - aind-ophys-bergamo-stitcher
 process capsule_aind_ophys_bergamo_stitcher_1 {
 	tag 'capsule-4194956'
-	container "$REGISTRY_HOST/capsule/a8876b73-5b9f-40dd-90df-1af29add6807"
+	container "$REGISTRY_HOST/capsule/a8876b73-5b9f-40dd-90df-1af29add6807:53d4e8c61b977fb18b2e478f537bdb11"
 
 	cpus 4
 	memory '32 GB'
@@ -66,7 +66,7 @@ process capsule_aind_ophys_bergamo_stitcher_1 {
 // capsule - aind-ophys-motion-correction copy single plane test
 process capsule_aind_ophys_motion_correctioncopysingleplanetest_2 {
 	tag 'capsule-8090753'
-	container "$REGISTRY_HOST/capsule/8a59647f-9d6b-40c1-979e-a0039f8e0071"
+	container "$REGISTRY_HOST/capsule/8a59647f-9d6b-40c1-979e-a0039f8e0071:43277c4dfb290c9cc8e8e8d70de07fa2"
 
 	cpus 16
 	memory '128 GB'
@@ -114,7 +114,7 @@ process capsule_aind_ophys_motion_correctioncopysingleplanetest_2 {
 // capsule - aind-ophys-extraction-suite2p al test
 process capsule_aind_ophys_extraction_suite_2_paltest_3 {
 	tag 'capsule-4591920'
-	container "$REGISTRY_HOST/capsule/9b5aca63-c509-4a2a-aeaf-92784bc2e842"
+	container "$REGISTRY_HOST/capsule/9b5aca63-c509-4a2a-aeaf-92784bc2e842:0bebd0d44335e8857dabf8a173119b82"
 
 	cpus 2
 	memory '16 GB'
@@ -146,6 +146,7 @@ process capsule_aind_ophys_extraction_suite_2_paltest_3 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4591920.git" capsule-repo
+	git -C capsule-repo checkout 394e2607d43c5d923c4e628a40561a338f154fbe --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -161,7 +162,7 @@ process capsule_aind_ophys_extraction_suite_2_paltest_3 {
 // capsule - aind-ophys-dff
 process capsule_aind_ophys_dff_4 {
 	tag 'capsule-5252030'
-	container "$REGISTRY_HOST/capsule/8511f8d7-ac43-4c63-ae00-dad820185c47"
+	container "$REGISTRY_HOST/capsule/8511f8d7-ac43-4c63-ae00-dad820185c47:12e97cc1d769f84406fc4508341beb33"
 
 	cpus 2
 	memory '16 GB'
