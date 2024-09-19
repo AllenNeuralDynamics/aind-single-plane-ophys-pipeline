@@ -1,6 +1,6 @@
 # Single plane optical physiology processing pipeline
 
-The single plane pipeline processes planar optical physiology data acquired on Neural Dynamics Bergamo platforms. Motion correction and segmentation are both done using [Suite2p](https://github.com/MouseLand/suite2p) and the final outputs of the pipeline are the cellular events detected by [OASIS](https://github.com/j-friedrich/OASIS).
+The single plane pipeline processes planar optical physiology data acquired on Neural Dynamics [Bergamo](https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=7494#ad-image-0) platforms. Motion correction and segmentation are both done using [Suite2p](https://github.com/MouseLand/suite2p) and the final outputs of the pipeline are the cellular events detected by [OASIS](https://github.com/j-friedrich/OASIS).
 
 
 The single plane pipeline runs on [Nextflow](https://www.nextflow.io/) and contains the following steps:
@@ -9,7 +9,7 @@ The single plane pipeline runs on [Nextflow](https://www.nextflow.io/) and conta
 
 * [aind-ophys-motion-correction](https://github.com/AllenNeuralDynamics/aind-ophys-motion-correction): Suite2p non-rigid motion correction is run on each plane in parallel. Motion correction is done with a reference image from only the spontaneous epochs and motion corrects the entire stitched, movie. 
 
-* [aind-ophys-extraction-suite2p](https://github.com/AllenNeuralDynamics/aind-ophys-extraction-suite2p): Combination of Cellpose and Suite2p cell detection and extraction. Segmenation is only done on spontaneous and behavior epochs while extraction is done on across all epochs. `
+* [aind-ophys-extraction-suite2p](https://github.com/AllenNeuralDynamics/aind-ophys-extraction-suite2p): Combination of Cellpose and Suite2p cell detection and extraction. Segmenation is only done on spontaneous and behavior epochs while trace extraction is done on across all epochs. `
 
 * [aind-ophys-dff](https://github.com/AllenNeuralDynamics/aind-ophys-dff/blob/main/code/run_capsule.py#L116): Uses [aind-ophys-utils](https://github.com/AllenNeuralDynamics/aind-ophys-utils/tree/main) to compute the delta F over F from the fluorescence traces.
 
