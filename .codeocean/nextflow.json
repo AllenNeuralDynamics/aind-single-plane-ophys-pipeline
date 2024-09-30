@@ -69,12 +69,11 @@
 			}
 		},
 		{
-			"name": "capsule_aind_ophys_extraction_suite_2_paltest_3",
+			"name": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"capsule": {
-				"id": "9b5aca63-c509-4a2a-aeaf-92784bc2e842",
-				"name": "aind-ophys-extraction-suite2p al test",
-				"slug": "4591920",
-				"commit": "394e2607d43c5d923c4e628a40561a338f154fbe"
+				"id": "c9f136a2-67d7-4adf-b15a-e02af4237fa4",
+				"name": "aind-ophys-extraction-suite2p",
+				"slug": "3592435"
 			},
 			"resources": {
 				"cpus": 4,
@@ -105,7 +104,7 @@
 				}
 			],
 			"results": {
-				"id": "9b5aca63-c509-4a2a-aeaf-92784bc2e842"
+				"id": "c9f136a2-67d7-4adf-b15a-e02af4237fa4"
 			}
 		},
 		{
@@ -123,9 +122,9 @@
 			"inputs": [
 				{
 					"id": "9hfKDVMI0rnhqK8T",
-					"source_id": "capsule_aind_ophys_extraction_suite_2_paltest_3",
+					"source_id": "capsule_aind_ophys_extraction_suite_2_p_3",
 					"type": "capsule",
-					"name": "aind-ophys-extraction-suite2p al test"
+					"name": "aind-ophys-extraction-suite2p"
 				}
 			],
 			"results": {

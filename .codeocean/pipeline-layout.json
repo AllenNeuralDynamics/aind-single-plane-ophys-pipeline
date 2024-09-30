@@ -34,28 +34,28 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_motion_correctioncopysingleplanetest_2-capsule_aind_ophys_extraction_suite_2_paltest_3",
+			"id": "reactflow__edge-capsule_aind_ophys_motion_correctioncopysingleplanetest_2-capsule_aind_ophys_extraction_suite_2_p_3",
 			"source": "capsule_aind_ophys_motion_correctioncopysingleplanetest_2",
-			"target": "capsule_aind_ophys_extraction_suite_2_paltest_3"
+			"target": "capsule_aind_ophys_extraction_suite_2_p_3"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_paltest_3-resultsresults-start",
-			"source": "capsule_aind_ophys_extraction_suite_2_paltest_3",
+			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_3-resultsresults-start",
+			"source": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_paltest_3-results",
-			"source": "capsule_aind_ophys_extraction_suite_2_paltest_3",
+			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_3-results",
+			"source": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-d803aa43-f56a-4a4f-82f1-75bc7ca7065a-capsule_aind_ophys_extraction_suite_2_paltest_3",
+			"id": "reactflow__edge-d803aa43-f56a-4a4f-82f1-75bc7ca7065a-capsule_aind_ophys_extraction_suite_2_p_3",
 			"source": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
-			"target": "capsule_aind_ophys_extraction_suite_2_paltest_3"
+			"target": "capsule_aind_ophys_extraction_suite_2_p_3"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_paltest_3-capsule_aind_ophys_dff_4",
-			"source": "capsule_aind_ophys_extraction_suite_2_paltest_3",
+			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_3-capsule_aind_ophys_dff_4",
+			"source": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"target": "capsule_aind_ophys_dff_4"
 		},
 		{
@@ -112,7 +112,7 @@
 			"id": "capsule_aind_ophys_bergamo_stitcher_1",
 			"position": {
 				"x": 163.02331247124084,
-				"y": -111.6901239981249
+				"y": -113.27567631874795
 			},
 			"selected": false,
 			"type": "capsule"
@@ -131,8 +131,8 @@
 			},
 			"id": "capsule_aind_ophys_motion_correctioncopysingleplanetest_2",
 			"position": {
-				"x": -246.57260857156973,
-				"y": -8.098807262941989
+				"x": -246.57260857156976,
+				"y": -12.087607503002403
 			},
 			"selected": false,
 			"type": "capsule"
@@ -184,21 +184,16 @@
 		},
 		{
 			"data": {
-				"capsule_id": "9b5aca63-c509-4a2a-aeaf-92784bc2e842"
+				"capsule_id": "c9f136a2-67d7-4adf-b15a-e02af4237fa4"
 			},
-			"id": "capsule_aind_ophys_extraction_suite_2_paltest_3",
+			"id": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"position": {
-				"x": 465.97075074089025,
-				"y": 412.5957750442253
+				"x": 478.65516930587467,
+				"y": 409.42467040297925
 			},
 			"selected": true,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1727732925265,
-	"viewport": {
-		"x": 177.29040067797757,
-		"y": 206.61463048382214,
-		"zoom": 0.4161035538248227
-	}
+	"timestamp": 1727737830728
 }

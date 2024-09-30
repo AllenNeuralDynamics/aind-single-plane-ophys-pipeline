@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:0f7a9fa6674e766a2efceb4daeae8cdff24766ec485fd80591a972fc9f917e96
+// hash:sha256:5ccf79c8d836d4104ec1e54bde03bc6cf5786cc1d9887528d767bdbc85b3b9f5
 
 nextflow.enable.dsl = 1
 
@@ -9,10 +9,10 @@ ophys_to_aind_ophys_bergamo_stitcher_1 = channel.fromPath(params.ophys_url + "/"
 ophys_to_aind_ophys_motion_correction_copy_single_plane_test_2 = channel.fromPath(params.ophys_url + "/session.json", type: 'any')
 ophys_to_aind_ophys_motion_correction_copy_single_plane_test_3 = channel.fromPath(params.ophys_url + "/data_description.json", type: 'any')
 capsule_aind_ophys_bergamo_stitcher_1_to_capsule_aind_ophys_motion_correctioncopysingleplanetest_2_4 = channel.create()
-ophys_to_aind_ophys_extraction_suite2p_al_test_5 = channel.fromPath(params.ophys_url + "/data_description.json", type: 'any')
-ophys_to_aind_ophys_extraction_suite2p_al_test_6 = channel.fromPath(params.ophys_url + "/session.json", type: 'any')
-capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_extraction_suite_2_paltest_3_7 = channel.create()
-capsule_aind_ophys_extraction_suite_2_paltest_3_to_capsule_aind_ophys_dff_4_8 = channel.create()
+ophys_to_aind_ophys_extraction_suite2p_5 = channel.fromPath(params.ophys_url + "/data_description.json", type: 'any')
+ophys_to_aind_ophys_extraction_suite2p_6 = channel.fromPath(params.ophys_url + "/session.json", type: 'any')
+capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_extraction_suite_2_p_3_7 = channel.create()
+capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_dff_4_8 = channel.create()
 capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_9 = channel.create()
 ophys_to_processing_json_aggregator_10 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
 capsule_aind_ophys_oasis_event_detection_6_to_capsule_processingjsonaggregator_7_11 = channel.create()
@@ -80,7 +80,7 @@ process capsule_aind_ophys_motion_correctioncopysingleplanetest_2 {
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*' into capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_extraction_suite_2_paltest_3_7
+	path 'capsule/results/*' into capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_extraction_suite_2_p_3_7
 
 	script:
 	"""
@@ -111,10 +111,10 @@ process capsule_aind_ophys_motion_correctioncopysingleplanetest_2 {
 	"""
 }
 
-// capsule - aind-ophys-extraction-suite2p al test
-process capsule_aind_ophys_extraction_suite_2_paltest_3 {
-	tag 'capsule-4591920'
-	container "$REGISTRY_HOST/capsule/9b5aca63-c509-4a2a-aeaf-92784bc2e842"
+// capsule - aind-ophys-extraction-suite2p
+process capsule_aind_ophys_extraction_suite_2_p_3 {
+	tag 'capsule-3592435'
+	container "$REGISTRY_HOST/capsule/c9f136a2-67d7-4adf-b15a-e02af4237fa4"
 
 	cpus 4
 	memory '32 GB'
@@ -122,20 +122,20 @@ process capsule_aind_ophys_extraction_suite_2_paltest_3 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from ophys_to_aind_ophys_extraction_suite2p_al_test_5.collect()
-	path 'capsule/data/' from ophys_to_aind_ophys_extraction_suite2p_al_test_6.collect()
-	path 'capsule/data/' from capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_extraction_suite_2_paltest_3_7
+	path 'capsule/data/' from ophys_to_aind_ophys_extraction_suite2p_5.collect()
+	path 'capsule/data/' from ophys_to_aind_ophys_extraction_suite2p_6.collect()
+	path 'capsule/data/' from capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_extraction_suite_2_p_3_7
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*' into capsule_aind_ophys_extraction_suite_2_paltest_3_to_capsule_aind_ophys_dff_4_8
+	path 'capsule/results/*' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_dff_4_8
 
 	script:
 	"""
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=9b5aca63-c509-4a2a-aeaf-92784bc2e842
+	export CO_CAPSULE_ID=c9f136a2-67d7-4adf-b15a-e02af4237fa4
 	export CO_CPUS=4
 	export CO_MEMORY=34359738368
 
@@ -145,8 +145,7 @@ process capsule_aind_ophys_extraction_suite_2_paltest_3 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4591920.git" capsule-repo
-	git -C capsule-repo checkout 394e2607d43c5d923c4e628a40561a338f154fbe --quiet
+	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-3592435.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -170,7 +169,7 @@ process capsule_aind_ophys_dff_4 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_extraction_suite_2_paltest_3_to_capsule_aind_ophys_dff_4_8
+	path 'capsule/data/' from capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_dff_4_8
 
 	output:
 	path 'capsule/results/*'
