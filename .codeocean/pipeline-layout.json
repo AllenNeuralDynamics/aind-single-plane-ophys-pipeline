@@ -1,0 +1,204 @@
+{
+	"edges": [
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_bergamo_stitcher_1-capsule_aind_ophys_motion_correctioncopysingleplanetest_2",
+			"selected": false,
+			"source": "capsule_aind_ophys_bergamo_stitcher_1",
+			"target": "capsule_aind_ophys_motion_correctioncopysingleplanetest_2"
+		},
+		{
+			"id": "reactflow__edge-d803aa43-f56a-4a4f-82f1-75bc7ca7065a-capsule_aind_ophys_bergamo_stitcher_1",
+			"selected": false,
+			"source": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
+			"target": "capsule_aind_ophys_bergamo_stitcher_1"
+		},
+		{
+			"id": "reactflow__edge-d803aa43-f56a-4a4f-82f1-75bc7ca7065a-capsule_aind_ophys_motion_correctioncopysingleplanetest_2",
+			"selected": false,
+			"source": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
+			"target": "capsule_aind_ophys_motion_correctioncopysingleplanetest_2"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_motion_correctioncopysingleplanetest_2-results",
+			"source": "capsule_aind_ophys_motion_correctioncopysingleplanetest_2",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_bergamo_stitcher_1-resultsresults-start",
+			"source": "capsule_aind_ophys_bergamo_stitcher_1",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_bergamo_stitcher_1-results",
+			"source": "capsule_aind_ophys_bergamo_stitcher_1",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_motion_correctioncopysingleplanetest_2-capsule_aind_ophys_extraction_suite_2_paltest_3",
+			"source": "capsule_aind_ophys_motion_correctioncopysingleplanetest_2",
+			"target": "capsule_aind_ophys_extraction_suite_2_paltest_3"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_paltest_3-resultsresults-start",
+			"source": "capsule_aind_ophys_extraction_suite_2_paltest_3",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_paltest_3-results",
+			"source": "capsule_aind_ophys_extraction_suite_2_paltest_3",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-d803aa43-f56a-4a4f-82f1-75bc7ca7065a-capsule_aind_ophys_extraction_suite_2_paltest_3",
+			"source": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
+			"target": "capsule_aind_ophys_extraction_suite_2_paltest_3"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_paltest_3-capsule_aind_ophys_dff_4",
+			"source": "capsule_aind_ophys_extraction_suite_2_paltest_3",
+			"target": "capsule_aind_ophys_dff_4"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_dff_4-capsule_aind_ophys_oasis_event_detection_6",
+			"source": "capsule_aind_ophys_dff_4",
+			"target": "capsule_aind_ophys_oasis_event_detection_6"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_6-capsule_processingjsonaggregator_7",
+			"source": "capsule_aind_ophys_oasis_event_detection_6",
+			"target": "capsule_processingjsonaggregator_7"
+		},
+		{
+			"id": "reactflow__edge-capsule_processingjsonaggregator_7-resultsresults-start",
+			"source": "capsule_processingjsonaggregator_7",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-capsule_processingjsonaggregator_7-results",
+			"source": "capsule_processingjsonaggregator_7",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_6-resultsresults-start",
+			"source": "capsule_aind_ophys_oasis_event_detection_6",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_6-results",
+			"source": "capsule_aind_ophys_oasis_event_detection_6",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_dff_4-resultsresults-start",
+			"source": "capsule_aind_ophys_dff_4",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_dff_4-results",
+			"source": "capsule_aind_ophys_dff_4",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-d803aa43-f56a-4a4f-82f1-75bc7ca7065a-capsule_processingjsonaggregator_7",
+			"source": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
+			"target": "capsule_processingjsonaggregator_7"
+		}
+	],
+	"nodes": [
+		{
+			"data": {
+				"capsule_id": "a8876b73-5b9f-40dd-90df-1af29add6807"
+			},
+			"id": "capsule_aind_ophys_bergamo_stitcher_1",
+			"position": {
+				"x": 163.02331247124084,
+				"y": -111.6901239981249
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"id": "results",
+			"position": {
+				"x": 80,
+				"y": 985.3333333333334
+			},
+			"type": "results"
+		},
+		{
+			"data": {
+				"capsule_id": "8a59647f-9d6b-40c1-979e-a0039f8e0071"
+			},
+			"id": "capsule_aind_ophys_motion_correctioncopysingleplanetest_2",
+			"position": {
+				"x": -246.57260857156973,
+				"y": -8.098807262941989
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"id": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
+			"position": {
+				"x": 557.9430697834623,
+				"y": -338.9331714524654
+			},
+			"selected": false,
+			"type": "dataset"
+		},
+		{
+			"data": {
+				"capsule_id": "c6394aab-0db7-47b2-90ba-864866d6755e"
+			},
+			"id": "capsule_aind_ophys_oasis_event_detection_6",
+			"position": {
+				"x": 335.3388292242712,
+				"y": 1145.261880767289
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "2fafe85f-e0fa-41a7-b2a6-9ac24b88605d"
+			},
+			"id": "capsule_processingjsonaggregator_7",
+			"position": {
+				"x": -284.6257806619492,
+				"y": 994.2407575005764
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "8511f8d7-ac43-4c63-ae00-dad820185c47"
+			},
+			"id": "capsule_aind_ophys_dff_4",
+			"position": {
+				"x": 835.3653718096057,
+				"y": 760.9810443248443
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "9b5aca63-c509-4a2a-aeaf-92784bc2e842"
+			},
+			"id": "capsule_aind_ophys_extraction_suite_2_paltest_3",
+			"position": {
+				"x": 465.97075074089025,
+				"y": 412.5957750442253
+			},
+			"selected": true,
+			"type": "capsule"
+		}
+	],
+	"timestamp": 1727732925265,
+	"viewport": {
+		"x": 177.29040067797757,
+		"y": 206.61463048382214,
+		"zoom": 0.4161035538248227
+	}
+}
