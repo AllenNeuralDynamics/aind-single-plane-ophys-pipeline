@@ -1,5 +1,10 @@
 {
 	"version": 1,
 	"nextflow_version": "22.10.8",
+	"nextflow_error_strategy": {
+		"error_strategy": "retry",
+		"max_retries": 2,
+		"max_errors": 5
+	},
 	"verbose_logs": true
 }
