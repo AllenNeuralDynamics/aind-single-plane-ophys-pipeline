@@ -77,8 +77,8 @@
 				"commit": "394e2607d43c5d923c4e628a40561a338f154fbe"
 			},
 			"resources": {
-				"cpus": 2,
-				"memory": 16
+				"cpus": 4,
+				"memory": 32
 			},
 			"inputs": [
 				{
