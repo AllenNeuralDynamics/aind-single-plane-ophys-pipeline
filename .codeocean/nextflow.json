@@ -18,8 +18,8 @@
 					"id": "fKbqNfs0GcMCOWHD",
 					"source_id": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
 					"type": "dataset",
-					"name": "single-plane-ophys_731012_2024-08-13_23-49-46",
-					"source_path": "single-plane-ophys_731012_2024-08-13_23-49-46/",
+					"name": "ophys",
+					"source_path": "ophys/",
 					"collect": true
 				}
 			],
@@ -44,16 +44,16 @@
 					"id": "BYyy3M84GY77tBFJ",
 					"source_id": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
 					"type": "dataset",
-					"name": "single-plane-ophys_731012_2024-08-13_23-49-46",
-					"source_path": "single-plane-ophys_731012_2024-08-13_23-49-46/session.json",
+					"name": "ophys",
+					"source_path": "ophys/session.json",
 					"collect": true
 				},
 				{
 					"id": "n2rgNKEBTsCrMjoE",
 					"source_id": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
 					"type": "dataset",
-					"name": "single-plane-ophys_731012_2024-08-13_23-49-46",
-					"source_path": "single-plane-ophys_731012_2024-08-13_23-49-46/data_description.json",
+					"name": "ophys",
+					"source_path": "ophys/data_description.json",
 					"collect": true
 				},
 				{
@@ -85,16 +85,16 @@
 					"id": "S6JCMrOxXbNK1DOY",
 					"source_id": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
 					"type": "dataset",
-					"name": "single-plane-ophys_731012_2024-08-13_23-49-46",
-					"source_path": "single-plane-ophys_731012_2024-08-13_23-49-46/data_description.json",
+					"name": "ophys",
+					"source_path": "ophys/data_description.json",
 					"collect": true
 				},
 				{
 					"id": "YZqza7yGxzurXytA",
 					"source_id": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
 					"type": "dataset",
-					"name": "single-plane-ophys_731012_2024-08-13_23-49-46",
-					"source_path": "single-plane-ophys_731012_2024-08-13_23-49-46/session.json",
+					"name": "ophys",
+					"source_path": "ophys/session.json",
 					"collect": true
 				},
 				{
@@ -173,8 +173,8 @@
 					"id": "xFV70R8H0bVBJw13",
 					"source_id": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
 					"type": "dataset",
-					"name": "single-plane-ophys_731012_2024-08-13_23-49-46",
-					"source_path": "single-plane-ophys_731012_2024-08-13_23-49-46/*.json",
+					"name": "ophys",
+					"source_path": "ophys/*.json",
 					"collect": true
 				},
 				{

@@ -1,26 +1,26 @@
 #!/usr/bin/env nextflow
-// hash:sha256:cec1f67a59b965b19316fe33d9366f39cd33ac27f5e52f785b5b9c31e0e78eaa
+// hash:sha256:1d40b16c42b541bca8ab6bad103900be3477bd5b860f73188c28ff677a11193a
 
 nextflow.enable.dsl = 1
 
-params.single_plane_ophys_731012_2024_08_13_23_49_46_url = 's3://aind-private-data-prod-o5171v/single-plane-ophys_731012_2024-08-13_23-49-46'
+params.ophys_url = 's3://aind-private-data-prod-o5171v/single-plane-ophys_731012_2024-08-13_23-49-46'
 
-single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_bergamo_stitcher_1 = channel.fromPath(params.single_plane_ophys_731012_2024_08_13_23_49_46_url + "/", type: 'any')
-single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_motion_correction_copy_single_plane_test_2 = channel.fromPath(params.single_plane_ophys_731012_2024_08_13_23_49_46_url + "/session.json", type: 'any')
-single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_motion_correction_copy_single_plane_test_3 = channel.fromPath(params.single_plane_ophys_731012_2024_08_13_23_49_46_url + "/data_description.json", type: 'any')
+ophys_to_aind_ophys_bergamo_stitcher_1 = channel.fromPath(params.ophys_url + "/", type: 'any')
+ophys_to_aind_ophys_motion_correction_copy_single_plane_test_2 = channel.fromPath(params.ophys_url + "/session.json", type: 'any')
+ophys_to_aind_ophys_motion_correction_copy_single_plane_test_3 = channel.fromPath(params.ophys_url + "/data_description.json", type: 'any')
 capsule_aind_ophys_bergamo_stitcher_1_to_capsule_aind_ophys_motion_correctioncopysingleplanetest_2_4 = channel.create()
-single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_extraction_suite2p_al_test_5 = channel.fromPath(params.single_plane_ophys_731012_2024_08_13_23_49_46_url + "/data_description.json", type: 'any')
-single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_extraction_suite2p_al_test_6 = channel.fromPath(params.single_plane_ophys_731012_2024_08_13_23_49_46_url + "/session.json", type: 'any')
+ophys_to_aind_ophys_extraction_suite2p_al_test_5 = channel.fromPath(params.ophys_url + "/data_description.json", type: 'any')
+ophys_to_aind_ophys_extraction_suite2p_al_test_6 = channel.fromPath(params.ophys_url + "/session.json", type: 'any')
 capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_extraction_suite_2_paltest_3_7 = channel.create()
 capsule_aind_ophys_extraction_suite_2_paltest_3_to_capsule_aind_ophys_dff_4_8 = channel.create()
 capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_9 = channel.create()
-single_plane_ophys_731012_2024_08_13_23_49_46_to_processing_json_aggregator_10 = channel.fromPath(params.single_plane_ophys_731012_2024_08_13_23_49_46_url + "/*.json", type: 'any')
+ophys_to_processing_json_aggregator_10 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
 capsule_aind_ophys_oasis_event_detection_6_to_capsule_processingjsonaggregator_7_11 = channel.create()
 
 // capsule - aind-ophys-bergamo-stitcher
 process capsule_aind_ophys_bergamo_stitcher_1 {
 	tag 'capsule-4194956'
-	container "$REGISTRY_HOST/capsule/a8876b73-5b9f-40dd-90df-1af29add6807:53d4e8c61b977fb18b2e478f537bdb11"
+	container "$REGISTRY_HOST/capsule/a8876b73-5b9f-40dd-90df-1af29add6807"
 
 	cpus 4
 	memory '32 GB'
@@ -28,7 +28,7 @@ process capsule_aind_ophys_bergamo_stitcher_1 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data' from single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_bergamo_stitcher_1.collect()
+	path 'capsule/data' from ophys_to_aind_ophys_bergamo_stitcher_1.collect()
 
 	output:
 	path 'capsule/results/*'
@@ -66,7 +66,7 @@ process capsule_aind_ophys_bergamo_stitcher_1 {
 // capsule - aind-ophys-motion-correction copy single plane test
 process capsule_aind_ophys_motion_correctioncopysingleplanetest_2 {
 	tag 'capsule-8090753'
-	container "$REGISTRY_HOST/capsule/8a59647f-9d6b-40c1-979e-a0039f8e0071:43277c4dfb290c9cc8e8e8d70de07fa2"
+	container "$REGISTRY_HOST/capsule/8a59647f-9d6b-40c1-979e-a0039f8e0071"
 
 	cpus 16
 	memory '128 GB'
@@ -74,8 +74,8 @@ process capsule_aind_ophys_motion_correctioncopysingleplanetest_2 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_motion_correction_copy_single_plane_test_2.collect()
-	path 'capsule/data/' from single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_motion_correction_copy_single_plane_test_3.collect()
+	path 'capsule/data/' from ophys_to_aind_ophys_motion_correction_copy_single_plane_test_2.collect()
+	path 'capsule/data/' from ophys_to_aind_ophys_motion_correction_copy_single_plane_test_3.collect()
 	path 'capsule/data/' from capsule_aind_ophys_bergamo_stitcher_1_to_capsule_aind_ophys_motion_correctioncopysingleplanetest_2_4.collect()
 
 	output:
@@ -114,7 +114,7 @@ process capsule_aind_ophys_motion_correctioncopysingleplanetest_2 {
 // capsule - aind-ophys-extraction-suite2p al test
 process capsule_aind_ophys_extraction_suite_2_paltest_3 {
 	tag 'capsule-4591920'
-	container "$REGISTRY_HOST/capsule/9b5aca63-c509-4a2a-aeaf-92784bc2e842:0bebd0d44335e8857dabf8a173119b82"
+	container "$REGISTRY_HOST/capsule/9b5aca63-c509-4a2a-aeaf-92784bc2e842"
 
 	cpus 2
 	memory '16 GB'
@@ -122,8 +122,8 @@ process capsule_aind_ophys_extraction_suite_2_paltest_3 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_extraction_suite2p_al_test_5.collect()
-	path 'capsule/data/' from single_plane_ophys_731012_2024_08_13_23_49_46_to_aind_ophys_extraction_suite2p_al_test_6.collect()
+	path 'capsule/data/' from ophys_to_aind_ophys_extraction_suite2p_al_test_5.collect()
+	path 'capsule/data/' from ophys_to_aind_ophys_extraction_suite2p_al_test_6.collect()
 	path 'capsule/data/' from capsule_aind_ophys_motion_correctioncopysingleplanetest_2_to_capsule_aind_ophys_extraction_suite_2_paltest_3_7
 
 	output:
@@ -162,7 +162,7 @@ process capsule_aind_ophys_extraction_suite_2_paltest_3 {
 // capsule - aind-ophys-dff
 process capsule_aind_ophys_dff_4 {
 	tag 'capsule-5252030'
-	container "$REGISTRY_HOST/capsule/8511f8d7-ac43-4c63-ae00-dad820185c47:12e97cc1d769f84406fc4508341beb33"
+	container "$REGISTRY_HOST/capsule/8511f8d7-ac43-4c63-ae00-dad820185c47"
 
 	cpus 2
 	memory '16 GB'
@@ -261,7 +261,7 @@ process capsule_processingjsonaggregator_7 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from single_plane_ophys_731012_2024_08_13_23_49_46_to_processing_json_aggregator_10.collect()
+	path 'capsule/data/' from ophys_to_processing_json_aggregator_10.collect()
 	path 'capsule/data/' from capsule_aind_ophys_oasis_event_detection_6_to_capsule_processingjsonaggregator_7_11
 
 	output:
