@@ -112,7 +112,7 @@
 			"id": "capsule_aind_ophys_bergamo_stitcher_1",
 			"position": {
 				"x": 163.02331247124084,
-				"y": -113.27567631874795
+				"y": -115.19017357707634
 			},
 			"selected": false,
 			"type": "capsule"
@@ -153,9 +153,9 @@
 			"id": "capsule_aind_ophys_oasis_event_detection_6",
 			"position": {
 				"x": 335.3388292242712,
-				"y": 1145.261880767289
+				"y": 1143.205653113977
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -176,8 +176,8 @@
 			},
 			"id": "capsule_aind_ophys_dff_4",
 			"position": {
-				"x": 835.3653718096057,
-				"y": 760.9810443248443
+				"x": 831.2529165029814,
+				"y": 707.5191253387288
 			},
 			"selected": false,
 			"type": "capsule"
@@ -191,14 +191,14 @@
 				"x": 478.65516930587467,
 				"y": 407.02142248354187
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1727737958370,
+	"timestamp": 1727888220571,
 	"viewport": {
-		"x": 507.942927187313,
-		"y": 218.05457651766773,
-		"zoom": 0.4161035538248228
+		"x": 230.590250129435,
+		"y": 319.98597308930084,
+		"zoom": 0.48632747370614215
 	}
 }
