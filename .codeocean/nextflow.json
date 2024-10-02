@@ -7,7 +7,8 @@
 				"id": "a8876b73-5b9f-40dd-90df-1af29add6807",
 				"name": "aind-ophys-bergamo-stitcher",
 				"slug": "4194956",
-				"commit": "533a0bde3a50aab046f1c143081adad04409c8ca"
+				"commit": "533a0bde3a50aab046f1c143081adad04409c8ca",
+				"image_tag": "53d4e8c61b977fb18b2e478f537bdb11"
 			},
 			"resources": {
 				"cpus": 4,
@@ -33,7 +34,8 @@
 				"id": "8a59647f-9d6b-40c1-979e-a0039f8e0071",
 				"name": "aind-ophys-motion-correction copy single plane test",
 				"slug": "8090753",
-				"commit": "6a3460b9f44f3a2130a3e02de70e44e694d947e9"
+				"commit": "6a3460b9f44f3a2130a3e02de70e44e694d947e9",
+				"image_tag": "43277c4dfb290c9cc8e8e8d70de07fa2"
 			},
 			"resources": {
 				"cpus": 16,
@@ -73,7 +75,10 @@
 			"capsule": {
 				"id": "c9f136a2-67d7-4adf-b15a-e02af4237fa4",
 				"name": "aind-ophys-extraction-suite2p",
-				"slug": "3592435"
+				"slug": "3592435",
+				"commit": "b4e5b06c690e27a5562b8cec8cf94eb9d18c1744",
+				"image_tag": "0cc403490b311d666c4607dae3b94f60",
+				"app_panel": true
 			},
 			"resources": {
 				"cpus": 4,
@@ -113,7 +118,8 @@
 				"id": "8511f8d7-ac43-4c63-ae00-dad820185c47",
 				"name": "aind-ophys-dff",
 				"slug": "5252030",
-				"commit": "fa23c56355228783762174aca4a2739bd849ed3c"
+				"commit": "180b16b33ec3d8382810f29377c6ed8e3eac2385",
+				"image_tag": "12e97cc1d769f84406fc4508341beb33"
 			},
 			"resources": {
 				"cpus": 2,

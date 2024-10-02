@@ -189,11 +189,16 @@
 			"id": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"position": {
 				"x": 478.65516930587467,
-				"y": 409.42467040297925
+				"y": 407.02142248354187
 			},
 			"selected": true,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1727737830728
+	"timestamp": 1727737958370,
+	"viewport": {
+		"x": 507.942927187313,
+		"y": 218.05457651766773,
+		"zoom": 0.4161035538248228
+	}
 }

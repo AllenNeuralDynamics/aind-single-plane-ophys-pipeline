@@ -1,6 +1,9 @@
 {
 	"version": 1,
 	"nextflow_version": "22.10.8",
+	"role": {
+		"role_arn": "arn:aws:iam::467914378000:role/aind-codeocean-user"
+	},
 	"nextflow_error_strategy": {
 		"error_strategy": "retry",
 		"max_retries": 2,
