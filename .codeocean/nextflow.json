@@ -78,8 +78,8 @@
 				"app_panel": true
 			},
 			"resources": {
-				"cpus": 4,
-				"memory": 32
+				"cpus": 8,
+				"memory": 64
 			},
 			"inputs": [
 				{

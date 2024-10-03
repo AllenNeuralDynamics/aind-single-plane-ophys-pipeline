@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:fb73618d51d17698a9a81eb99c1a9e5cf8211edd0a0f8588049c6089f4d01258
+// hash:sha256:f80d64f716c311fe20627e1c36402977e97ebe63f3f4260aaedd23c0be795797
 
 nextflow.enable.dsl = 1
 
@@ -116,8 +116,8 @@ process capsule_aind_ophys_extraction_suite_2_p_3 {
 	tag 'capsule-3592435'
 	container "$REGISTRY_HOST/capsule/c9f136a2-67d7-4adf-b15a-e02af4237fa4"
 
-	cpus 4
-	memory '32 GB'
+	cpus 8
+	memory '64 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
@@ -136,8 +136,8 @@ process capsule_aind_ophys_extraction_suite_2_p_3 {
 	set -e
 
 	export CO_CAPSULE_ID=c9f136a2-67d7-4adf-b15a-e02af4237fa4
-	export CO_CPUS=4
-	export CO_MEMORY=34359738368
+	export CO_CPUS=8
+	export CO_MEMORY=68719476736
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data

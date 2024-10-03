@@ -111,8 +111,8 @@
 			},
 			"id": "capsule_aind_ophys_bergamo_stitcher_1",
 			"position": {
-				"x": 163.02331247124084,
-				"y": -115.19017357707634
+				"x": 141.9545201467256,
+				"y": 259.0734238134693
 			},
 			"selected": false,
 			"type": "capsule"
@@ -131,8 +131,8 @@
 			},
 			"id": "capsule_aind_ophys_motion_correctioncopysingleplanetest_2",
 			"position": {
-				"x": -246.57260857156976,
-				"y": -12.087607503002403
+				"x": -348.166088740365,
+				"y": 497.74875356772884
 			},
 			"selected": false,
 			"type": "capsule"
@@ -140,8 +140,8 @@
 		{
 			"id": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
 			"position": {
-				"x": 557.9430697834623,
-				"y": -338.9331714524654
+				"x": 88.73606897491254,
+				"y": -36.82581785184075
 			},
 			"selected": false,
 			"type": "dataset"
@@ -152,10 +152,10 @@
 			},
 			"id": "capsule_aind_ophys_oasis_event_detection_6",
 			"position": {
-				"x": 335.3388292242712,
-				"y": 1143.205653113977
+				"x": 271.800642885619,
+				"y": 1166.4513310427521
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -165,9 +165,9 @@
 			"id": "capsule_processingjsonaggregator_7",
 			"position": {
 				"x": -284.6257806619492,
-				"y": 994.2407575005764
+				"y": 927.6031474380875
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -176,8 +176,8 @@
 			},
 			"id": "capsule_aind_ophys_dff_4",
 			"position": {
-				"x": 831.2529165029814,
-				"y": 707.5191253387288
+				"x": 471.7197645379256,
+				"y": 783.4550065727279
 			},
 			"selected": false,
 			"type": "capsule"
@@ -188,17 +188,17 @@
 			},
 			"id": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"position": {
-				"x": 478.65516930587467,
-				"y": 407.02142248354187
+				"x": 421.315830414896,
+				"y": 489.15615116521417
 			},
 			"selected": false,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1727888220571,
+	"timestamp": 1727910444134,
 	"viewport": {
-		"x": 230.590250129435,
-		"y": 319.98597308930084,
-		"zoom": 0.48632747370614215
+		"x": 347.2112355737522,
+		"y": 150.15398187469802,
+		"zoom": 0.6452812452258885
 	}
 }
