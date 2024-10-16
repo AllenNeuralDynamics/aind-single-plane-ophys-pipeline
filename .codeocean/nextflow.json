@@ -7,8 +7,7 @@
 				"id": "a8876b73-5b9f-40dd-90df-1af29add6807",
 				"name": "aind-ophys-bergamo-stitcher",
 				"slug": "4194956",
-				"commit": "533a0bde3a50aab046f1c143081adad04409c8ca",
-				"image_tag": "53d4e8c61b977fb18b2e478f537bdb11"
+				"commit": "533a0bde3a50aab046f1c143081adad04409c8ca"
 			},
 			"resources": {
 				"cpus": 4,
@@ -29,13 +28,12 @@
 			}
 		},
 		{
-			"name": "capsule_aind_ophys_motion_correctioncopysingleplanetest_2",
+			"name": "capsule_aind_ophys_motion_correction_2",
 			"capsule": {
-				"id": "8a59647f-9d6b-40c1-979e-a0039f8e0071",
-				"name": "aind-ophys-motion-correction copy single plane test",
-				"slug": "8090753",
-				"commit": "6a3460b9f44f3a2130a3e02de70e44e694d947e9",
-				"image_tag": "43277c4dfb290c9cc8e8e8d70de07fa2"
+				"id": "63a8ce2e-f232-4590-9098-36b820202911",
+				"name": "aind-ophys-motion-correction",
+				"slug": "5379831",
+				"commit": "680f04a2f4c97bbcd9740875e5b91edd4da52982"
 			},
 			"resources": {
 				"cpus": 16,
@@ -67,18 +65,16 @@
 				}
 			],
 			"results": {
-				"id": "8a59647f-9d6b-40c1-979e-a0039f8e0071"
+				"id": "63a8ce2e-f232-4590-9098-36b820202911"
 			}
 		},
 		{
-			"name": "capsule_aind_ophys_extraction_suite_2_p_3",
+			"name": "capsule_test_aind_ophys_extraction_suite_2_p_3",
 			"capsule": {
-				"id": "c9f136a2-67d7-4adf-b15a-e02af4237fa4",
-				"name": "aind-ophys-extraction-suite2p",
-				"slug": "3592435",
-				"commit": "b4e5b06c690e27a5562b8cec8cf94eb9d18c1744",
-				"image_tag": "0cc403490b311d666c4607dae3b94f60",
-				"app_panel": true
+				"id": "43ebd21f-576b-491f-a9db-6aa66f02af9b",
+				"name": "TEST aind-ophys-extraction-suite2p",
+				"slug": "0050492",
+				"commit": "28cebf69151913f44240494caf5d5c16ecbbbf94"
 			},
 			"resources": {
 				"cpus": 8,
@@ -103,23 +99,21 @@
 				},
 				{
 					"id": "604RQu9rcTtNbZs4",
-					"source_id": "capsule_aind_ophys_motion_correctioncopysingleplanetest_2",
+					"source_id": "capsule_aind_ophys_motion_correction_2",
 					"type": "capsule",
-					"name": "aind-ophys-motion-correction copy single plane test"
+					"name": "aind-ophys-motion-correction"
 				}
 			],
 			"results": {
-				"id": "c9f136a2-67d7-4adf-b15a-e02af4237fa4"
+				"id": "43ebd21f-576b-491f-a9db-6aa66f02af9b"
 			}
 		},
 		{
-			"name": "capsule_aind_ophys_dff_4",
+			"name": "capsule_test_aind_ophys_dff_4",
 			"capsule": {
-				"id": "8511f8d7-ac43-4c63-ae00-dad820185c47",
-				"name": "aind-ophys-dff",
-				"slug": "5252030",
-				"commit": "180b16b33ec3d8382810f29377c6ed8e3eac2385",
-				"image_tag": "12e97cc1d769f84406fc4508341beb33"
+				"id": "1867cc11-08d1-4b1a-b07c-aff3e944df18",
+				"name": "TEST aind-ophys-dff",
+				"slug": "2484728"
 			},
 			"resources": {
 				"cpus": 2,
@@ -128,22 +122,21 @@
 			"inputs": [
 				{
 					"id": "9hfKDVMI0rnhqK8T",
-					"source_id": "capsule_aind_ophys_extraction_suite_2_p_3",
+					"source_id": "capsule_test_aind_ophys_extraction_suite_2_p_3",
 					"type": "capsule",
-					"name": "aind-ophys-extraction-suite2p"
+					"name": "TEST aind-ophys-extraction-suite2p"
 				}
 			],
 			"results": {
-				"id": "8511f8d7-ac43-4c63-ae00-dad820185c47"
+				"id": "1867cc11-08d1-4b1a-b07c-aff3e944df18"
 			}
 		},
 		{
-			"name": "capsule_aind_ophys_oasis_event_detection_6",
+			"name": "capsule_test_aind_ophys_oasis_event_detection_6",
 			"capsule": {
-				"id": "c6394aab-0db7-47b2-90ba-864866d6755e",
-				"name": "aind-ophys-oasis-event-detection",
-				"slug": "8957649",
-				"version": 2
+				"id": "8fcd1706-90cf-4804-8a39-3796d5af2285",
+				"name": "TEST aind-ophys-oasis-event-detection",
+				"slug": "0772112"
 			},
 			"resources": {
 				"cpus": 1,
@@ -152,13 +145,13 @@
 			"inputs": [
 				{
 					"id": "3sczeU8cqbY8rZel",
-					"source_id": "capsule_aind_ophys_dff_4",
+					"source_id": "capsule_test_aind_ophys_dff_4",
 					"type": "capsule",
-					"name": "aind-ophys-dff"
+					"name": "TEST aind-ophys-dff"
 				}
 			],
 			"results": {
-				"id": "c6394aab-0db7-47b2-90ba-864866d6755e"
+				"id": "8fcd1706-90cf-4804-8a39-3796d5af2285"
 			}
 		},
 		{
@@ -184,9 +177,9 @@
 				},
 				{
 					"id": "pdD1SSatU4dYlhLe",
-					"source_id": "capsule_aind_ophys_oasis_event_detection_6",
+					"source_id": "capsule_test_aind_ophys_oasis_event_detection_6",
 					"type": "capsule",
-					"name": "aind-ophys-oasis-event-detection"
+					"name": "TEST aind-ophys-oasis-event-detection"
 				}
 			],
 			"results": {

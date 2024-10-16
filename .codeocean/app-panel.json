@@ -5,8 +5,5 @@
 			"id": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
 			"name": "Bergamo dataset"
 		}
-	],
-	"processes": [
-		"capsule_aind_ophys_extraction_suite_2_p_3"
 	]
 }
