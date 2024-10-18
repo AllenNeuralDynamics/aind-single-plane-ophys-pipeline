@@ -74,7 +74,7 @@
 				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9",
 				"name": "aind-ophys-extraction-suite2p",
 				"slug": "9911715",
-				"version": 1,
+				"version": 2,
 				"app_panel": true
 			},
 			"resources": {

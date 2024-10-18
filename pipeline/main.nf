@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:bfa12150127179131c37bd7f81f020e053e2e75e4618623791c8b6ec149b2880
+// hash:sha256:b7857a3bda3850879615aaeef72b5800c4a8a7667d9b7c2f24a7637dca4f006d
 
 nextflow.enable.dsl = 1
 
@@ -112,7 +112,7 @@ process capsule_aind_ophys_motion_correction_2 {
 // capsule - aind-ophys-extraction-suite2p
 process capsule_aind_ophys_extraction_suite_2_p_3 {
 	tag 'capsule-9911715'
-	container "$REGISTRY_HOST/published/5e1d659c-e149-4a57-be83-12f5a448a0c9:v1"
+	container "$REGISTRY_HOST/published/5e1d659c-e149-4a57-be83-12f5a448a0c9:v2"
 
 	cpus 8
 	memory '64 GB'
@@ -143,7 +143,7 @@ process capsule_aind_ophys_extraction_suite_2_p_3 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v1.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9911715.git" capsule-repo
+	git clone --branch v2.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9911715.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 

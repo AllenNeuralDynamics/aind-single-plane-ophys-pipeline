@@ -174,10 +174,10 @@
 			},
 			"id": "capsule_aind_ophys_dff_4",
 			"position": {
-				"x": 471.7197645379256,
-				"y": 783.4550065727279
+				"x": 421.05309787125907,
+				"y": 768.7883399060613
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -189,9 +189,14 @@
 				"x": 263.4566313348673,
 				"y": 1071.4406817757547
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1729274483539
+	"timestamp": 1729282432760,
+	"viewport": {
+		"x": 0,
+		"y": 0,
+		"zoom": 0.75
+	}
 }
