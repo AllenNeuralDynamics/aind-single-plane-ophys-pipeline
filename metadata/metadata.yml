@@ -1,2 +1,9 @@
 metadata_version: 1
-name: TEST MERGED CAPSULES Single-plane Ophys Pipeline
+name: Single-plane Ophys Pipeline
+authors:
+- name: Arielle Leon
+- name: Johannes Friedrich
+- name: Jerome Lecoq
+- name: Matt Davis
+- name: Jinho Kim
+- name: David Feng
