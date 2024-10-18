@@ -32,38 +32,38 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_2-capsule_test_aind_ophys_extraction_suite_2_p_3",
+			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_2-capsule_aind_ophys_extraction_suite_2_p_3",
 			"source": "capsule_aind_ophys_motion_correction_2",
-			"target": "capsule_test_aind_ophys_extraction_suite_2_p_3"
+			"target": "capsule_aind_ophys_extraction_suite_2_p_3"
 		},
 		{
-			"id": "reactflow__edge-capsule_test_aind_ophys_extraction_suite_2_p_3-resultsresults-start",
-			"source": "capsule_test_aind_ophys_extraction_suite_2_p_3",
+			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_3-resultsresults-start",
+			"source": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-capsule_test_aind_ophys_extraction_suite_2_p_3-results",
-			"source": "capsule_test_aind_ophys_extraction_suite_2_p_3",
+			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_3-results",
+			"source": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-d803aa43-f56a-4a4f-82f1-75bc7ca7065a-capsule_test_aind_ophys_extraction_suite_2_p_3",
+			"id": "reactflow__edge-d803aa43-f56a-4a4f-82f1-75bc7ca7065a-capsule_aind_ophys_extraction_suite_2_p_3",
 			"source": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
-			"target": "capsule_test_aind_ophys_extraction_suite_2_p_3"
+			"target": "capsule_aind_ophys_extraction_suite_2_p_3"
 		},
 		{
-			"id": "reactflow__edge-capsule_test_aind_ophys_extraction_suite_2_p_3-capsule_test_aind_ophys_dff_4",
-			"source": "capsule_test_aind_ophys_extraction_suite_2_p_3",
-			"target": "capsule_test_aind_ophys_dff_4"
+			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_3-capsule_aind_ophys_dff_4",
+			"source": "capsule_aind_ophys_extraction_suite_2_p_3",
+			"target": "capsule_aind_ophys_dff_4"
 		},
 		{
-			"id": "reactflow__edge-capsule_test_aind_ophys_dff_4-capsule_test_aind_ophys_oasis_event_detection_6",
-			"source": "capsule_test_aind_ophys_dff_4",
-			"target": "capsule_test_aind_ophys_oasis_event_detection_6"
+			"id": "reactflow__edge-capsule_aind_ophys_dff_4-capsule_aind_ophys_oasis_event_detection_6",
+			"source": "capsule_aind_ophys_dff_4",
+			"target": "capsule_aind_ophys_oasis_event_detection_6"
 		},
 		{
-			"id": "reactflow__edge-capsule_test_aind_ophys_oasis_event_detection_6-capsule_processingjsonaggregator_7",
-			"source": "capsule_test_aind_ophys_oasis_event_detection_6",
+			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_6-capsule_processingjsonaggregator_7",
+			"source": "capsule_aind_ophys_oasis_event_detection_6",
 			"target": "capsule_processingjsonaggregator_7"
 		},
 		{
@@ -77,23 +77,23 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-capsule_test_aind_ophys_oasis_event_detection_6-resultsresults-start",
-			"source": "capsule_test_aind_ophys_oasis_event_detection_6",
+			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_6-resultsresults-start",
+			"source": "capsule_aind_ophys_oasis_event_detection_6",
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-capsule_test_aind_ophys_oasis_event_detection_6-results",
-			"source": "capsule_test_aind_ophys_oasis_event_detection_6",
+			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_6-results",
+			"source": "capsule_aind_ophys_oasis_event_detection_6",
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-capsule_test_aind_ophys_dff_4-resultsresults-start",
-			"source": "capsule_test_aind_ophys_dff_4",
+			"id": "reactflow__edge-capsule_aind_ophys_dff_4-resultsresults-start",
+			"source": "capsule_aind_ophys_dff_4",
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-capsule_test_aind_ophys_dff_4-results",
-			"source": "capsule_test_aind_ophys_dff_4",
+			"id": "reactflow__edge-capsule_aind_ophys_dff_4-results",
+			"source": "capsule_aind_ophys_dff_4",
 			"target": "results"
 		},
 		{
@@ -105,7 +105,7 @@
 	"nodes": [
 		{
 			"data": {
-				"capsule_id": "a8876b73-5b9f-40dd-90df-1af29add6807"
+				"capsule_id": "bdd26885-5b39-46e3-a1a5-3c00f9f96add"
 			},
 			"id": "capsule_aind_ophys_bergamo_stitcher_1",
 			"position": {
@@ -146,7 +146,7 @@
 		},
 		{
 			"data": {
-				"capsule_id": "63a8ce2e-f232-4590-9098-36b820202911"
+				"capsule_id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf"
 			},
 			"id": "capsule_aind_ophys_motion_correction_2",
 			"position": {
@@ -158,21 +158,21 @@
 		},
 		{
 			"data": {
-				"capsule_id": "43ebd21f-576b-491f-a9db-6aa66f02af9b"
+				"capsule_id": "5e1d659c-e149-4a57-be83-12f5a448a0c9"
 			},
-			"id": "capsule_test_aind_ophys_extraction_suite_2_p_3",
+			"id": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"position": {
-				"x": 427.98249708156254,
-				"y": 482.4894844985474
+				"x": 429.6262182557182,
+				"y": 479.20204215023625
 			},
 			"selected": false,
 			"type": "capsule"
 		},
 		{
 			"data": {
-				"capsule_id": "1867cc11-08d1-4b1a-b07c-aff3e944df18"
+				"capsule_id": "85987e27-601c-4863-811b-71e5b4bdea37"
 			},
-			"id": "capsule_test_aind_ophys_dff_4",
+			"id": "capsule_aind_ophys_dff_4",
 			"position": {
 				"x": 471.7197645379256,
 				"y": 783.4550065727279
@@ -182,21 +182,16 @@
 		},
 		{
 			"data": {
-				"capsule_id": "8fcd1706-90cf-4804-8a39-3796d5af2285"
+				"capsule_id": "c6394aab-0db7-47b2-90ba-864866d6755e"
 			},
-			"id": "capsule_test_aind_ophys_oasis_event_detection_6",
+			"id": "capsule_aind_ophys_oasis_event_detection_6",
 			"position": {
-				"x": 265.2257581889967,
-				"y": 1108.5923457124752
+				"x": 263.4566313348673,
+				"y": 1071.4406817757547
 			},
 			"selected": true,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1729112153550,
-	"viewport": {
-		"x": 298.06769221493016,
-		"y": -465.0810917908204,
-		"zoom": 0.608375687874017
-	}
+	"timestamp": 1729274483539
 }

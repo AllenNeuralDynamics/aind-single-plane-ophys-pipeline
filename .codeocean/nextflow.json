@@ -4,10 +4,10 @@
 		{
 			"name": "capsule_aind_ophys_bergamo_stitcher_1",
 			"capsule": {
-				"id": "a8876b73-5b9f-40dd-90df-1af29add6807",
+				"id": "bdd26885-5b39-46e3-a1a5-3c00f9f96add",
 				"name": "aind-ophys-bergamo-stitcher",
-				"slug": "4194956",
-				"commit": "533a0bde3a50aab046f1c143081adad04409c8ca"
+				"slug": "6802467",
+				"version": 1
 			},
 			"resources": {
 				"cpus": 4,
@@ -30,10 +30,10 @@
 		{
 			"name": "capsule_aind_ophys_motion_correction_2",
 			"capsule": {
-				"id": "63a8ce2e-f232-4590-9098-36b820202911",
+				"id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf",
 				"name": "aind-ophys-motion-correction",
-				"slug": "5379831",
-				"commit": "680f04a2f4c97bbcd9740875e5b91edd4da52982"
+				"slug": "7474660",
+				"version": 7
 			},
 			"resources": {
 				"cpus": 16,
@@ -69,12 +69,13 @@
 			}
 		},
 		{
-			"name": "capsule_test_aind_ophys_extraction_suite_2_p_3",
+			"name": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"capsule": {
-				"id": "43ebd21f-576b-491f-a9db-6aa66f02af9b",
-				"name": "TEST aind-ophys-extraction-suite2p",
-				"slug": "0050492",
-				"commit": "28cebf69151913f44240494caf5d5c16ecbbbf94"
+				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9",
+				"name": "aind-ophys-extraction-suite2p",
+				"slug": "9911715",
+				"version": 1,
+				"app_panel": true
 			},
 			"resources": {
 				"cpus": 8,
@@ -105,15 +106,16 @@
 				}
 			],
 			"results": {
-				"id": "43ebd21f-576b-491f-a9db-6aa66f02af9b"
+				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9"
 			}
 		},
 		{
-			"name": "capsule_test_aind_ophys_dff_4",
+			"name": "capsule_aind_ophys_dff_4",
 			"capsule": {
-				"id": "1867cc11-08d1-4b1a-b07c-aff3e944df18",
-				"name": "TEST aind-ophys-dff",
-				"slug": "2484728"
+				"id": "85987e27-601c-4863-811b-71e5b4bdea37",
+				"name": "aind-ophys-dff",
+				"slug": "6574773",
+				"version": 1
 			},
 			"resources": {
 				"cpus": 2,
@@ -122,21 +124,22 @@
 			"inputs": [
 				{
 					"id": "9hfKDVMI0rnhqK8T",
-					"source_id": "capsule_test_aind_ophys_extraction_suite_2_p_3",
+					"source_id": "capsule_aind_ophys_extraction_suite_2_p_3",
 					"type": "capsule",
-					"name": "TEST aind-ophys-extraction-suite2p"
+					"name": "aind-ophys-extraction-suite2p"
 				}
 			],
 			"results": {
-				"id": "1867cc11-08d1-4b1a-b07c-aff3e944df18"
+				"id": "85987e27-601c-4863-811b-71e5b4bdea37"
 			}
 		},
 		{
-			"name": "capsule_test_aind_ophys_oasis_event_detection_6",
+			"name": "capsule_aind_ophys_oasis_event_detection_6",
 			"capsule": {
-				"id": "8fcd1706-90cf-4804-8a39-3796d5af2285",
-				"name": "TEST aind-ophys-oasis-event-detection",
-				"slug": "0772112"
+				"id": "c6394aab-0db7-47b2-90ba-864866d6755e",
+				"name": "aind-ophys-oasis-event-detection",
+				"slug": "8957649",
+				"version": 2
 			},
 			"resources": {
 				"cpus": 1,
@@ -145,13 +148,13 @@
 			"inputs": [
 				{
 					"id": "3sczeU8cqbY8rZel",
-					"source_id": "capsule_test_aind_ophys_dff_4",
+					"source_id": "capsule_aind_ophys_dff_4",
 					"type": "capsule",
-					"name": "TEST aind-ophys-dff"
+					"name": "aind-ophys-dff"
 				}
 			],
 			"results": {
-				"id": "8fcd1706-90cf-4804-8a39-3796d5af2285"
+				"id": "c6394aab-0db7-47b2-90ba-864866d6755e"
 			}
 		},
 		{
@@ -177,9 +180,9 @@
 				},
 				{
 					"id": "pdD1SSatU4dYlhLe",
-					"source_id": "capsule_test_aind_ophys_oasis_event_detection_6",
+					"source_id": "capsule_aind_ophys_oasis_event_detection_6",
 					"type": "capsule",
-					"name": "TEST aind-ophys-oasis-event-detection"
+					"name": "aind-ophys-oasis-event-detection"
 				}
 			],
 			"results": {
