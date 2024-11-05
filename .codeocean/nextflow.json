@@ -6,7 +6,9 @@
 			"capsule": {
 				"id": "a8876b73-5b9f-40dd-90df-1af29add6807",
 				"name": "aind-ophys-bergamo-stitcher",
-				"slug": "4194956"
+				"slug": "4194956",
+				"commit": "b519bb0c90a0e7ae6182624d6937d2c33cd7e417",
+				"image_tag": "6eb13578ec5a6781b712ad4671dfd8c9"
 			},
 			"resources": {
 				"cpus": 4,

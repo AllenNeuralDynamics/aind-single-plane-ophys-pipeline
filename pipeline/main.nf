@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:e25f90eaf9725f74ff571dcda264951bfc8020fa8f34cfe0afebafbe31dbe145
+// hash:sha256:21c74ac7104374989a01d2888ccaf8cfda7315fee97a090056921eac48a8b008
 
 nextflow.enable.dsl = 1
 
@@ -20,7 +20,7 @@ capsule_aind_ophys_oasis_event_detection_6_to_capsule_processingjsonaggregator_7
 // capsule - aind-ophys-bergamo-stitcher
 process capsule_aind_ophys_bergamo_stitcher_1 {
 	tag 'capsule-4194956'
-	container "$REGISTRY_HOST/capsule/a8876b73-5b9f-40dd-90df-1af29add6807"
+	container "$REGISTRY_HOST/capsule/a8876b73-5b9f-40dd-90df-1af29add6807:6eb13578ec5a6781b712ad4671dfd8c9"
 
 	cpus 4
 	memory '32 GB'
@@ -50,6 +50,7 @@ process capsule_aind_ophys_bergamo_stitcher_1 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4194956.git" capsule-repo
+	git -C capsule-repo checkout b519bb0c90a0e7ae6182624d6937d2c33cd7e417 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
