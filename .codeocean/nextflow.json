@@ -4,10 +4,9 @@
 		{
 			"name": "capsule_aind_ophys_bergamo_stitcher_1",
 			"capsule": {
-				"id": "bdd26885-5b39-46e3-a1a5-3c00f9f96add",
+				"id": "a8876b73-5b9f-40dd-90df-1af29add6807",
 				"name": "aind-ophys-bergamo-stitcher",
-				"slug": "6802467",
-				"version": 1
+				"slug": "4194956"
 			},
 			"resources": {
 				"cpus": 4,

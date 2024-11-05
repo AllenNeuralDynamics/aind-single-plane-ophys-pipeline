@@ -48,6 +48,7 @@
 		},
 		{
 			"id": "reactflow__edge-d803aa43-f56a-4a4f-82f1-75bc7ca7065a-capsule_aind_ophys_extraction_suite_2_p_3",
+			"selected": false,
 			"source": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
 			"target": "capsule_aind_ophys_extraction_suite_2_p_3"
 		},
@@ -105,14 +106,14 @@
 	"nodes": [
 		{
 			"data": {
-				"capsule_id": "bdd26885-5b39-46e3-a1a5-3c00f9f96add"
+				"capsule_id": "a8876b73-5b9f-40dd-90df-1af29add6807"
 			},
 			"id": "capsule_aind_ophys_bergamo_stitcher_1",
 			"position": {
-				"x": 111.95452014672583,
-				"y": 455.740090480136
+				"x": 105.2878534800592,
+				"y": 274.4067571468027
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -163,7 +164,7 @@
 			"id": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"position": {
 				"x": 429.6262182557182,
-				"y": 479.20204215023625
+				"y": 580.5353754835696
 			},
 			"selected": false,
 			"type": "capsule"
@@ -177,7 +178,7 @@
 				"x": 421.05309787125907,
 				"y": 768.7883399060613
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -193,10 +194,10 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1729282432760,
+	"timestamp": 1730822563089,
 	"viewport": {
-		"x": 0,
-		"y": 0,
+		"x": 256,
+		"y": 34,
 		"zoom": 0.75
 	}
 }
