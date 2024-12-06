@@ -1,5 +1,5 @@
 metadata_version: 1
-name: TEST ANNOTATIONSaind-single-plane-ophys-pipeline
+name: aind-single-plane-ophys-pipeline
 description: The single plane pipeline processes planar optical physiology data acquired
   on Neural Dynamics Bergamo platforms. Motion correction and segmentation are both
   done using Suite2p and the final outputs of the pipeline are the cellular events
