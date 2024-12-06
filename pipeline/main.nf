@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:a8fe498333af0f97f990c7656231cd9b16e9bdf9d379d74215991afac40c0717
+// hash:sha256:2644a904f7e3cd609b37ad55f6d872c7a5b4ddcd1c29bf7c67aa68529a1f9c75
 
 nextflow.enable.dsl = 1
 
@@ -25,13 +25,10 @@ process capsule_aind_ophys_bergamo_stitcher_1 {
 	cpus 4
 	memory '32 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
-
 	input:
 	path 'capsule/data' from ophys_to_aind_ophys_bergamo_stitcher_1.collect()
 
 	output:
-	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_aind_ophys_bergamo_stitcher_1_to_capsule_aind_ophys_motion_correction_2_4
 
 	script:

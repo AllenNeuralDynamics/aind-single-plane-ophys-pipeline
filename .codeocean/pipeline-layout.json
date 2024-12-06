@@ -22,16 +22,6 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_bergamo_stitcher_1-resultsresults-start",
-			"source": "capsule_aind_ophys_bergamo_stitcher_1",
-			"target": "results"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_bergamo_stitcher_1-results",
-			"source": "capsule_aind_ophys_bergamo_stitcher_1",
-			"target": "results"
-		},
-		{
 			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_2-capsule_aind_ophys_extraction_suite_2_p_3",
 			"source": "capsule_aind_ophys_motion_correction_2",
 			"target": "capsule_aind_ophys_extraction_suite_2_p_3"
@@ -194,10 +184,10 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1733442868600,
+	"timestamp": 1733444922344,
 	"viewport": {
-		"x": 256,
-		"y": 34,
+		"x": 297,
+		"y": -117,
 		"zoom": 0.75
 	}
 }

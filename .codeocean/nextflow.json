@@ -22,10 +22,7 @@
 					"source_path": "ophys/",
 					"collect": true
 				}
-			],
-			"results": {
-				"id": "a8876b73-5b9f-40dd-90df-1af29add6807"
-			}
+			]
 		},
 		{
 			"name": "capsule_aind_ophys_motion_correction_2",
