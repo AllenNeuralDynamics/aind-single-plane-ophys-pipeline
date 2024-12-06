@@ -136,7 +136,7 @@
 				"id": "c6394aab-0db7-47b2-90ba-864866d6755e",
 				"name": "aind-ophys-oasis-event-detection",
 				"slug": "8957649",
-				"version": 2
+				"version": 4
 			},
 			"resources": {
 				"cpus": 1,

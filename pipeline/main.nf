@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:2644a904f7e3cd609b37ad55f6d872c7a5b4ddcd1c29bf7c67aa68529a1f9c75
+// hash:sha256:4b5105b09c0043313a85967a9a6a13efabe1b50d9ccee81169faa605eb1c84a7
 
 nextflow.enable.dsl = 1
 
@@ -201,7 +201,7 @@ process capsule_aind_ophys_dff_4 {
 // capsule - aind-ophys-oasis-event-detection
 process capsule_aind_ophys_oasis_event_detection_6 {
 	tag 'capsule-8957649'
-	container "$REGISTRY_HOST/published/c6394aab-0db7-47b2-90ba-864866d6755e:v2"
+	container "$REGISTRY_HOST/published/c6394aab-0db7-47b2-90ba-864866d6755e:v4"
 
 	cpus 1
 	memory '8 GB'
@@ -230,7 +230,7 @@ process capsule_aind_ophys_oasis_event_detection_6 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v2.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8957649.git" capsule-repo
+	git clone --branch v4.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8957649.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
