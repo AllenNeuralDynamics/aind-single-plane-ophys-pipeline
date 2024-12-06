@@ -4,10 +4,10 @@
 		{
 			"name": "capsule_aind_ophys_bergamo_stitcher_1",
 			"capsule": {
-				"id": "a8876b73-5b9f-40dd-90df-1af29add6807",
+				"id": "bdd26885-5b39-46e3-a1a5-3c00f9f96add",
 				"name": "aind-ophys-bergamo-stitcher",
-				"slug": "4194956",
-				"commit": "b519bb0c90a0e7ae6182624d6937d2c33cd7e417"
+				"slug": "6802467",
+				"version": 2
 			},
 			"resources": {
 				"cpus": 4,
@@ -33,7 +33,7 @@
 				"id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf",
 				"name": "aind-ophys-motion-correction",
 				"slug": "7474660",
-				"version": 7
+				"version": 9
 			},
 			"resources": {
 				"cpus": 16,
@@ -74,7 +74,7 @@
 				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9",
 				"name": "aind-ophys-extraction-suite2p",
 				"slug": "9911715",
-				"version": 2,
+				"version": 6,
 				"app_panel": true
 			},
 			"resources": {
