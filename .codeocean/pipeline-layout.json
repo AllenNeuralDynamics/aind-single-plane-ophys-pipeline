@@ -100,8 +100,8 @@
 			},
 			"id": "capsule_aind_ophys_bergamo_stitcher_1",
 			"position": {
-				"x": 178.62118681339257,
-				"y": 314.4067571468027
+				"x": 401.0479570109417,
+				"y": 187.74009048013608
 			},
 			"selected": true,
 			"type": "capsule"
@@ -141,8 +141,8 @@
 			},
 			"id": "capsule_aind_ophys_motion_correction_2",
 			"position": {
-				"x": -310.1660887403652,
-				"y": 385.74875356772884
+				"x": -351.4994220736985,
+				"y": 497.74875356772884
 			},
 			"selected": false,
 			"type": "capsule"
@@ -153,8 +153,8 @@
 			},
 			"id": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"position": {
-				"x": 444.2928849223848,
-				"y": 493.868708816903
+				"x": 445.14847068179233,
+				"y": 473.52842502901547
 			},
 			"selected": false,
 			"type": "capsule"
@@ -165,8 +165,8 @@
 			},
 			"id": "capsule_aind_ophys_dff_4",
 			"position": {
-				"x": 479.7197645379257,
-				"y": 799.455006572728
+				"x": 472.01527201978934,
+				"y": 759.0812591158651
 			},
 			"selected": false,
 			"type": "capsule"
@@ -184,10 +184,10 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1733444922344,
+	"timestamp": 1733805645398,
 	"viewport": {
-		"x": 297,
-		"y": -117,
-		"zoom": 0.75
+		"x": 289.1874354447125,
+		"y": -13.437923449243499,
+		"zoom": 0.41207033159132994
 	}
 }

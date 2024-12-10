@@ -112,7 +112,7 @@
 				"id": "85987e27-601c-4863-811b-71e5b4bdea37",
 				"name": "aind-ophys-dff",
 				"slug": "6574773",
-				"version": 2
+				"version": 3
 			},
 			"resources": {
 				"cpus": 2,
