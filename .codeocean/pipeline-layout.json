@@ -1,28 +1,13 @@
 {
 	"edges": [
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_bergamo_stitcher_1-capsule_aind_ophys_motion_correction_2",
-			"source": "capsule_aind_ophys_bergamo_stitcher_1",
-			"target": "capsule_aind_ophys_motion_correction_2"
-		},
-		{
-			"id": "reactflow__edge-d803aa43-f56a-4a4f-82f1-75bc7ca7065a-capsule_aind_ophys_bergamo_stitcher_1",
-			"selected": false,
-			"source": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
-			"target": "capsule_aind_ophys_bergamo_stitcher_1"
-		},
-		{
-			"id": "reactflow__edge-d803aa43-f56a-4a4f-82f1-75bc7ca7065a-capsule_aind_ophys_motion_correction_2",
-			"source": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
-			"target": "capsule_aind_ophys_motion_correction_2"
-		},
-		{
 			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_2-results",
 			"source": "capsule_aind_ophys_motion_correction_2",
 			"target": "results"
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_2-capsule_aind_ophys_extraction_suite_2_p_3",
+			"selected": false,
 			"source": "capsule_aind_ophys_motion_correction_2",
 			"target": "capsule_aind_ophys_extraction_suite_2_p_3"
 		},
@@ -35,12 +20,6 @@
 			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_3-results",
 			"source": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"target": "results"
-		},
-		{
-			"id": "reactflow__edge-d803aa43-f56a-4a4f-82f1-75bc7ca7065a-capsule_aind_ophys_extraction_suite_2_p_3",
-			"selected": false,
-			"source": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
-			"target": "capsule_aind_ophys_extraction_suite_2_p_3"
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_3-capsule_aind_ophys_dff_4",
@@ -88,40 +67,32 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-d803aa43-f56a-4a4f-82f1-75bc7ca7065a-capsule_processingjsonaggregator_7",
-			"source": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
+			"id": "reactflow__edge-165135d6-7730-4fd6-aba0-3539c270ae1b-capsule_aind_ophys_motion_correction_2",
+			"selected": false,
+			"source": "165135d6-7730-4fd6-aba0-3539c270ae1b",
+			"target": "capsule_aind_ophys_motion_correction_2"
+		},
+		{
+			"id": "reactflow__edge-165135d6-7730-4fd6-aba0-3539c270ae1b-capsule_aind_ophys_extraction_suite_2_p_3",
+			"source": "165135d6-7730-4fd6-aba0-3539c270ae1b",
+			"target": "capsule_aind_ophys_extraction_suite_2_p_3"
+		},
+		{
+			"id": "reactflow__edge-165135d6-7730-4fd6-aba0-3539c270ae1b-capsule_processingjsonaggregator_7",
+			"selected": false,
+			"source": "165135d6-7730-4fd6-aba0-3539c270ae1b",
 			"target": "capsule_processingjsonaggregator_7"
 		}
 	],
 	"nodes": [
-		{
-			"data": {
-				"capsule_id": "bdd26885-5b39-46e3-a1a5-3c00f9f96add"
-			},
-			"id": "capsule_aind_ophys_bergamo_stitcher_1",
-			"position": {
-				"x": 401.0479570109417,
-				"y": 187.74009048013608
-			},
-			"selected": true,
-			"type": "capsule"
-		},
 		{
 			"id": "results",
 			"position": {
 				"x": 80,
 				"y": 985.3333333333334
 			},
-			"type": "results"
-		},
-		{
-			"id": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
-			"position": {
-				"x": 88.73606897491254,
-				"y": -36.82581785184075
-			},
 			"selected": false,
-			"type": "dataset"
+			"type": "results"
 		},
 		{
 			"data": {
@@ -137,14 +108,14 @@
 		},
 		{
 			"data": {
-				"capsule_id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf"
+				"capsule_id": "63a8ce2e-f232-4590-9098-36b820202911"
 			},
 			"id": "capsule_aind_ophys_motion_correction_2",
 			"position": {
-				"x": -351.4994220736985,
-				"y": 497.74875356772884
+				"x": -499.4994220736985,
+				"y": 256.74875356772884
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -182,12 +153,20 @@
 			},
 			"selected": false,
 			"type": "capsule"
+		},
+		{
+			"id": "165135d6-7730-4fd6-aba0-3539c270ae1b",
+			"position": {
+				"x": -170.61609077487037,
+				"y": -37.01790902992741
+			},
+			"type": "dataset"
 		}
 	],
-	"timestamp": 1733805645398,
+	"timestamp": 1733965929661,
 	"viewport": {
-		"x": 289.1874354447125,
-		"y": -13.437923449243499,
-		"zoom": 0.41207033159132994
+		"x": 322.508710019208,
+		"y": 15.889024098516956,
+		"zoom": 0.5998470472335683
 	}
 }

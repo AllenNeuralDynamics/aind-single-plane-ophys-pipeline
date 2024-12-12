@@ -2,35 +2,14 @@
 	"version": 1,
 	"processes": [
 		{
-			"name": "capsule_aind_ophys_bergamo_stitcher_1",
-			"capsule": {
-				"id": "bdd26885-5b39-46e3-a1a5-3c00f9f96add",
-				"name": "aind-ophys-bergamo-stitcher",
-				"slug": "6802467",
-				"version": 2
-			},
-			"resources": {
-				"cpus": 4,
-				"memory": 32
-			},
-			"inputs": [
-				{
-					"id": "fKbqNfs0GcMCOWHD",
-					"source_id": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
-					"type": "dataset",
-					"name": "ophys",
-					"source_path": "ophys/",
-					"collect": true
-				}
-			]
-		},
-		{
 			"name": "capsule_aind_ophys_motion_correction_2",
 			"capsule": {
-				"id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf",
+				"id": "63a8ce2e-f232-4590-9098-36b820202911",
 				"name": "aind-ophys-motion-correction",
-				"slug": "7474660",
-				"version": 9
+				"slug": "5379831",
+				"commit": "d90aa8534a2b433a85692f36bb7ef57ce9e980dc",
+				"image_tag": "baabc08accddc0a0e01505e7dd64887a",
+				"app_panel": true
 			},
 			"resources": {
 				"cpus": 16,
@@ -38,26 +17,27 @@
 			},
 			"inputs": [
 				{
-					"id": "BYyy3M84GY77tBFJ",
-					"source_id": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
+					"id": "CwvuUEoc3LMBzFY8",
+					"source_id": "165135d6-7730-4fd6-aba0-3539c270ae1b",
 					"type": "dataset",
-					"name": "ophys",
-					"source_path": "ophys/session.json",
+					"name": "single-plane_harvard_2024-10-21_11-15-00",
+					"source_path": "single-plane_harvard_2024-10-21_11-15-00/data_description.json",
 					"collect": true
 				},
 				{
-					"id": "n2rgNKEBTsCrMjoE",
-					"source_id": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
+					"id": "jNH6CrDDMF6hWQUG",
+					"source_id": "165135d6-7730-4fd6-aba0-3539c270ae1b",
 					"type": "dataset",
-					"name": "ophys",
-					"source_path": "ophys/data_description.json",
+					"name": "single-plane_harvard_2024-10-21_11-15-00",
+					"source_path": "single-plane_harvard_2024-10-21_11-15-00/session.json",
 					"collect": true
 				},
 				{
-					"id": "olUgVlUfj5yQrQI6",
-					"source_id": "capsule_aind_ophys_bergamo_stitcher_1",
-					"type": "capsule",
-					"name": "aind-ophys-bergamo-stitcher",
+					"id": "fKyi6F7JY0aENN5U",
+					"source_id": "165135d6-7730-4fd6-aba0-3539c270ae1b",
+					"type": "dataset",
+					"name": "single-plane_harvard_2024-10-21_11-15-00",
+					"source_path": "single-plane_harvard_2024-10-21_11-15-00/",
 					"collect": true
 				}
 			],
@@ -80,19 +60,19 @@
 			},
 			"inputs": [
 				{
-					"id": "S6JCMrOxXbNK1DOY",
-					"source_id": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
+					"id": "3GqE0UPmUvKy4b9i",
+					"source_id": "165135d6-7730-4fd6-aba0-3539c270ae1b",
 					"type": "dataset",
-					"name": "ophys",
-					"source_path": "ophys/data_description.json",
+					"name": "single-plane_harvard_2024-10-21_11-15-00",
+					"source_path": "single-plane_harvard_2024-10-21_11-15-00/data_description.json",
 					"collect": true
 				},
 				{
-					"id": "YZqza7yGxzurXytA",
-					"source_id": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
+					"id": "BqotLQI30kV9p7V2",
+					"source_id": "165135d6-7730-4fd6-aba0-3539c270ae1b",
 					"type": "dataset",
-					"name": "ophys",
-					"source_path": "ophys/session.json",
+					"name": "single-plane_harvard_2024-10-21_11-15-00",
+					"source_path": "single-plane_harvard_2024-10-21_11-15-00/session.json",
 					"collect": true
 				},
 				{
@@ -168,11 +148,19 @@
 			},
 			"inputs": [
 				{
-					"id": "xFV70R8H0bVBJw13",
-					"source_id": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
+					"id": "8C8XhkMTvhy7EdGV",
+					"source_id": "165135d6-7730-4fd6-aba0-3539c270ae1b",
 					"type": "dataset",
-					"name": "ophys",
-					"source_path": "ophys/*.json",
+					"name": "single-plane_harvard_2024-10-21_11-15-00",
+					"source_path": "single-plane_harvard_2024-10-21_11-15-00/data_description.json",
+					"collect": true
+				},
+				{
+					"id": "X9ObAIt2VvlJyoEf",
+					"source_id": "165135d6-7730-4fd6-aba0-3539c270ae1b",
+					"type": "dataset",
+					"name": "single-plane_harvard_2024-10-21_11-15-00",
+					"source_path": "single-plane_harvard_2024-10-21_11-15-00/session.json",
 					"collect": true
 				},
 				{

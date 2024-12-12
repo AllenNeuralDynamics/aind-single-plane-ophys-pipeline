@@ -1,89 +1,33 @@
 #!/usr/bin/env nextflow
-// hash:sha256:860a63f8727e03de91665478e162a884ea3151068334df046c589f575caffb00
+// hash:sha256:78db42ba6d9c05df73345b2fbf52703faa99c53bce371d8557b57b1de6885821
 
 nextflow.enable.dsl = 1
 
-params.ophys_url = 's3://aind-private-data-prod-o5171v/single-plane-ophys_731012_2024-08-13_23-49-46'
-
-ophys_to_aind_ophys_bergamo_stitcher_1 = channel.fromPath(params.ophys_url + "/", type: 'any')
-ophys_to_aind_ophys_motion_correction_2 = channel.fromPath(params.ophys_url + "/session.json", type: 'any')
-ophys_to_aind_ophys_motion_correction_3 = channel.fromPath(params.ophys_url + "/data_description.json", type: 'any')
-capsule_aind_ophys_bergamo_stitcher_1_to_capsule_aind_ophys_motion_correction_2_4 = channel.create()
-ophys_to_aind_ophys_extraction_suite2p_5 = channel.fromPath(params.ophys_url + "/data_description.json", type: 'any')
-ophys_to_aind_ophys_extraction_suite2p_6 = channel.fromPath(params.ophys_url + "/session.json", type: 'any')
-capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_7 = channel.create()
-capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_dff_4_8 = channel.create()
-capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_9 = channel.create()
-ophys_to_processing_json_aggregator_10 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
-capsule_aind_ophys_oasis_event_detection_6_to_capsule_processingjsonaggregator_7_11 = channel.create()
-
-// capsule - aind-ophys-bergamo-stitcher
-process capsule_aind_ophys_bergamo_stitcher_1 {
-	tag 'capsule-6802467'
-	container "$REGISTRY_HOST/published/bdd26885-5b39-46e3-a1a5-3c00f9f96add:v2"
-
-	cpus 4
-	memory '32 GB'
-
-	input:
-	path 'capsule/data' from ophys_to_aind_ophys_bergamo_stitcher_1.collect()
-
-	output:
-	path 'capsule/results/*' into capsule_aind_ophys_bergamo_stitcher_1_to_capsule_aind_ophys_motion_correction_2_4
-
-	script:
-	"""
-	#!/usr/bin/env bash
-	set -e
-
-	export CO_CAPSULE_ID=bdd26885-5b39-46e3-a1a5-3c00f9f96add
-	export CO_CPUS=4
-	export CO_MEMORY=34359738368
-
-	mkdir -p capsule
-	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
-	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
-	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
-
-	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v2.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-6802467.git" capsule-repo
-	mv capsule-repo/code capsule/code
-	rm -rf capsule-repo
-
-	echo "[${task.tag}] running capsule..."
-	cd capsule/code
-	chmod +x run
-	./run
-
-	echo "[${task.tag}] completed!"
-	"""
-}
+capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_1 = channel.create()
+capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_dff_4_2 = channel.create()
+capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_3 = channel.create()
+capsule_aind_ophys_oasis_event_detection_6_to_capsule_processingjsonaggregator_7_4 = channel.create()
 
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_2 {
-	tag 'capsule-7474660'
-	container "$REGISTRY_HOST/published/91a8ed4d-3b9a-49c6-9283-3f16ea5482bf:v9"
+	tag 'capsule-5379831'
+	container "$REGISTRY_HOST/capsule/63a8ce2e-f232-4590-9098-36b820202911:baabc08accddc0a0e01505e7dd64887a"
 
 	cpus 16
 	memory '128 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
-	input:
-	path 'capsule/data/' from ophys_to_aind_ophys_motion_correction_2.collect()
-	path 'capsule/data/' from ophys_to_aind_ophys_motion_correction_3.collect()
-	path 'capsule/data/' from capsule_aind_ophys_bergamo_stitcher_1_to_capsule_aind_ophys_motion_correction_2_4.collect()
-
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_7
+	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_1
 
 	script:
 	"""
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=91a8ed4d-3b9a-49c6-9283-3f16ea5482bf
+	export CO_CAPSULE_ID=63a8ce2e-f232-4590-9098-36b820202911
 	export CO_CPUS=16
 	export CO_MEMORY=137438953472
 
@@ -92,15 +36,20 @@ process capsule_aind_ophys_motion_correction_2 {
 	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
+	ln -s "/tmp/data/single-plane_harvard_2024-10-21_11-15-00/data_description.json" "capsule/data/data_description.json" # id: 165135d6-7730-4fd6-aba0-3539c270ae1b
+	ln -s "/tmp/data/single-plane_harvard_2024-10-21_11-15-00/session.json" "capsule/data/session.json" # id: 165135d6-7730-4fd6-aba0-3539c270ae1b
+	ln -s "/tmp/data/single-plane_harvard_2024-10-21_11-15-00" "capsule/data/single-plane_harvard_2024-10-21_11-15-00" # id: 165135d6-7730-4fd6-aba0-3539c270ae1b
+
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v9.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7474660.git" capsule-repo
+	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5379831.git" capsule-repo
+	git -C capsule-repo checkout d90aa8534a2b433a85692f36bb7ef57ce9e980dc --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run
+	./run ${params.capsule_aind_ophys_motion_correction_2_args}
 
 	echo "[${task.tag}] completed!"
 	"""
@@ -117,13 +66,11 @@ process capsule_aind_ophys_extraction_suite_2_p_3 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from ophys_to_aind_ophys_extraction_suite2p_5.collect()
-	path 'capsule/data/' from ophys_to_aind_ophys_extraction_suite2p_6.collect()
-	path 'capsule/data/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_7
+	path 'capsule/data/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_1
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_dff_4_8
+	path 'capsule/results/*' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_dff_4_2
 
 	script:
 	"""
@@ -138,6 +85,9 @@ process capsule_aind_ophys_extraction_suite_2_p_3 {
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
 	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	ln -s "/tmp/data/single-plane_harvard_2024-10-21_11-15-00/data_description.json" "capsule/data/data_description.json" # id: 165135d6-7730-4fd6-aba0-3539c270ae1b
+	ln -s "/tmp/data/single-plane_harvard_2024-10-21_11-15-00/session.json" "capsule/data/session.json" # id: 165135d6-7730-4fd6-aba0-3539c270ae1b
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone --branch v6.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9911715.git" capsule-repo
@@ -164,11 +114,11 @@ process capsule_aind_ophys_dff_4 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_dff_4_8
+	path 'capsule/data/' from capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_dff_4_2
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*' into capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_9
+	path 'capsule/results/*' into capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_3
 
 	script:
 	"""
@@ -209,11 +159,11 @@ process capsule_aind_ophys_oasis_event_detection_6 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_9
+	path 'capsule/data/' from capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_3
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*' into capsule_aind_ophys_oasis_event_detection_6_to_capsule_processingjsonaggregator_7_11
+	path 'capsule/results/*' into capsule_aind_ophys_oasis_event_detection_6_to_capsule_processingjsonaggregator_7_4
 
 	script:
 	"""
@@ -254,8 +204,7 @@ process capsule_processingjsonaggregator_7 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from ophys_to_processing_json_aggregator_10.collect()
-	path 'capsule/data/' from capsule_aind_ophys_oasis_event_detection_6_to_capsule_processingjsonaggregator_7_11
+	path 'capsule/data/' from capsule_aind_ophys_oasis_event_detection_6_to_capsule_processingjsonaggregator_7_4
 
 	output:
 	path 'capsule/results/*'
@@ -273,6 +222,9 @@ process capsule_processingjsonaggregator_7 {
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
 	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	ln -s "/tmp/data/single-plane_harvard_2024-10-21_11-15-00/data_description.json" "capsule/data/data_description.json" # id: 165135d6-7730-4fd6-aba0-3539c270ae1b
+	ln -s "/tmp/data/single-plane_harvard_2024-10-21_11-15-00/session.json" "capsule/data/session.json" # id: 165135d6-7730-4fd6-aba0-3539c270ae1b
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone --branch v8.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1054292.git" capsule-repo
