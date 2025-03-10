@@ -2,7 +2,7 @@
 	"edges": [
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_bergamo_stitcher_1-capsule_aind_ophys_motion_correction_2",
-			"selected": true,
+			"selected": false,
 			"source": "capsule_aind_ophys_bergamo_stitcher_1",
 			"target": "capsule_aind_ophys_motion_correction_2"
 		},
@@ -25,6 +25,7 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_2-capsule_aind_ophys_extraction_suite_2_p_3",
+			"selected": false,
 			"source": "capsule_aind_ophys_motion_correction_2",
 			"target": "capsule_aind_ophys_extraction_suite_2_p_3"
 		},
@@ -152,7 +153,7 @@
 		},
 		{
 			"data": {
-				"capsule_id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf"
+				"capsule_id": "63a8ce2e-f232-4590-9098-36b820202911"
 			},
 			"id": "capsule_aind_ophys_motion_correction_2",
 			"position": {
@@ -168,10 +169,10 @@
 			},
 			"id": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"position": {
-				"x": 445.14847068179233,
-				"y": 473.52842502901547
+				"x": 165.14847068179233,
+				"y": 650.1950916956821
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -211,10 +212,10 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1741373319498,
+	"timestamp": 1741632302971,
 	"viewport": {
-		"x": 270.7278342754124,
-		"y": 115.53472727121192,
+		"x": 204.72783427541242,
+		"y": -111.46527272878811,
 		"zoom": 0.3
 	}
 }

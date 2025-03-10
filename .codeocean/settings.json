@@ -6,8 +6,8 @@
 	},
 	"nextflow_error_strategy": {
 		"error_strategy": "retry",
-		"max_retries": 2,
-		"max_errors": 5
+		"max_retries": 1,
+		"max_errors": 2
 	},
 	"verbose_logs": true
 }
