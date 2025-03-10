@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:b230c04b06a265372be7d5a16c758ad98ce102bec01f1fd2172b7243c54cf7de
+// hash:sha256:ab7bf9931f806bf63863ffb1f6a2f8f9f9971b35c72bb967e58fa9767ca1c8c3
 
 nextflow.enable.dsl = 1
 
@@ -13,9 +13,9 @@ capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_
 ophys_to_aind_ophys_extraction_suite2p_6 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
 capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_dff_4_7 = channel.create()
 capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_8 = channel.create()
-capsule_aind_ophys_oasis_event_detection_6_to_capsule_aind_pipeline_processing_metadata_aggregator_7_9 = channel.create()
-capsule_aind_ophys_dff_4_to_capsule_aind_pipeline_processing_metadata_aggregator_7_10 = channel.create()
-capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_pipeline_processing_metadata_aggregator_7_11 = channel.create()
+capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_pipeline_processing_metadata_aggregator_7_9 = channel.create()
+capsule_aind_ophys_oasis_event_detection_6_to_capsule_aind_pipeline_processing_metadata_aggregator_7_10 = channel.create()
+capsule_aind_ophys_dff_4_to_capsule_aind_pipeline_processing_metadata_aggregator_7_11 = channel.create()
 capsule_aind_ophys_motion_correction_2_to_capsule_aind_pipeline_processing_metadata_aggregator_7_12 = channel.create()
 ophys_to_aind_pipeline_processing_metadata_aggregator_13 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
 
@@ -131,7 +131,7 @@ process capsule_aind_ophys_extraction_suite_2_p_3 {
 	output:
 	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_dff_4_7
-	path 'capsule/results/*/*/*data_description.json' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_pipeline_processing_metadata_aggregator_7_11
+	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_pipeline_processing_metadata_aggregator_7_9
 
 	script:
 	"""
@@ -177,7 +177,7 @@ process capsule_aind_ophys_dff_4 {
 	output:
 	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_8
-	path 'capsule/results/*/*/*data_description.json' into capsule_aind_ophys_dff_4_to_capsule_aind_pipeline_processing_metadata_aggregator_7_10
+	path 'capsule/results/*/*/*data_description.json' into capsule_aind_ophys_dff_4_to_capsule_aind_pipeline_processing_metadata_aggregator_7_11
 
 	script:
 	"""
@@ -222,7 +222,7 @@ process capsule_aind_ophys_oasis_event_detection_6 {
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*/*/*data_description.json' into capsule_aind_ophys_oasis_event_detection_6_to_capsule_aind_pipeline_processing_metadata_aggregator_7_9
+	path 'capsule/results/*/*/*data_description.json' into capsule_aind_ophys_oasis_event_detection_6_to_capsule_aind_pipeline_processing_metadata_aggregator_7_10
 
 	script:
 	"""
@@ -263,9 +263,9 @@ process capsule_aind_pipeline_processing_metadata_aggregator_7 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_oasis_event_detection_6_to_capsule_aind_pipeline_processing_metadata_aggregator_7_9.collect()
-	path 'capsule/data/' from capsule_aind_ophys_dff_4_to_capsule_aind_pipeline_processing_metadata_aggregator_7_10.collect()
-	path 'capsule/data/' from capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_pipeline_processing_metadata_aggregator_7_11.collect()
+	path 'capsule/data/' from capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_pipeline_processing_metadata_aggregator_7_9.collect()
+	path 'capsule/data/' from capsule_aind_ophys_oasis_event_detection_6_to_capsule_aind_pipeline_processing_metadata_aggregator_7_10.collect()
+	path 'capsule/data/' from capsule_aind_ophys_dff_4_to_capsule_aind_pipeline_processing_metadata_aggregator_7_11.collect()
 	path 'capsule/data/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_pipeline_processing_metadata_aggregator_7_12.collect()
 	path 'capsule/data/' from ophys_to_aind_pipeline_processing_metadata_aggregator_13.collect()
 

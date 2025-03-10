@@ -137,9 +137,10 @@
 		{
 			"id": "results",
 			"position": {
-				"x": 80,
-				"y": 985.3333333333334
+				"x": 86.66666666666674,
+				"y": 1262
 			},
+			"selected": true,
 			"type": "results"
 		},
 		{
@@ -169,10 +170,10 @@
 			},
 			"id": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"position": {
-				"x": -14.851529318207668,
-				"y": 660.1950916956821
+				"x": 165.14847068179233,
+				"y": 400.1950916956821
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -212,7 +213,7 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1741637064012,
+	"timestamp": 1741638070738,
 	"viewport": {
 		"x": 237.72783427541242,
 		"y": 72.53472727121186,
