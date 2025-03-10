@@ -122,6 +122,14 @@
 					"source_id": "capsule_aind_ophys_extraction_suite_2_p_3",
 					"type": "capsule",
 					"name": "aind-ophys-extraction-suite2p"
+				},
+				{
+					"id": "PIZqLDX9M0K0RuDC",
+					"source_id": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
+					"type": "dataset",
+					"name": "ophys",
+					"source_path": "ophys/*.json",
+					"collect": true
 				}
 			],
 			"results": {
@@ -167,19 +175,11 @@
 			},
 			"inputs": [
 				{
-					"id": "SdgMsmG9Rhx5PQsa",
-					"source_id": "capsule_aind_ophys_extraction_suite_2_p_3",
-					"type": "capsule",
-					"name": "aind-ophys-extraction-suite2p",
-					"source_path": "*/*/*data_process.json",
-					"collect": true
-				},
-				{
 					"id": "pdD1SSatU4dYlhLe",
 					"source_id": "capsule_aind_ophys_oasis_event_detection_6",
 					"type": "capsule",
 					"name": "aind-ophys-oasis-event-detection",
-					"source_path": "*/*/*data_description.json",
+					"source_path": "*/*/*data_process.json",
 					"collect": true
 				},
 				{
@@ -187,14 +187,6 @@
 					"source_id": "capsule_aind_ophys_dff_4",
 					"type": "capsule",
 					"name": "aind-ophys-dff",
-					"source_path": "*/*/*data_description.json",
-					"collect": true
-				},
-				{
-					"id": "hp6p19nueMKqxhb3",
-					"source_id": "capsule_aind_ophys_motion_correction_2",
-					"type": "capsule",
-					"name": "aind-ophys-motion-correction",
 					"source_path": "*/*/*data_process.json",
 					"collect": true
 				},
@@ -204,6 +196,22 @@
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/*.json",
+					"collect": true
+				},
+				{
+					"id": "SdgMsmG9Rhx5PQsa",
+					"source_id": "capsule_aind_ophys_extraction_suite_2_p_3",
+					"type": "capsule",
+					"name": "aind-ophys-extraction-suite2p",
+					"source_path": "*/*/*data_process.json",
+					"collect": true
+				},
+				{
+					"id": "hp6p19nueMKqxhb3",
+					"source_id": "capsule_aind_ophys_motion_correction_2",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "*/*/*data_process.json",
 					"collect": true
 				}
 			],
