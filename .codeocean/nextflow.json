@@ -150,6 +150,14 @@
 			},
 			"inputs": [
 				{
+					"id": "ahnIg7kUyl2WiGYi",
+					"source_id": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
+					"type": "dataset",
+					"name": "ophys",
+					"source_path": "ophys/*.json",
+					"collect": true
+				},
+				{
 					"id": "3sczeU8cqbY8rZel",
 					"source_id": "capsule_aind_ophys_dff_4",
 					"type": "capsule",

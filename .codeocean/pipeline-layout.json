@@ -125,6 +125,12 @@
 			"id": "xy-edge__d803aa43-f56a-4a4f-82f1-75bc7ca7065a-capsule_aind_ophys_dff_4",
 			"source": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
 			"target": "capsule_aind_ophys_dff_4"
+		},
+		{
+			"id": "xy-edge__d803aa43-f56a-4a4f-82f1-75bc7ca7065a-capsule_aind_ophys_oasis_event_detection_6",
+			"selected": false,
+			"source": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
+			"target": "capsule_aind_ophys_oasis_event_detection_6"
 		}
 	],
 	"nodes": [
@@ -191,7 +197,7 @@
 				"x": 305.3486053531226,
 				"y": 669.0812591158654
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -200,10 +206,10 @@
 			},
 			"id": "capsule_aind_ophys_oasis_event_detection_6",
 			"position": {
-				"x": 416.3431537804586,
-				"y": 1044.746209602715
+				"x": 533.0098204471251,
+				"y": 901.4128762693815
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -219,7 +225,7 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1741640777235,
+	"timestamp": 1741641372733,
 	"viewport": {
 		"x": 237.72783427541242,
 		"y": 72.53472727121186,
