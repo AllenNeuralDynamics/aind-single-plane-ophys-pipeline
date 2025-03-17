@@ -1,13 +1,13 @@
 #!/usr/bin/env nextflow
-// hash:sha256:7effb137d478d693b5cb86264b8acfab738ccc4ed20e3b23f9af342879bbed61
+// hash:sha256:319c8a0e3ccf07b1a7f261c3dba785da35e46910b420dd06db966878c419ceef
 
 nextflow.enable.dsl = 1
 
-params.ophys_url = 's3://aind-private-data-prod-o5171v/single-plane-ophys_731012_2024-08-13_23-49-46'
+params.ophys_url = 's3://aind-private-data-prod-o5171v/single-plane-ophys_740369_2025-03-10_17-11-46'
 
-ophys_to_aind_ophys_bergamo_stitcher_1 = channel.fromPath(params.ophys_url + "/", type: 'any')
+ophys_to_aind_pophys_converter_capsule_1 = channel.fromPath(params.ophys_url + "/", type: 'any')
 ophys_to_aind_ophys_motion_correction_2 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
-capsule_aind_ophys_bergamo_stitcher_1_to_capsule_aind_ophys_motion_correction_2_3 = channel.create()
+capsule_aind_pophys_converter_capsule_1_to_capsule_aind_ophys_motion_correction_2_3 = channel.create()
 capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_4 = channel.create()
 capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_5 = channel.create()
 ophys_to_aind_ophys_extraction_suite2p_6 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
@@ -21,10 +21,10 @@ ophys_to_aind_pipeline_processing_metadata_aggregator_13 = channel.fromPath(para
 capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_pipeline_processing_metadata_aggregator_7_14 = channel.create()
 capsule_aind_ophys_motion_correction_2_to_capsule_aind_pipeline_processing_metadata_aggregator_7_15 = channel.create()
 
-// capsule - aind-ophys-bergamo-stitcher
-process capsule_aind_ophys_bergamo_stitcher_1 {
-	tag 'capsule-6802467'
-	container "$REGISTRY_HOST/published/bdd26885-5b39-46e3-a1a5-3c00f9f96add:v2"
+// capsule - aind-pophys-converter-capsule
+process capsule_aind_pophys_converter_capsule_1 {
+	tag 'capsule-0547799'
+	container "$REGISTRY_HOST/capsule/56956b65-72a4-4248-9718-468df22b23ff:9c59c115ceb2eb78036bf6f73b8e3b61"
 
 	cpus 4
 	memory '32 GB'
@@ -32,18 +32,18 @@ process capsule_aind_ophys_bergamo_stitcher_1 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data' from ophys_to_aind_ophys_bergamo_stitcher_1.collect()
+	path 'capsule/data' from ophys_to_aind_pophys_converter_capsule_1.collect()
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*' into capsule_aind_ophys_bergamo_stitcher_1_to_capsule_aind_ophys_motion_correction_2_3
+	path 'capsule/results/*' into capsule_aind_pophys_converter_capsule_1_to_capsule_aind_ophys_motion_correction_2_3
 
 	script:
 	"""
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=bdd26885-5b39-46e3-a1a5-3c00f9f96add
+	export CO_CAPSULE_ID=56956b65-72a4-4248-9718-468df22b23ff
 	export CO_CPUS=4
 	export CO_MEMORY=34359738368
 
@@ -53,14 +53,15 @@ process capsule_aind_ophys_bergamo_stitcher_1 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v2.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-6802467.git" capsule-repo
+	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0547799.git" capsule-repo
+	git -C capsule-repo checkout 2986f1aaeea57236764186b4cd26476666a3af0e --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run
+	./run ${params.capsule_aind_pophys_converter_capsule_1_args}
 
 	echo "[${task.tag}] completed!"
 	"""
@@ -69,7 +70,7 @@ process capsule_aind_ophys_bergamo_stitcher_1 {
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_2 {
 	tag 'capsule-5379831'
-	container "$REGISTRY_HOST/capsule/63a8ce2e-f232-4590-9098-36b820202911"
+	container "$REGISTRY_HOST/capsule/63a8ce2e-f232-4590-9098-36b820202911:0da186b632b36a65afc14b406afd4686"
 
 	cpus 16
 	memory '128 GB'
@@ -78,7 +79,7 @@ process capsule_aind_ophys_motion_correction_2 {
 
 	input:
 	path 'capsule/data/' from ophys_to_aind_ophys_motion_correction_2.collect()
-	path 'capsule/data/' from capsule_aind_ophys_bergamo_stitcher_1_to_capsule_aind_ophys_motion_correction_2_3.collect()
+	path 'capsule/data/' from capsule_aind_pophys_converter_capsule_1_to_capsule_aind_ophys_motion_correction_2_3.collect()
 
 	output:
 	path 'capsule/results/*'
@@ -102,7 +103,7 @@ process capsule_aind_ophys_motion_correction_2 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5379831.git" capsule-repo
-	git -C capsule-repo checkout efd8fc219b7322ff4cbc765867ef70e4b6aa84bf --quiet
+	git -C capsule-repo checkout 7b21e1d21bb472d84c1119e201d8fe206cb96e08 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 

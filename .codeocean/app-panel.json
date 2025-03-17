@@ -2,13 +2,14 @@
 	"version": 1,
 	"datasets": [
 		{
-			"id": "d803aa43-f56a-4a4f-82f1-75bc7ca7065a",
+			"id": "3e8b277c-06e8-4ea9-95b3-38fdad2618f6",
 			"name": "Bergamo dataset"
 		}
 	],
 	"processes": [
 		"capsule_aind_ophys_extraction_suite_2_p_3",
 		"capsule_aind_ophys_motion_correction_2",
-		"capsule_aind_pipeline_processing_metadata_aggregator_7"
+		"capsule_aind_pipeline_processing_metadata_aggregator_7",
+		"capsule_aind_pophys_converter_capsule_1"
 	]
 }
