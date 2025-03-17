@@ -8,7 +8,6 @@
 				"name": "aind-pophys-converter-capsule",
 				"slug": "0547799",
 				"commit": "2986f1aaeea57236764186b4cd26476666a3af0e",
-				"image_tag": "9c59c115ceb2eb78036bf6f73b8e3b61",
 				"app_panel": true
 			},
 			"resources": {
@@ -18,7 +17,7 @@
 			"inputs": [
 				{
 					"id": "fKbqNfs0GcMCOWHD",
-					"source_id": "3e8b277c-06e8-4ea9-95b3-38fdad2618f6",
+					"source_id": "f375685e-b8e2-4499-ab88-f16a45de5115",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/",
@@ -36,7 +35,6 @@
 				"name": "aind-ophys-motion-correction",
 				"slug": "5379831",
 				"commit": "7b21e1d21bb472d84c1119e201d8fe206cb96e08",
-				"image_tag": "0da186b632b36a65afc14b406afd4686",
 				"app_panel": true
 			},
 			"resources": {
@@ -46,7 +44,7 @@
 			"inputs": [
 				{
 					"id": "BYyy3M84GY77tBFJ",
-					"source_id": "3e8b277c-06e8-4ea9-95b3-38fdad2618f6",
+					"source_id": "f375685e-b8e2-4499-ab88-f16a45de5115",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/*.json",
@@ -96,7 +94,7 @@
 				},
 				{
 					"id": "YZqza7yGxzurXytA",
-					"source_id": "3e8b277c-06e8-4ea9-95b3-38fdad2618f6",
+					"source_id": "f375685e-b8e2-4499-ab88-f16a45de5115",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/*.json",
@@ -128,7 +126,7 @@
 				},
 				{
 					"id": "PIZqLDX9M0K0RuDC",
-					"source_id": "3e8b277c-06e8-4ea9-95b3-38fdad2618f6",
+					"source_id": "f375685e-b8e2-4499-ab88-f16a45de5115",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/*.json",
@@ -154,7 +152,7 @@
 			"inputs": [
 				{
 					"id": "ahnIg7kUyl2WiGYi",
-					"source_id": "3e8b277c-06e8-4ea9-95b3-38fdad2618f6",
+					"source_id": "f375685e-b8e2-4499-ab88-f16a45de5115",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/*.json",
@@ -203,7 +201,7 @@
 				},
 				{
 					"id": "xFV70R8H0bVBJw13",
-					"source_id": "3e8b277c-06e8-4ea9-95b3-38fdad2618f6",
+					"source_id": "f375685e-b8e2-4499-ab88-f16a45de5115",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/*.json",

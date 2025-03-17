@@ -6,13 +6,13 @@
 			"target": "capsule_aind_ophys_motion_correction_2"
 		},
 		{
-			"id": "reactflow__edge-3e8b277c-06e8-4ea9-95b3-38fdad2618f6-capsule_aind_pophys_converter_capsule_1",
-			"source": "3e8b277c-06e8-4ea9-95b3-38fdad2618f6",
+			"id": "reactflow__edge-f375685e-b8e2-4499-ab88-f16a45de5115-capsule_aind_pophys_converter_capsule_1",
+			"source": "f375685e-b8e2-4499-ab88-f16a45de5115",
 			"target": "capsule_aind_pophys_converter_capsule_1"
 		},
 		{
-			"id": "reactflow__edge-3e8b277c-06e8-4ea9-95b3-38fdad2618f6-capsule_aind_ophys_motion_correction_2",
-			"source": "3e8b277c-06e8-4ea9-95b3-38fdad2618f6",
+			"id": "reactflow__edge-f375685e-b8e2-4499-ab88-f16a45de5115-capsule_aind_ophys_motion_correction_2",
+			"source": "f375685e-b8e2-4499-ab88-f16a45de5115",
 			"target": "capsule_aind_ophys_motion_correction_2"
 		},
 		{
@@ -37,8 +37,8 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-3e8b277c-06e8-4ea9-95b3-38fdad2618f6-capsule_aind_ophys_extraction_suite_2_p_3",
-			"source": "3e8b277c-06e8-4ea9-95b3-38fdad2618f6",
+			"id": "reactflow__edge-f375685e-b8e2-4499-ab88-f16a45de5115-capsule_aind_ophys_extraction_suite_2_p_3",
+			"source": "f375685e-b8e2-4499-ab88-f16a45de5115",
 			"target": "capsule_aind_ophys_extraction_suite_2_p_3"
 		},
 		{
@@ -89,8 +89,8 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-3e8b277c-06e8-4ea9-95b3-38fdad2618f6-capsule_aind_pipeline_processing_metadata_aggregator_7",
-			"source": "3e8b277c-06e8-4ea9-95b3-38fdad2618f6",
+			"id": "reactflow__edge-f375685e-b8e2-4499-ab88-f16a45de5115-capsule_aind_pipeline_processing_metadata_aggregator_7",
+			"source": "f375685e-b8e2-4499-ab88-f16a45de5115",
 			"target": "capsule_aind_pipeline_processing_metadata_aggregator_7"
 		},
 		{
@@ -117,13 +117,13 @@
 			"target": "results"
 		},
 		{
-			"id": "xy-edge__3e8b277c-06e8-4ea9-95b3-38fdad2618f6-capsule_aind_ophys_dff_4",
-			"source": "3e8b277c-06e8-4ea9-95b3-38fdad2618f6",
+			"id": "xy-edge__f375685e-b8e2-4499-ab88-f16a45de5115-capsule_aind_ophys_dff_4",
+			"source": "f375685e-b8e2-4499-ab88-f16a45de5115",
 			"target": "capsule_aind_ophys_dff_4"
 		},
 		{
-			"id": "xy-edge__3e8b277c-06e8-4ea9-95b3-38fdad2618f6-capsule_aind_ophys_oasis_event_detection_6",
-			"source": "3e8b277c-06e8-4ea9-95b3-38fdad2618f6",
+			"id": "xy-edge__f375685e-b8e2-4499-ab88-f16a45de5115-capsule_aind_ophys_oasis_event_detection_6",
+			"source": "f375685e-b8e2-4499-ab88-f16a45de5115",
 			"target": "capsule_aind_ophys_oasis_event_detection_6"
 		}
 	],
@@ -210,7 +210,7 @@
 			"type": "capsule"
 		},
 		{
-			"id": "3e8b277c-06e8-4ea9-95b3-38fdad2618f6",
+			"id": "f375685e-b8e2-4499-ab88-f16a45de5115",
 			"position": {
 				"x": 88.73606897491254,
 				"y": -36.82581785184075
@@ -218,5 +218,5 @@
 			"type": "dataset"
 		}
 	],
-	"timestamp": 1741992786581
+	"timestamp": 1742175823649
 }

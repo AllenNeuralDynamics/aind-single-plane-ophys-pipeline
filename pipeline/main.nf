@@ -1,9 +1,9 @@
 #!/usr/bin/env nextflow
-// hash:sha256:319c8a0e3ccf07b1a7f261c3dba785da35e46910b420dd06db966878c419ceef
+// hash:sha256:9e2c2abacd2ac4610c9d1957d8c09bafcdeee8deab79e8b26a6e0116d1084959
 
 nextflow.enable.dsl = 1
 
-params.ophys_url = 's3://aind-private-data-prod-o5171v/single-plane-ophys_740369_2025-03-10_17-11-46'
+params.ophys_url = 's3://aind-private-data-prod-o5171v/single-plane-ophys_767715_2025-02-17_17-41-50'
 
 ophys_to_aind_pophys_converter_capsule_1 = channel.fromPath(params.ophys_url + "/", type: 'any')
 ophys_to_aind_ophys_motion_correction_2 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
@@ -24,7 +24,7 @@ capsule_aind_ophys_motion_correction_2_to_capsule_aind_pipeline_processing_metad
 // capsule - aind-pophys-converter-capsule
 process capsule_aind_pophys_converter_capsule_1 {
 	tag 'capsule-0547799'
-	container "$REGISTRY_HOST/capsule/56956b65-72a4-4248-9718-468df22b23ff:9c59c115ceb2eb78036bf6f73b8e3b61"
+	container "$REGISTRY_HOST/capsule/56956b65-72a4-4248-9718-468df22b23ff"
 
 	cpus 4
 	memory '32 GB'
@@ -70,7 +70,7 @@ process capsule_aind_pophys_converter_capsule_1 {
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_2 {
 	tag 'capsule-5379831'
-	container "$REGISTRY_HOST/capsule/63a8ce2e-f232-4590-9098-36b820202911:0da186b632b36a65afc14b406afd4686"
+	container "$REGISTRY_HOST/capsule/63a8ce2e-f232-4590-9098-36b820202911"
 
 	cpus 16
 	memory '128 GB'
