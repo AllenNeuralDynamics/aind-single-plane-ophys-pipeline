@@ -124,6 +124,7 @@
 		},
 		{
 			"id": "xy-edge__f375685e-b8e2-4499-ab88-f16a45de5115-capsule_aind_ophys_oasis_event_detection_6",
+			"selected": false,
 			"source": "f375685e-b8e2-4499-ab88-f16a45de5115",
 			"target": "capsule_aind_ophys_oasis_event_detection_6"
 		},
@@ -191,14 +192,14 @@
 		},
 		{
 			"data": {
-				"capsule_id": "c6394aab-0db7-47b2-90ba-864866d6755e"
+				"capsule_id": "382062c4-fd31-4812-806b-cc81bad29bf4"
 			},
 			"id": "capsule_aind_ophys_oasis_event_detection_6",
 			"position": {
 				"x": 533.0098204471251,
 				"y": 901.4128762693815
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -250,11 +251,11 @@
 				"x": -414.41864160574437,
 				"y": 743.3222749738904
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1743202012170,
+	"timestamp": 1743439499095,
 	"viewport": {
 		"x": 380.1420311092437,
 		"y": -1.5984577223674137,

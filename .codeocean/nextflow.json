@@ -8,7 +8,6 @@
 				"name": "aind-pophys-converter-capsule",
 				"slug": "0547799",
 				"commit": "26c2b127281288fe5197185e663b91bef5011fba",
-				"image_tag": "9c59c115ceb2eb78036bf6f73b8e3b61",
 				"app_panel": true
 			},
 			"resources": {
@@ -36,7 +35,6 @@
 				"name": "aind-ophys-motion-correction",
 				"slug": "5379831",
 				"commit": "efd8fc219b7322ff4cbc765867ef70e4b6aa84bf",
-				"image_tag": "0da186b632b36a65afc14b406afd4686",
 				"app_panel": true
 			},
 			"resources": {
@@ -70,8 +68,7 @@
 				"id": "c9f136a2-67d7-4adf-b15a-e02af4237fa4",
 				"name": "aind-ophys-extraction-suite2p",
 				"slug": "3592435",
-				"commit": "53f7d5128b8f778cdfc6dc238ce7ed0a91d2a19f",
-				"image_tag": "5c573bd731b27103f675f902ccaf1198",
+				"commit": "b1e169216f9774dbfcc96281e6053be97097df85",
 				"app_panel": true
 			},
 			"resources": {
@@ -143,10 +140,9 @@
 		{
 			"name": "capsule_aind_ophys_oasis_event_detection_6",
 			"capsule": {
-				"id": "c6394aab-0db7-47b2-90ba-864866d6755e",
+				"id": "382062c4-fd31-4812-806b-cc81bad29bf4",
 				"name": "aind-ophys-oasis-event-detection",
-				"slug": "8957649",
-				"version": 6
+				"slug": "0298748"
 			},
 			"resources": {
 				"cpus": 2,
