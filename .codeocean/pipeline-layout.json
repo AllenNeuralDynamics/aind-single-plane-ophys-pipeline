@@ -2,6 +2,7 @@
 	"edges": [
 		{
 			"id": "reactflow__edge-capsule_aind_pophys_converter_capsule_1-capsule_aind_ophys_motion_correction_2",
+			"selected": false,
 			"source": "capsule_aind_pophys_converter_capsule_1",
 			"target": "capsule_aind_ophys_motion_correction_2"
 		},
@@ -125,6 +126,21 @@
 			"id": "xy-edge__f375685e-b8e2-4499-ab88-f16a45de5115-capsule_aind_ophys_oasis_event_detection_6",
 			"source": "f375685e-b8e2-4499-ab88-f16a45de5115",
 			"target": "capsule_aind_ophys_oasis_event_detection_6"
+		},
+		{
+			"id": "xy-edge__35d1284e-4dfa-4ac3-9ba8-5ea1ae2fdaeb-capsule_aind_ophys_classifier_8",
+			"source": "35d1284e-4dfa-4ac3-9ba8-5ea1ae2fdaeb",
+			"target": "capsule_aind_ophys_classifier_8"
+		},
+		{
+			"id": "xy-edge__capsule_aind_ophys_extraction_suite_2_p_3-capsule_aind_ophys_classifier_8",
+			"source": "capsule_aind_ophys_extraction_suite_2_p_3",
+			"target": "capsule_aind_ophys_classifier_8"
+		},
+		{
+			"id": "xy-edge__capsule_aind_ophys_classifier_8-results",
+			"source": "capsule_aind_ophys_classifier_8",
+			"target": "results"
 		}
 	],
 	"nodes": [
@@ -151,12 +167,12 @@
 		},
 		{
 			"data": {
-				"capsule_id": "5e1d659c-e149-4a57-be83-12f5a448a0c9"
+				"capsule_id": "c9f136a2-67d7-4adf-b15a-e02af4237fa4"
 			},
 			"id": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"position": {
-				"x": 165.14847068179233,
-				"y": 400.1950916956821
+				"x": -62.48899040744925,
+				"y": 648.7167833429339
 			},
 			"selected": false,
 			"type": "capsule"
@@ -182,7 +198,7 @@
 				"x": 533.0098204471251,
 				"y": 901.4128762693815
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -206,7 +222,7 @@
 				"x": 398.62118681339257,
 				"y": 187.74009048013608
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -216,7 +232,32 @@
 				"y": -36.82581785184075
 			},
 			"type": "dataset"
+		},
+		{
+			"id": "35d1284e-4dfa-4ac3-9ba8-5ea1ae2fdaeb",
+			"position": {
+				"x": -420,
+				"y": 315
+			},
+			"type": "dataset"
+		},
+		{
+			"data": {
+				"capsule_id": "3819d125-9f03-48f3-ba09-b44c84a7a2c7"
+			},
+			"id": "capsule_aind_ophys_classifier_8",
+			"position": {
+				"x": -414.41864160574437,
+				"y": 743.3222749738904
+			},
+			"selected": true,
+			"type": "capsule"
 		}
 	],
-	"timestamp": 1742175823649
+	"timestamp": 1743202012170,
+	"viewport": {
+		"x": 380.1420311092437,
+		"y": -1.5984577223674137,
+		"zoom": 0.4025345884219218
+	}
 }

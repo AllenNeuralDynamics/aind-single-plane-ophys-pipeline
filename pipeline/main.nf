@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:9e2c2abacd2ac4610c9d1957d8c09bafcdeee8deab79e8b26a6e0116d1084959
+// hash:sha256:d934161632e361393f3c5c6187379dcc789c096a62b87cf3e14bc4dea7aaa00e
 
 nextflow.enable.dsl = 1
 
@@ -20,11 +20,12 @@ capsule_aind_ophys_dff_4_to_capsule_aind_pipeline_processing_metadata_aggregator
 ophys_to_aind_pipeline_processing_metadata_aggregator_13 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
 capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_pipeline_processing_metadata_aggregator_7_14 = channel.create()
 capsule_aind_ophys_motion_correction_2_to_capsule_aind_pipeline_processing_metadata_aggregator_7_15 = channel.create()
+capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_classifier_8_16 = channel.create()
 
 // capsule - aind-pophys-converter-capsule
 process capsule_aind_pophys_converter_capsule_1 {
 	tag 'capsule-0547799'
-	container "$REGISTRY_HOST/capsule/56956b65-72a4-4248-9718-468df22b23ff"
+	container "$REGISTRY_HOST/capsule/56956b65-72a4-4248-9718-468df22b23ff:9c59c115ceb2eb78036bf6f73b8e3b61"
 
 	cpus 4
 	memory '32 GB'
@@ -54,7 +55,7 @@ process capsule_aind_pophys_converter_capsule_1 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0547799.git" capsule-repo
-	git -C capsule-repo checkout 2986f1aaeea57236764186b4cd26476666a3af0e --quiet
+	git -C capsule-repo checkout 26c2b127281288fe5197185e663b91bef5011fba --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -70,7 +71,7 @@ process capsule_aind_pophys_converter_capsule_1 {
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_2 {
 	tag 'capsule-5379831'
-	container "$REGISTRY_HOST/capsule/63a8ce2e-f232-4590-9098-36b820202911"
+	container "$REGISTRY_HOST/capsule/63a8ce2e-f232-4590-9098-36b820202911:0da186b632b36a65afc14b406afd4686"
 
 	cpus 16
 	memory '128 GB'
@@ -103,7 +104,7 @@ process capsule_aind_ophys_motion_correction_2 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5379831.git" capsule-repo
-	git -C capsule-repo checkout 7b21e1d21bb472d84c1119e201d8fe206cb96e08 --quiet
+	git -C capsule-repo checkout efd8fc219b7322ff4cbc765867ef70e4b6aa84bf --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -118,8 +119,8 @@ process capsule_aind_ophys_motion_correction_2 {
 
 // capsule - aind-ophys-extraction-suite2p
 process capsule_aind_ophys_extraction_suite_2_p_3 {
-	tag 'capsule-9911715'
-	container "$REGISTRY_HOST/published/5e1d659c-e149-4a57-be83-12f5a448a0c9:v9"
+	tag 'capsule-3592435'
+	container "$REGISTRY_HOST/capsule/c9f136a2-67d7-4adf-b15a-e02af4237fa4:5c573bd731b27103f675f902ccaf1198"
 
 	cpus 8
 	memory '64 GB'
@@ -135,13 +136,14 @@ process capsule_aind_ophys_extraction_suite_2_p_3 {
 	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_dff_4_7
 	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_pipeline_processing_metadata_aggregator_7_14
+	path 'capsule/results/*' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_classifier_8_16
 
 	script:
 	"""
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=5e1d659c-e149-4a57-be83-12f5a448a0c9
+	export CO_CAPSULE_ID=c9f136a2-67d7-4adf-b15a-e02af4237fa4
 	export CO_CPUS=8
 	export CO_MEMORY=68719476736
 
@@ -151,7 +153,8 @@ process capsule_aind_ophys_extraction_suite_2_p_3 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v9.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9911715.git" capsule-repo
+	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-3592435.git" capsule-repo
+	git -C capsule-repo checkout 53f7d5128b8f778cdfc6dc238ce7ed0a91d2a19f --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -300,6 +303,54 @@ process capsule_aind_pipeline_processing_metadata_aggregator_7 {
 	cd capsule/code
 	chmod +x run
 	./run ${params.capsule_aind_pipeline_processing_metadata_aggregator_7_args}
+
+	echo "[${task.tag}] completed!"
+	"""
+}
+
+// capsule - aind-ophys-classifier
+process capsule_aind_ophys_classifier_8 {
+	tag 'capsule-0630574'
+	container "$REGISTRY_HOST/published/3819d125-9f03-48f3-ba09-b44c84a7a2c7:v4"
+
+	cpus 16
+	memory '61 GB'
+	accelerator 1
+	label 'gpu'
+
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+
+	input:
+	path 'capsule/data/' from capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_classifier_8_16
+
+	output:
+	path 'capsule/results/*'
+
+	script:
+	"""
+	#!/usr/bin/env bash
+	set -e
+
+	export CO_CAPSULE_ID=3819d125-9f03-48f3-ba09-b44c84a7a2c7
+	export CO_CPUS=16
+	export CO_MEMORY=65498251264
+
+	mkdir -p capsule
+	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
+	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
+	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	ln -s "/tmp/data/2p_roi_classifier" "capsule/data/2p_roi_classifier" # id: 35d1284e-4dfa-4ac3-9ba8-5ea1ae2fdaeb
+
+	echo "[${task.tag}] cloning git repo..."
+	git clone --branch v4.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0630574.git" capsule-repo
+	mv capsule-repo/code capsule/code
+	rm -rf capsule-repo
+
+	echo "[${task.tag}] running capsule..."
+	cd capsule/code
+	chmod +x run
+	./run
 
 	echo "[${task.tag}] completed!"
 	"""

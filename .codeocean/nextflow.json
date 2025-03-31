@@ -7,7 +7,8 @@
 				"id": "56956b65-72a4-4248-9718-468df22b23ff",
 				"name": "aind-pophys-converter-capsule",
 				"slug": "0547799",
-				"commit": "2986f1aaeea57236764186b4cd26476666a3af0e",
+				"commit": "26c2b127281288fe5197185e663b91bef5011fba",
+				"image_tag": "9c59c115ceb2eb78036bf6f73b8e3b61",
 				"app_panel": true
 			},
 			"resources": {
@@ -34,7 +35,8 @@
 				"id": "63a8ce2e-f232-4590-9098-36b820202911",
 				"name": "aind-ophys-motion-correction",
 				"slug": "5379831",
-				"commit": "7b21e1d21bb472d84c1119e201d8fe206cb96e08",
+				"commit": "efd8fc219b7322ff4cbc765867ef70e4b6aa84bf",
+				"image_tag": "0da186b632b36a65afc14b406afd4686",
 				"app_panel": true
 			},
 			"resources": {
@@ -65,10 +67,11 @@
 		{
 			"name": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"capsule": {
-				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9",
+				"id": "c9f136a2-67d7-4adf-b15a-e02af4237fa4",
 				"name": "aind-ophys-extraction-suite2p",
-				"slug": "9911715",
-				"version": 9,
+				"slug": "3592435",
+				"commit": "53f7d5128b8f778cdfc6dc238ce7ed0a91d2a19f",
+				"image_tag": "5c573bd731b27103f675f902ccaf1198",
 				"app_panel": true
 			},
 			"resources": {
@@ -226,6 +229,39 @@
 			],
 			"results": {
 				"id": "d51df783-d892-4304-a129-238a9baea72a"
+			}
+		},
+		{
+			"name": "capsule_aind_ophys_classifier_8",
+			"capsule": {
+				"id": "3819d125-9f03-48f3-ba09-b44c84a7a2c7",
+				"name": "aind-ophys-classifier",
+				"slug": "0630574",
+				"version": 4
+			},
+			"resources": {
+				"cpus": 16,
+				"memory": 61,
+				"gpus": 1
+			},
+			"inputs": [
+				{
+					"id": "fiqCmrnzkHO4jRuX",
+					"source_id": "35d1284e-4dfa-4ac3-9ba8-5ea1ae2fdaeb",
+					"type": "dataset",
+					"name": "2p_roi_classifier",
+					"source_path": "2p_roi_classifier/",
+					"collect": true
+				},
+				{
+					"id": "4k6SeFsAfP1JZHfu",
+					"source_id": "capsule_aind_ophys_extraction_suite_2_p_3",
+					"type": "capsule",
+					"name": "aind-ophys-extraction-suite2p"
+				}
+			],
+			"results": {
+				"id": "3819d125-9f03-48f3-ba09-b44c84a7a2c7"
 			}
 		}
 	]
