@@ -8,6 +8,7 @@
 				"name": "aind-pophys-converter-capsule",
 				"slug": "0547799",
 				"commit": "26c2b127281288fe5197185e663b91bef5011fba",
+				"image_tag": "9c59c115ceb2eb78036bf6f73b8e3b61",
 				"app_panel": true
 			},
 			"resources": {
@@ -35,6 +36,7 @@
 				"name": "aind-ophys-motion-correction",
 				"slug": "5379831",
 				"commit": "efd8fc219b7322ff4cbc765867ef70e4b6aa84bf",
+				"image_tag": "0da186b632b36a65afc14b406afd4686",
 				"app_panel": true
 			},
 			"resources": {
@@ -69,6 +71,7 @@
 				"name": "aind-ophys-extraction-suite2p",
 				"slug": "3592435",
 				"commit": "b1e169216f9774dbfcc96281e6053be97097df85",
+				"image_tag": "5c573bd731b27103f675f902ccaf1198",
 				"app_panel": true
 			},
 			"resources": {
@@ -142,7 +145,9 @@
 			"capsule": {
 				"id": "382062c4-fd31-4812-806b-cc81bad29bf4",
 				"name": "aind-ophys-oasis-event-detection",
-				"slug": "0298748"
+				"slug": "0298748",
+				"commit": "c62a395143428f5c6041e3bdfa25facf93add3c4",
+				"image_tag": "9087c2ff5cc907978b646b11a6cab48d"
 			},
 			"resources": {
 				"cpus": 2,
@@ -241,6 +246,14 @@
 				"gpus": 1
 			},
 			"inputs": [
+				{
+					"id": "fZKHcSvcCJ6YEKym",
+					"source_id": "f375685e-b8e2-4499-ab88-f16a45de5115",
+					"type": "dataset",
+					"name": "ophys",
+					"source_path": "ophys/*.json",
+					"collect": true
+				},
 				{
 					"id": "fiqCmrnzkHO4jRuX",
 					"source_id": "35d1284e-4dfa-4ac3-9ba8-5ea1ae2fdaeb",
