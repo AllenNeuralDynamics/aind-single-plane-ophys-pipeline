@@ -35,7 +35,7 @@
 				"id": "63a8ce2e-f232-4590-9098-36b820202911",
 				"name": "aind-ophys-motion-correction",
 				"slug": "5379831",
-				"commit": "efd8fc219b7322ff4cbc765867ef70e4b6aa84bf",
+				"commit": "f44b3cce5777678001f2ce1c43e56c10a9f40014",
 				"image_tag": "0da186b632b36a65afc14b406afd4686",
 				"app_panel": true
 			},
@@ -187,6 +187,14 @@
 				"memory": 8
 			},
 			"inputs": [
+				{
+					"id": "IXpN7jcJFkC4VlvL",
+					"source_id": "capsule_aind_ophys_classifier_8",
+					"type": "capsule",
+					"name": "aind-ophys-classifier",
+					"source_path": "*/*/*data_process.json",
+					"collect": true
+				},
 				{
 					"id": "pdD1SSatU4dYlhLe",
 					"source_id": "capsule_aind_ophys_oasis_event_detection_6",
