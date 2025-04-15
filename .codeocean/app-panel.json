@@ -4,6 +4,7 @@
 		"capsule_aind_pophys_converter_capsule_1",
 		"capsule_aind_ophys_motion_correction_2",
 		"capsule_aind_ophys_extraction_suite_2_p_3",
-		"capsule_aind_pipeline_processing_metadata_aggregator_7"
+		"capsule_aind_pipeline_processing_metadata_aggregator_7",
+		"capsule_nwb_packaging_subject_10"
 	]
 }
