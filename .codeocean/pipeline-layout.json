@@ -158,6 +158,31 @@
 			"id": "xy-edge__fb4b5cef-4505-4145-b8bd-e41d6863d7a9-capsule_aind_ophys_nwb_9",
 			"source": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
 			"target": "capsule_aind_ophys_nwb_9"
+		},
+		{
+			"id": "xy-edge__capsule_aind_ophys_classifier_8-results",
+			"source": "capsule_aind_ophys_classifier_8",
+			"target": "results"
+		},
+		{
+			"id": "xy-edge__capsule_aind_ophys_extraction_suite_2_p_3-results",
+			"source": "capsule_aind_ophys_extraction_suite_2_p_3",
+			"target": "results"
+		},
+		{
+			"id": "xy-edge__capsule_aind_ophys_dff_4-results",
+			"source": "capsule_aind_ophys_dff_4",
+			"target": "results"
+		},
+		{
+			"id": "xy-edge__capsule_aind_ophys_oasis_event_detection_6-results",
+			"source": "capsule_aind_ophys_oasis_event_detection_6",
+			"target": "results"
+		},
+		{
+			"id": "xy-edge__capsule_aind_ophys_motion_correction_2-results",
+			"source": "capsule_aind_ophys_motion_correction_2",
+			"target": "results"
 		}
 	],
 	"nodes": [
@@ -176,10 +201,10 @@
 			},
 			"id": "capsule_aind_ophys_motion_correction_2",
 			"position": {
-				"x": -351.4994220736985,
-				"y": 497.74875356772884
+				"x": -354.83275540703175,
+				"y": 531.0820869010621
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -299,14 +324,14 @@
 				"x": 956.6666666666667,
 				"y": 1193.3333333333335
 			},
-			"selected": true,
+			"selected": false,
 			"type": "dataset"
 		}
 	],
-	"timestamp": 1744217993907,
+	"timestamp": 1744728349460,
 	"viewport": {
-		"x": 15.10874766079715,
-		"y": -268.065326583648,
+		"x": 195.85877054898071,
+		"y": -47.065326583648016,
 		"zoom": 0.3
 	}
 }

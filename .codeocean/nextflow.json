@@ -56,7 +56,10 @@
 					"name": "aind-pophys-converter-capsule",
 					"collect": true
 				}
-			]
+			],
+			"results": {
+				"id": "63a8ce2e-f232-4590-9098-36b820202911"
+			}
 		},
 		{
 			"name": "capsule_aind_ophys_extraction_suite_2_p_3",
@@ -97,7 +100,10 @@
 					"source_path": "ophys/*.json",
 					"collect": true
 				}
-			]
+			],
+			"results": {
+				"id": "c9f136a2-67d7-4adf-b15a-e02af4237fa4"
+			}
 		},
 		{
 			"name": "capsule_aind_ophys_dff_4",
@@ -126,7 +132,10 @@
 					"source_path": "ophys/*.json",
 					"collect": true
 				}
-			]
+			],
+			"results": {
+				"id": "85987e27-601c-4863-811b-71e5b4bdea37"
+			}
 		},
 		{
 			"name": "capsule_aind_ophys_oasis_event_detection_6",
@@ -156,7 +165,10 @@
 					"type": "capsule",
 					"name": "aind-ophys-dff"
 				}
-			]
+			],
+			"results": {
+				"id": "382062c4-fd31-4812-806b-cc81bad29bf4"
+			}
 		},
 		{
 			"name": "capsule_aind_pipeline_processing_metadata_aggregator_7",
@@ -261,7 +273,10 @@
 					"type": "capsule",
 					"name": "aind-ophys-extraction-suite2p"
 				}
-			]
+			],
+			"results": {
+				"id": "3819d125-9f03-48f3-ba09-b44c84a7a2c7"
+			}
 		},
 		{
 			"name": "capsule_aind_ophys_nwb_9",
@@ -269,7 +284,7 @@
 				"id": "a30bf042-db62-45ea-89f2-a51698b3f795",
 				"name": "aind-ophys-nwb",
 				"slug": "4928879",
-				"commit": "eaea4c14db510bf4dcade2540fbadb6f2579ff29",
+				"commit": "a0eb065fd10c3d6f98744df1e0e95bb11058ee53",
 				"image_tag": "41ff6fd9d464d0ed7f4b68d9f6acba7e"
 			},
 			"resources": {

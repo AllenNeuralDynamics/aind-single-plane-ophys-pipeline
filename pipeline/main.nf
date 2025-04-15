@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:e94747973e99bdce57c00c54b910a201f8af2e78008cab53bfe4696e479ef541
+// hash:sha256:1dae8e207da5cf2da9885dc5a5f67591193bcc4cbd1cd555125f76dd69557c31
 
 nextflow.enable.dsl = 1
 
@@ -86,11 +86,14 @@ process capsule_aind_ophys_motion_correction_2 {
 	cpus 16
 	memory '128 GB'
 
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+
 	input:
 	path 'capsule/data/' from ophys_to_aind_ophys_motion_correction_2.collect()
 	path 'capsule/data/' from capsule_aind_pophys_converter_capsule_1_to_capsule_aind_ophys_motion_correction_2_3.collect()
 
 	output:
+	path 'capsule/results/*'
 	path 'capsule/results/*/motion_correction/*.h5' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_4
 	path 'capsule/results/*/motion_correction/*.json' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_5
 	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_pipeline_processing_metadata_aggregator_7_16
@@ -137,12 +140,15 @@ process capsule_aind_ophys_extraction_suite_2_p_3 {
 	cpus 8
 	memory '64 GB'
 
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_4.collect()
 	path 'capsule/data/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_5.collect()
 	path 'capsule/data/' from ophys_to_aind_ophys_extraction_suite2p_6.collect()
 
 	output:
+	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_dff_4_7
 	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_pipeline_processing_metadata_aggregator_7_15
 	path 'capsule/results/*' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_classifier_8_18
@@ -185,11 +191,14 @@ process capsule_aind_ophys_dff_4 {
 	cpus 2
 	memory '16 GB'
 
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_dff_4_7
 	path 'capsule/data/' from ophys_to_aind_ophys_dff_8.collect()
 
 	output:
+	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_10
 	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_dff_4_to_capsule_aind_pipeline_processing_metadata_aggregator_7_13
 	path 'capsule/results/*/dff/*.h5' into capsule_aind_ophys_dff_4_to_capsule_aind_ophys_nwb_9_27
@@ -230,11 +239,14 @@ process capsule_aind_ophys_oasis_event_detection_6 {
 	cpus 2
 	memory '16 GB'
 
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+
 	input:
 	path 'capsule/data/' from ophys_to_aind_ophys_oasis_event_detection_9.collect()
 	path 'capsule/data/' from capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_10
 
 	output:
+	path 'capsule/results/*'
 	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_oasis_event_detection_6_to_capsule_aind_pipeline_processing_metadata_aggregator_7_12
 
 	script:
@@ -325,12 +337,15 @@ process capsule_aind_ophys_classifier_8 {
 	accelerator 1
 	label 'gpu'
 
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+
 	input:
 	path 'capsule/data/' from ophys_to_aind_ophys_classifier_17.collect()
 	path 'capsule/data/' from capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_classifier_8_18
 
 	output:
 	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_classifier_8_to_capsule_aind_pipeline_processing_metadata_aggregator_7_11
+	path 'capsule/results/*'
 	path 'capsule/results/*/classification/*classification.h5' into capsule_aind_ophys_classifier_8_to_capsule_aind_ophys_nwb_9_26
 
 	script:
@@ -406,7 +421,7 @@ process capsule_aind_ophys_nwb_9 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4928879.git" capsule-repo
-	git -C capsule-repo checkout eaea4c14db510bf4dcade2540fbadb6f2579ff29 --quiet
+	git -C capsule-repo checkout a0eb065fd10c3d6f98744df1e0e95bb11058ee53 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
