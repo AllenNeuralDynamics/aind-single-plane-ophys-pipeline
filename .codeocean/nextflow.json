@@ -280,8 +280,7 @@
 				"id": "a30bf042-db62-45ea-89f2-a51698b3f795",
 				"name": "aind-ophys-nwb",
 				"slug": "4928879",
-				"commit": "a0eb065fd10c3d6f98744df1e0e95bb11058ee53",
-				"image_tag": "41ff6fd9d464d0ed7f4b68d9f6acba7e"
+				"commit": "a0eb065fd10c3d6f98744df1e0e95bb11058ee53"
 			},
 			"resources": {
 				"cpus": 1,
