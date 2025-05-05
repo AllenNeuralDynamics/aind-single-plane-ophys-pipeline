@@ -279,10 +279,10 @@
 			"name": "capsule_aind_ophys_nwb_9",
 			"capsule": {
 				"id": "0be2aae9-3cda-45de-b5f6-870c0b569819",
-				"name": "aind-ophys-nwb",
-				"slug": "7197641",
-				"commit": "97a7d7b840c33686fd55ba87eae34f4e0602e364",
-				"image_tag": "41ff6fd9d464d0ed7f4b68d9f6acba7e"
+        "name": "aind-ophys-nwb",
+        "slug": "7197641",
+        "commit": "97a7d7b840c33686fd55ba87eae34f4e0602e364",
+        "image_tag": "41ff6fd9d464d0ed7f4b68d9f6acba7e"
 			},
 			"resources": {
 				"cpus": 1,
