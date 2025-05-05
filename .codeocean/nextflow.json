@@ -8,7 +8,6 @@
 				"name": "aind-pophys-converter-capsule",
 				"slug": "0547799",
 				"commit": "684dcd410d9945953fb5a03329bb7c062b79581f",
-				"image_tag": "1b3224ef4c626ed639d3c9e74d301842",
 				"app_panel": true
 			},
 			"resources": {
@@ -278,11 +277,10 @@
 		{
 			"name": "capsule_aind_ophys_nwb_9",
 			"capsule": {
-				"id": "0be2aae9-3cda-45de-b5f6-870c0b569819",
-        "name": "aind-ophys-nwb",
-        "slug": "7197641",
-        "commit": "97a7d7b840c33686fd55ba87eae34f4e0602e364",
-        "image_tag": "41ff6fd9d464d0ed7f4b68d9f6acba7e"
+				"id": "8c436e95-8607-4752-8e9f-2b62024f9326",
+				"name": "aind-ophys-nwb",
+				"slug": "9383700",
+				"version": 13
 			},
 			"resources": {
 				"cpus": 1,
@@ -417,11 +415,10 @@
 		{
 			"name": "capsule_aind_bci_behavior_nwb_capsule_11",
 			"capsule": {
-				"id": "b1eec6ee-3107-40df-a856-b8ceca4abad5",
+				"id": "fbc8f633-8d2b-4e53-be33-2e77a79f422e",
 				"name": "aind-bci-behavior-nwb-capsule",
-				"slug": "9874736",
-				"commit": "019227ff43f7d8952fa91e22d90c3c365f7e9ca5",
-				"image_tag": "b2324f5b3e4ebc9b6557ce3fd513637e"
+				"slug": "9156170",
+				"version": 1
 			},
 			"resources": {
 				"cpus": 1,

@@ -351,7 +351,7 @@
 		},
 		{
 			"data": {
-				"capsule_id": "0be2aae9-3cda-45de-b5f6-870c0b569819"
+				"capsule_id": "8c436e95-8607-4752-8e9f-2b62024f9326"
 			},
 			"id": "capsule_aind_ophys_nwb_9",
 			"position": {
@@ -363,7 +363,7 @@
 		},
 		{
 			"data": {
-				"capsule_id": "b1eec6ee-3107-40df-a856-b8ceca4abad5"
+				"capsule_id": "fbc8f633-8d2b-4e53-be33-2e77a79f422e"
 			},
 			"id": "capsule_aind_bci_behavior_nwb_capsule_11",
 			"position": {
@@ -374,7 +374,7 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1746169567942,
+	"timestamp": 1746486540961,
 	"viewport": {
 		"x": 170.4563587668307,
 		"y": -329.41799489557525,
