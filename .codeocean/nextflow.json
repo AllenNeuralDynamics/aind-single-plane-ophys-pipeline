@@ -7,7 +7,8 @@
 				"id": "56956b65-72a4-4248-9718-468df22b23ff",
 				"name": "aind-pophys-converter-capsule",
 				"slug": "0547799",
-				"commit": "26c2b127281288fe5197185e663b91bef5011fba",
+				"commit": "684dcd410d9945953fb5a03329bb7c062b79581f",
+				"image_tag": "1b3224ef4c626ed639d3c9e74d301842",
 				"app_panel": true
 			},
 			"resources": {
@@ -28,10 +29,10 @@
 		{
 			"name": "capsule_aind_ophys_motion_correction_2",
 			"capsule": {
-				"id": "63a8ce2e-f232-4590-9098-36b820202911",
+				"id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf",
 				"name": "aind-ophys-motion-correction",
-				"slug": "5379831",
-				"commit": "f44b3cce5777678001f2ce1c43e56c10a9f40014",
+				"slug": "7474660",
+				"version": 18,
 				"app_panel": true
 			},
 			"resources": {
@@ -62,10 +63,10 @@
 		{
 			"name": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"capsule": {
-				"id": "c9f136a2-67d7-4adf-b15a-e02af4237fa4",
+				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9",
 				"name": "aind-ophys-extraction-suite2p",
-				"slug": "3592435",
-				"commit": "b1e169216f9774dbfcc96281e6053be97097df85",
+				"slug": "9911715",
+				"version": 11,
 				"app_panel": true
 			},
 			"resources": {
@@ -137,10 +138,10 @@
 		{
 			"name": "capsule_aind_ophys_oasis_event_detection_6",
 			"capsule": {
-				"id": "382062c4-fd31-4812-806b-cc81bad29bf4",
+				"id": "c6394aab-0db7-47b2-90ba-864866d6755e",
 				"name": "aind-ophys-oasis-event-detection",
-				"slug": "0298748",
-				"commit": "c62a395143428f5c6041e3bdfa25facf93add3c4"
+				"slug": "8957649",
+				"version": 7
 			},
 			"resources": {
 				"cpus": 2,
@@ -277,10 +278,10 @@
 		{
 			"name": "capsule_aind_ophys_nwb_9",
 			"capsule": {
-				"id": "a30bf042-db62-45ea-89f2-a51698b3f795",
+				"id": "0be2aae9-3cda-45de-b5f6-870c0b569819",
 				"name": "aind-ophys-nwb",
-				"slug": "4928879",
-				"commit": "a0eb065fd10c3d6f98744df1e0e95bb11058ee53",
+				"slug": "7197641",
+				"commit": "97a7d7b840c33686fd55ba87eae34f4e0602e364",
 				"image_tag": "41ff6fd9d464d0ed7f4b68d9f6acba7e"
 			},
 			"resources": {
@@ -386,10 +387,7 @@
 					"target_path": "nwb",
 					"collect": true
 				}
-			],
-			"results": {
-				"id": "a30bf042-db62-45ea-89f2-a51698b3f795"
-			}
+			]
 		},
 		{
 			"name": "capsule_nwb_packaging_subject_10",
@@ -415,6 +413,105 @@
 					"collect": true
 				}
 			]
+		},
+		{
+			"name": "capsule_aind_bci_behavior_nwb_capsule_11",
+			"capsule": {
+				"id": "b1eec6ee-3107-40df-a856-b8ceca4abad5",
+				"name": "aind-bci-behavior-nwb-capsule",
+				"slug": "9874736",
+				"commit": "019227ff43f7d8952fa91e22d90c3c365f7e9ca5",
+				"image_tag": "b2324f5b3e4ebc9b6557ce3fd513637e"
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "ld67rMV4CS5NVp5Y",
+					"source_id": "capsule_aind_ophys_extraction_suite_2_p_3",
+					"type": "capsule",
+					"name": "aind-ophys-extraction-suite2p",
+					"source_path": "*/extraction/*.h5",
+					"target_path": "processed/asset/extraction/",
+					"collect": true
+				},
+				{
+					"id": "dtt6nTOtG035Ef71",
+					"source_id": "capsule_aind_ophys_motion_correction_2",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "*/motion_correction/*.csv",
+					"target_path": "processed/asset/motion_correction/",
+					"collect": true
+				},
+				{
+					"id": "Aksxt52aTeWKgGgP",
+					"source_id": "capsule_aind_ophys_motion_correction_2",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "*/motion_correction/*.png",
+					"target_path": "processed/asset/motion_correction/",
+					"collect": true
+				},
+				{
+					"id": "O2tczPAijmUIHiGc",
+					"source_id": "capsule_aind_ophys_motion_correction_2",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "*/motion_correction/*.webm",
+					"target_path": "processed/asset/motion_correction/",
+					"collect": true
+				},
+				{
+					"id": "2lOhiqznMK405fSC",
+					"source_id": "capsule_aind_ophys_motion_correction_2",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "*/motion_correction/*.json",
+					"target_path": "processed/asset/motion_correction/",
+					"collect": true
+				},
+				{
+					"id": "UWzbareXKQMwSisl",
+					"source_id": "capsule_aind_ophys_motion_correction_2",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "*/motion_correction/*.h5",
+					"target_path": "processed/asset/motion_correction/",
+					"collect": true
+				},
+				{
+					"id": "enlCjVmEeNScGDdz",
+					"source_id": "capsule_aind_ophys_dff_4",
+					"type": "capsule",
+					"name": "aind-ophys-dff",
+					"source_path": "*/dff/*.h5",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
+					"id": "K3CE6ddazSrY5hU6",
+					"source_id": "capsule_aind_ophys_nwb_9",
+					"type": "capsule",
+					"name": "aind-ophys-nwb",
+					"target_path": "nwb",
+					"collect": true
+				},
+				{
+					"id": "UzYxTlHhOcn0ZjdN",
+					"source_id": "f375685e-b8e2-4499-ab88-f16a45de5115",
+					"type": "dataset",
+					"name": "ophys",
+					"source_path": "ophys/",
+					"target_path": "raw",
+					"collect": true
+				}
+			],
+			"results": {
+				"id": "b1eec6ee-3107-40df-a856-b8ceca4abad5"
+			}
 		}
 	]
 }
