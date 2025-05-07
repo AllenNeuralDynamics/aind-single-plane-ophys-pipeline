@@ -8,6 +8,7 @@
 				"name": "aind-pophys-converter-capsule",
 				"slug": "0547799",
 				"commit": "df1edf289e5e0a4d95dd3637cc0c6da6248127f9",
+				"image_tag": "1b3224ef4c626ed639d3c9e74d301842",
 				"app_panel": true
 			},
 			"resources": {
@@ -417,7 +418,9 @@
 			"capsule": {
 				"id": "d9aba160-ff62-47e3-8e50-73665315ce65",
 				"name": "aind-bci-behavior-nwb-capsule",
-				"slug": "9021570"
+				"slug": "9021570",
+				"commit": "7bd6ff5f17906d5165a2e7af341d0d8585f2795a",
+				"image_tag": "b2324f5b3e4ebc9b6557ce3fd513637e"
 			},
 			"resources": {
 				"cpus": 1,

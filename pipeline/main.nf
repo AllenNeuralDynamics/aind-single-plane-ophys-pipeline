@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:a53688ed5376ac6463c113c5046c3aa99d92b47d9eb473269a45de52bbe670ab
+// hash:sha256:2a5a64d1220490e76abfe0b6a462ca4c6d87b382e961d63ed6d5795d36aafa8b
 
 nextflow.enable.dsl = 1
 
@@ -47,7 +47,7 @@ ophys_to_aind_bci_behavior_nwb_capsule_38 = channel.fromPath(params.ophys_url + 
 // capsule - aind-pophys-converter-capsule
 process capsule_aind_pophys_converter_capsule_1 {
 	tag 'capsule-0547799'
-	container "$REGISTRY_HOST/capsule/56956b65-72a4-4248-9718-468df22b23ff"
+	container "$REGISTRY_HOST/capsule/56956b65-72a4-4248-9718-468df22b23ff:1b3224ef4c626ed639d3c9e74d301842"
 
 	cpus 4
 	memory '32 GB'
@@ -489,7 +489,7 @@ process capsule_nwb_packaging_subject_10 {
 // capsule - aind-bci-behavior-nwb-capsule
 process capsule_aind_bci_behavior_nwb_capsule_11 {
 	tag 'capsule-9021570'
-	container "$REGISTRY_HOST/capsule/d9aba160-ff62-47e3-8e50-73665315ce65"
+	container "$REGISTRY_HOST/capsule/d9aba160-ff62-47e3-8e50-73665315ce65:b2324f5b3e4ebc9b6557ce3fd513637e"
 
 	cpus 1
 	memory '8 GB'
@@ -526,6 +526,7 @@ process capsule_aind_bci_behavior_nwb_capsule_11 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9021570.git" capsule-repo
+	git -C capsule-repo checkout 7bd6ff5f17906d5165a2e7af341d0d8585f2795a --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
