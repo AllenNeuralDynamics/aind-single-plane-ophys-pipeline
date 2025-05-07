@@ -414,10 +414,9 @@
 		{
 			"name": "capsule_aind_bci_behavior_nwb_capsule_11",
 			"capsule": {
-				"id": "d9aba160-ff62-47e3-8e50-73665315ce65",
+				"id": "8d045ee0-c23d-476f-a188-641161a9eb7e",
 				"name": "aind-bci-behavior-nwb-capsule",
-				"slug": "9021570",
-				"commit": "7bd6ff5f17906d5165a2e7af341d0d8585f2795a"
+				"slug": "9627003"
 			},
 			"resources": {
 				"cpus": 1,
@@ -506,7 +505,7 @@
 				}
 			],
 			"results": {
-				"id": "d9aba160-ff62-47e3-8e50-73665315ce65"
+				"id": "8d045ee0-c23d-476f-a188-641161a9eb7e"
 			}
 		}
 	]

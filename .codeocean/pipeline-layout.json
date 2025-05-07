@@ -345,25 +345,25 @@
 			"type": "capsule"
 		},
 		{
-			"data": {
-				"capsule_id": "d9aba160-ff62-47e3-8e50-73665315ce65"
-			},
-			"id": "capsule_aind_bci_behavior_nwb_capsule_11",
-			"position": {
-				"x": 310.9996057913827,
-				"y": 1491.4480750624539
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
 			"id": "dc671a47-81d6-49f5-8dc3-a8db45389973",
 			"position": {
 				"x": 88.73606897491254,
 				"y": -36.82581785184075
 			},
 			"type": "dataset"
+		},
+		{
+			"data": {
+				"capsule_id": "8d045ee0-c23d-476f-a188-641161a9eb7e"
+			},
+			"id": "capsule_aind_bci_behavior_nwb_capsule_11",
+			"position": {
+				"x": 310.9996057913827,
+				"y": 1491.4480750624539
+			},
+			"selected": true,
+			"type": "capsule"
 		}
 	],
-	"timestamp": 1746651524173
+	"timestamp": 1746651691678
 }
