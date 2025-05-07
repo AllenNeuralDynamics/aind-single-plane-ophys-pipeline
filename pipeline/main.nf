@@ -1,16 +1,16 @@
 #!/usr/bin/env nextflow
-// hash:sha256:2a5a64d1220490e76abfe0b6a462ca4c6d87b382e961d63ed6d5795d36aafa8b
+// hash:sha256:1ae58fd87e2e95c9640cf6af2eae1af8e00b4f62bd871ee4954a29152951f21e
 
 nextflow.enable.dsl = 1
 
-params.ophys_url = 's3://aind-private-data-prod-o5171v/single-plane-ophys_767715_2025-02-17_17-41-50'
+params.ophys_url = 's3://aind-private-data-prod-o5171v/single-plane-ophys_772414_2025-01-31_13-09-59'
 
 ophys_to_aind_pophys_converter_capsule_1 = channel.fromPath(params.ophys_url + "/", type: 'any')
 ophys_to_aind_ophys_motion_correction_2 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
 capsule_aind_pophys_converter_capsule_1_to_capsule_aind_ophys_motion_correction_2_3 = channel.create()
 capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_4 = channel.create()
 capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_5 = channel.create()
-ophys_to_aind_ophys_extraction_suite2p_6 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
+ophys_to_aind_ophys_extraction_6 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
 capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_dff_4_7 = channel.create()
 ophys_to_aind_ophys_dff_8 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
 ophys_to_aind_ophys_oasis_event_detection_9 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
@@ -47,7 +47,7 @@ ophys_to_aind_bci_behavior_nwb_capsule_38 = channel.fromPath(params.ophys_url + 
 // capsule - aind-pophys-converter-capsule
 process capsule_aind_pophys_converter_capsule_1 {
 	tag 'capsule-0547799'
-	container "$REGISTRY_HOST/capsule/56956b65-72a4-4248-9718-468df22b23ff:1b3224ef4c626ed639d3c9e74d301842"
+	container "$REGISTRY_HOST/capsule/56956b65-72a4-4248-9718-468df22b23ff"
 
 	cpus 4
 	memory '32 GB'
@@ -145,10 +145,10 @@ process capsule_aind_ophys_motion_correction_2 {
 	"""
 }
 
-// capsule - aind-ophys-extraction-suite2p
+// capsule - aind-ophys-extraction
 process capsule_aind_ophys_extraction_suite_2_p_3 {
-	tag 'capsule-9911715'
-	container "$REGISTRY_HOST/published/5e1d659c-e149-4a57-be83-12f5a448a0c9:v11"
+	tag 'capsule-3592435'
+	container "$REGISTRY_HOST/capsule/c9f136a2-67d7-4adf-b15a-e02af4237fa4"
 
 	cpus 8
 	memory '64 GB'
@@ -158,7 +158,7 @@ process capsule_aind_ophys_extraction_suite_2_p_3 {
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_4.collect()
 	path 'capsule/data/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_5.collect()
-	path 'capsule/data/' from ophys_to_aind_ophys_extraction_suite2p_6.collect()
+	path 'capsule/data/' from ophys_to_aind_ophys_extraction_6.collect()
 
 	output:
 	path 'capsule/results/*'
@@ -173,7 +173,7 @@ process capsule_aind_ophys_extraction_suite_2_p_3 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=5e1d659c-e149-4a57-be83-12f5a448a0c9
+	export CO_CAPSULE_ID=c9f136a2-67d7-4adf-b15a-e02af4237fa4
 	export CO_CPUS=8
 	export CO_MEMORY=68719476736
 
@@ -183,7 +183,7 @@ process capsule_aind_ophys_extraction_suite_2_p_3 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v11.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9911715.git" capsule-repo
+	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-3592435.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -489,7 +489,7 @@ process capsule_nwb_packaging_subject_10 {
 // capsule - aind-bci-behavior-nwb-capsule
 process capsule_aind_bci_behavior_nwb_capsule_11 {
 	tag 'capsule-9021570'
-	container "$REGISTRY_HOST/capsule/d9aba160-ff62-47e3-8e50-73665315ce65:b2324f5b3e4ebc9b6557ce3fd513637e"
+	container "$REGISTRY_HOST/capsule/d9aba160-ff62-47e3-8e50-73665315ce65"
 
 	cpus 1
 	memory '8 GB'

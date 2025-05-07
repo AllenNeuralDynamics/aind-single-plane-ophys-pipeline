@@ -8,7 +8,6 @@
 				"name": "aind-pophys-converter-capsule",
 				"slug": "0547799",
 				"commit": "df1edf289e5e0a4d95dd3637cc0c6da6248127f9",
-				"image_tag": "1b3224ef4c626ed639d3c9e74d301842",
 				"app_panel": true
 			},
 			"resources": {
@@ -18,7 +17,7 @@
 			"inputs": [
 				{
 					"id": "fKbqNfs0GcMCOWHD",
-					"source_id": "f375685e-b8e2-4499-ab88-f16a45de5115",
+					"source_id": "dc671a47-81d6-49f5-8dc3-a8db45389973",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/",
@@ -42,7 +41,7 @@
 			"inputs": [
 				{
 					"id": "BYyy3M84GY77tBFJ",
-					"source_id": "f375685e-b8e2-4499-ab88-f16a45de5115",
+					"source_id": "dc671a47-81d6-49f5-8dc3-a8db45389973",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/*.json",
@@ -63,10 +62,9 @@
 		{
 			"name": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"capsule": {
-				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9",
-				"name": "aind-ophys-extraction-suite2p",
-				"slug": "9911715",
-				"version": 11,
+				"id": "c9f136a2-67d7-4adf-b15a-e02af4237fa4",
+				"name": "aind-ophys-extraction",
+				"slug": "3592435",
 				"app_panel": true
 			},
 			"resources": {
@@ -92,7 +90,7 @@
 				},
 				{
 					"id": "YZqza7yGxzurXytA",
-					"source_id": "f375685e-b8e2-4499-ab88-f16a45de5115",
+					"source_id": "dc671a47-81d6-49f5-8dc3-a8db45389973",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/*.json",
@@ -124,7 +122,7 @@
 				},
 				{
 					"id": "PIZqLDX9M0K0RuDC",
-					"source_id": "f375685e-b8e2-4499-ab88-f16a45de5115",
+					"source_id": "dc671a47-81d6-49f5-8dc3-a8db45389973",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/*.json",
@@ -150,7 +148,7 @@
 			"inputs": [
 				{
 					"id": "ahnIg7kUyl2WiGYi",
-					"source_id": "f375685e-b8e2-4499-ab88-f16a45de5115",
+					"source_id": "dc671a47-81d6-49f5-8dc3-a8db45389973",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/*.json",
@@ -207,7 +205,7 @@
 				},
 				{
 					"id": "xFV70R8H0bVBJw13",
-					"source_id": "f375685e-b8e2-4499-ab88-f16a45de5115",
+					"source_id": "dc671a47-81d6-49f5-8dc3-a8db45389973",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/*.json",
@@ -250,7 +248,7 @@
 			"inputs": [
 				{
 					"id": "fZKHcSvcCJ6YEKym",
-					"source_id": "f375685e-b8e2-4499-ab88-f16a45de5115",
+					"source_id": "dc671a47-81d6-49f5-8dc3-a8db45389973",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/*.json",
@@ -344,7 +342,7 @@
 				},
 				{
 					"id": "pJt5uaBojl71k4BS",
-					"source_id": "f375685e-b8e2-4499-ab88-f16a45de5115",
+					"source_id": "dc671a47-81d6-49f5-8dc3-a8db45389973",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/",
@@ -404,7 +402,7 @@
 			"inputs": [
 				{
 					"id": "wOuA2F9h31Ph3bqP",
-					"source_id": "f375685e-b8e2-4499-ab88-f16a45de5115",
+					"source_id": "dc671a47-81d6-49f5-8dc3-a8db45389973",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/",
@@ -419,8 +417,7 @@
 				"id": "d9aba160-ff62-47e3-8e50-73665315ce65",
 				"name": "aind-bci-behavior-nwb-capsule",
 				"slug": "9021570",
-				"commit": "7bd6ff5f17906d5165a2e7af341d0d8585f2795a",
-				"image_tag": "b2324f5b3e4ebc9b6557ce3fd513637e"
+				"commit": "7bd6ff5f17906d5165a2e7af341d0d8585f2795a"
 			},
 			"resources": {
 				"cpus": 1,
@@ -500,7 +497,7 @@
 				},
 				{
 					"id": "UzYxTlHhOcn0ZjdN",
-					"source_id": "f375685e-b8e2-4499-ab88-f16a45de5115",
+					"source_id": "dc671a47-81d6-49f5-8dc3-a8db45389973",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/",
