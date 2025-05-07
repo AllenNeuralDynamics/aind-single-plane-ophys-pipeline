@@ -7,7 +7,7 @@
 				"id": "56956b65-72a4-4248-9718-468df22b23ff",
 				"name": "aind-pophys-converter-capsule",
 				"slug": "0547799",
-				"commit": "684dcd410d9945953fb5a03329bb7c062b79581f",
+				"commit": "df1edf289e5e0a4d95dd3637cc0c6da6248127f9",
 				"app_panel": true
 			},
 			"resources": {
@@ -415,10 +415,9 @@
 		{
 			"name": "capsule_aind_bci_behavior_nwb_capsule_11",
 			"capsule": {
-				"id": "fbc8f633-8d2b-4e53-be33-2e77a79f422e",
+				"id": "d9aba160-ff62-47e3-8e50-73665315ce65",
 				"name": "aind-bci-behavior-nwb-capsule",
-				"slug": "9156170",
-				"version": 1
+				"slug": "9021570"
 			},
 			"resources": {
 				"cpus": 1,
@@ -507,7 +506,7 @@
 				}
 			],
 			"results": {
-				"id": "b1eec6ee-3107-40df-a856-b8ceca4abad5"
+				"id": "d9aba160-ff62-47e3-8e50-73665315ce65"
 			}
 		}
 	]

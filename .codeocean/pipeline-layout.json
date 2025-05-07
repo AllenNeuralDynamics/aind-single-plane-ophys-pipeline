@@ -182,13 +182,11 @@
 		},
 		{
 			"id": "xy-edge__capsule_aind_ophys_nwb_9-capsule_aind_bci_behavior_nwb_capsule_11",
-			"selected": false,
 			"source": "capsule_aind_ophys_nwb_9",
 			"target": "capsule_aind_bci_behavior_nwb_capsule_11"
 		},
 		{
 			"id": "xy-edge__f375685e-b8e2-4499-ab88-f16a45de5115-capsule_aind_bci_behavior_nwb_capsule_11",
-			"selected": false,
 			"source": "f375685e-b8e2-4499-ab88-f16a45de5115",
 			"target": "capsule_aind_bci_behavior_nwb_capsule_11"
 		},
@@ -199,19 +197,16 @@
 		},
 		{
 			"id": "xy-edge__capsule_aind_ophys_dff_4-capsule_aind_bci_behavior_nwb_capsule_11",
-			"selected": false,
 			"source": "capsule_aind_ophys_dff_4",
 			"target": "capsule_aind_bci_behavior_nwb_capsule_11"
 		},
 		{
 			"id": "xy-edge__capsule_aind_ophys_extraction_suite_2_p_3-capsule_aind_bci_behavior_nwb_capsule_11",
-			"selected": false,
 			"source": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"target": "capsule_aind_bci_behavior_nwb_capsule_11"
 		},
 		{
 			"id": "xy-edge__capsule_aind_ophys_motion_correction_2-capsule_aind_bci_behavior_nwb_capsule_11",
-			"selected": false,
 			"source": "capsule_aind_ophys_motion_correction_2",
 			"target": "capsule_aind_bci_behavior_nwb_capsule_11"
 		}
@@ -363,7 +358,7 @@
 		},
 		{
 			"data": {
-				"capsule_id": "fbc8f633-8d2b-4e53-be33-2e77a79f422e"
+				"capsule_id": "d9aba160-ff62-47e3-8e50-73665315ce65"
 			},
 			"id": "capsule_aind_bci_behavior_nwb_capsule_11",
 			"position": {
@@ -374,10 +369,5 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1746486540961,
-	"viewport": {
-		"x": 170.4563587668307,
-		"y": -329.41799489557525,
-		"zoom": 0.3224230695187369
-	}
+	"timestamp": 1746582943914
 }
