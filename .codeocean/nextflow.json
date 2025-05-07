@@ -8,6 +8,7 @@
 				"name": "aind-pophys-converter-capsule",
 				"slug": "0547799",
 				"commit": "df1edf289e5e0a4d95dd3637cc0c6da6248127f9",
+				"image_tag": "1b3224ef4c626ed639d3c9e74d301842",
 				"app_panel": true
 			},
 			"resources": {
@@ -65,6 +66,8 @@
 				"id": "c9f136a2-67d7-4adf-b15a-e02af4237fa4",
 				"name": "aind-ophys-extraction",
 				"slug": "3592435",
+				"commit": "56f3af82a0be6a0a08f52aee0d9031b76996f66d",
+				"image_tag": "3d1825eb10b984d0abe5c9b8ebd0175f",
 				"app_panel": true
 			},
 			"resources": {
@@ -416,7 +419,9 @@
 			"capsule": {
 				"id": "8d045ee0-c23d-476f-a188-641161a9eb7e",
 				"name": "aind-bci-behavior-nwb-capsule",
-				"slug": "9627003"
+				"slug": "9627003",
+				"commit": "0263aacd70508cdbb08c0d92cc3e337773e1047c",
+				"image_tag": "b2324f5b3e4ebc9b6557ce3fd513637e"
 			},
 			"resources": {
 				"cpus": 1,
