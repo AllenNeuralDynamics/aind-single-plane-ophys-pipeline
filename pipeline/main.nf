@@ -1,53 +1,52 @@
 #!/usr/bin/env nextflow
-// hash:sha256:5ff848dbf1ff0582918d377d87c26cd0ee3724da19ee58564476e41cac214cff
+// hash:sha256:a78287a24890bf9397970e6762c16d8938fbf28ceab3d7b7fb096a87b5f5f23c
 
 nextflow.enable.dsl = 1
 
 params.ophys_url = 's3://aind-private-data-prod-o5171v/single-plane-ophys_772414_2025-01-31_13-09-59'
 
 ophys_to_aind_pophys_converter_capsule_1 = channel.fromPath(params.ophys_url + "/", type: 'any')
-ophys_to_aind_ophys_motion_correction_2 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
-capsule_aind_pophys_converter_capsule_1_to_capsule_aind_ophys_motion_correction_2_3 = channel.create()
+capsule_aind_pophys_converter_capsule_1_to_capsule_aind_ophys_motion_correction_2_2 = channel.create()
+capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_3 = channel.create()
 capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_4 = channel.create()
-capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_5 = channel.create()
-ophys_to_aind_ophys_extraction_6 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
-capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_dff_4_7 = channel.create()
-ophys_to_aind_ophys_dff_8 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
-ophys_to_aind_ophys_oasis_event_detection_9 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
-capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_10 = channel.create()
-capsule_aind_ophys_classifier_8_to_capsule_aind_pipeline_processing_metadata_aggregator_7_11 = channel.create()
-capsule_aind_ophys_oasis_event_detection_6_to_capsule_aind_pipeline_processing_metadata_aggregator_7_12 = channel.create()
-capsule_aind_ophys_dff_4_to_capsule_aind_pipeline_processing_metadata_aggregator_7_13 = channel.create()
-ophys_to_aind_pipeline_processing_metadata_aggregator_14 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
-capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_pipeline_processing_metadata_aggregator_7_15 = channel.create()
-capsule_aind_ophys_motion_correction_2_to_capsule_aind_pipeline_processing_metadata_aggregator_7_16 = channel.create()
-ophys_to_aind_ophys_classifier_17 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
-capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_classifier_8_18 = channel.create()
+ophys_to_aind_ophys_extraction_5 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
+capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_dff_4_6 = channel.create()
+ophys_to_aind_ophys_dff_7 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
+ophys_to_aind_ophys_oasis_event_detection_8 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
+capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_9 = channel.create()
+capsule_aind_ophys_classifier_8_to_capsule_aind_pipeline_processing_metadata_aggregator_7_10 = channel.create()
+capsule_aind_ophys_oasis_event_detection_6_to_capsule_aind_pipeline_processing_metadata_aggregator_7_11 = channel.create()
+capsule_aind_ophys_dff_4_to_capsule_aind_pipeline_processing_metadata_aggregator_7_12 = channel.create()
+ophys_to_aind_pipeline_processing_metadata_aggregator_13 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
+capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_pipeline_processing_metadata_aggregator_7_14 = channel.create()
+capsule_aind_ophys_motion_correction_2_to_capsule_aind_pipeline_processing_metadata_aggregator_7_15 = channel.create()
+ophys_to_aind_ophys_classifier_16 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
+capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_classifier_8_17 = channel.create()
+capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_18 = channel.create()
 capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_19 = channel.create()
 capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_20 = channel.create()
 capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_21 = channel.create()
 capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_22 = channel.create()
-capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_23 = channel.create()
-ophys_to_aind_ophys_nwb_24 = channel.fromPath(params.ophys_url + "/", type: 'any')
-capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_nwb_9_25 = channel.create()
-capsule_aind_ophys_classifier_8_to_capsule_aind_ophys_nwb_9_26 = channel.create()
-capsule_aind_ophys_dff_4_to_capsule_aind_ophys_nwb_9_27 = channel.create()
-capsule_nwb_packaging_subject_10_to_capsule_aind_ophys_nwb_9_28 = channel.create()
-ophys_to_nwb_packaging_subject_29 = channel.fromPath(params.ophys_url + "/", type: 'any')
-capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_bci_behavior_nwb_capsule_11_30 = channel.create()
+ophys_to_aind_ophys_nwb_23 = channel.fromPath(params.ophys_url + "/", type: 'any')
+capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_nwb_9_24 = channel.create()
+capsule_aind_ophys_classifier_8_to_capsule_aind_ophys_nwb_9_25 = channel.create()
+capsule_aind_ophys_dff_4_to_capsule_aind_ophys_nwb_9_26 = channel.create()
+capsule_nwb_packaging_subject_10_to_capsule_aind_ophys_nwb_9_27 = channel.create()
+ophys_to_nwb_packaging_subject_28 = channel.fromPath(params.ophys_url + "/", type: 'any')
+capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_bci_behavior_nwb_capsule_11_29 = channel.create()
+capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_30 = channel.create()
 capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_31 = channel.create()
 capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_32 = channel.create()
 capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_33 = channel.create()
 capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_34 = channel.create()
-capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_35 = channel.create()
-capsule_aind_ophys_dff_4_to_capsule_aind_bci_behavior_nwb_capsule_11_36 = channel.create()
-capsule_aind_ophys_nwb_9_to_capsule_aind_bci_behavior_nwb_capsule_11_37 = channel.create()
-ophys_to_aind_bci_behavior_nwb_capsule_38 = channel.fromPath(params.ophys_url + "/", type: 'any')
+capsule_aind_ophys_dff_4_to_capsule_aind_bci_behavior_nwb_capsule_11_35 = channel.create()
+capsule_aind_ophys_nwb_9_to_capsule_aind_bci_behavior_nwb_capsule_11_36 = channel.create()
+ophys_to_aind_bci_behavior_nwb_capsule_37 = channel.fromPath(params.ophys_url + "/", type: 'any')
 
 // capsule - aind-pophys-converter-capsule
 process capsule_aind_pophys_converter_capsule_1 {
 	tag 'capsule-0547799'
-	container "$REGISTRY_HOST/capsule/56956b65-72a4-4248-9718-468df22b23ff:1b3224ef4c626ed639d3c9e74d301842"
+	container "$REGISTRY_HOST/capsule/56956b65-72a4-4248-9718-468df22b23ff"
 
 	cpus 4
 	memory '32 GB'
@@ -56,7 +55,7 @@ process capsule_aind_pophys_converter_capsule_1 {
 	path 'capsule/data' from ophys_to_aind_pophys_converter_capsule_1.collect()
 
 	output:
-	path 'capsule/results/*' into capsule_aind_pophys_converter_capsule_1_to_capsule_aind_ophys_motion_correction_2_3
+	path 'capsule/results/*' into capsule_aind_pophys_converter_capsule_1_to_capsule_aind_ophys_motion_correction_2_2
 
 	script:
 	"""
@@ -98,24 +97,23 @@ process capsule_aind_ophys_motion_correction_2 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from ophys_to_aind_ophys_motion_correction_2.collect()
-	path 'capsule/data/' from capsule_aind_pophys_converter_capsule_1_to_capsule_aind_ophys_motion_correction_2_3.collect()
+	path 'capsule/data/' from capsule_aind_pophys_converter_capsule_1_to_capsule_aind_ophys_motion_correction_2_2.collect()
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*/motion_correction/*.h5' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_4
-	path 'capsule/results/*/motion_correction/*.json' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_5
-	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_pipeline_processing_metadata_aggregator_7_16
-	path 'capsule/results/*/motion_correction/*.csv' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_19
-	path 'capsule/results/*/motion_correction/*.png' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_20
-	path 'capsule/results/*/motion_correction/*.webm' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_21
-	path 'capsule/results/*/motion_correction/*.h5' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_22
-	path 'capsule/results/*/motion_correction/*.json' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_23
-	path 'capsule/results/*/motion_correction/*.csv' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_31
-	path 'capsule/results/*/motion_correction/*.png' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_32
-	path 'capsule/results/*/motion_correction/*.webm' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_33
-	path 'capsule/results/*/motion_correction/*.json' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_34
-	path 'capsule/results/*/motion_correction/*.h5' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_35
+	path 'capsule/results/*/motion_correction/*.h5' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_3
+	path 'capsule/results/*/motion_correction/*.json' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_4
+	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_pipeline_processing_metadata_aggregator_7_15
+	path 'capsule/results/*/motion_correction/*.csv' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_18
+	path 'capsule/results/*/motion_correction/*.png' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_19
+	path 'capsule/results/*/motion_correction/*.webm' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_20
+	path 'capsule/results/*/motion_correction/*.h5' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_21
+	path 'capsule/results/*/motion_correction/*.json' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_22
+	path 'capsule/results/*/motion_correction/*.csv' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_30
+	path 'capsule/results/*/motion_correction/*.png' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_31
+	path 'capsule/results/*/motion_correction/*.webm' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_32
+	path 'capsule/results/*/motion_correction/*.json' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_33
+	path 'capsule/results/*/motion_correction/*.h5' into capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_34
 
 	script:
 	"""
@@ -148,7 +146,7 @@ process capsule_aind_ophys_motion_correction_2 {
 // capsule - aind-ophys-extraction
 process capsule_aind_ophys_extraction_suite_2_p_3 {
 	tag 'capsule-3592435'
-	container "$REGISTRY_HOST/capsule/c9f136a2-67d7-4adf-b15a-e02af4237fa4:3d1825eb10b984d0abe5c9b8ebd0175f"
+	container "$REGISTRY_HOST/capsule/c9f136a2-67d7-4adf-b15a-e02af4237fa4"
 
 	cpus 8
 	memory '64 GB'
@@ -156,17 +154,17 @@ process capsule_aind_ophys_extraction_suite_2_p_3 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
+	path 'capsule/data/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_3.collect()
 	path 'capsule/data/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_4.collect()
-	path 'capsule/data/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_extraction_suite_2_p_3_5.collect()
-	path 'capsule/data/' from ophys_to_aind_ophys_extraction_6.collect()
+	path 'capsule/data/' from ophys_to_aind_ophys_extraction_5.collect()
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_dff_4_7
-	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_pipeline_processing_metadata_aggregator_7_15
-	path 'capsule/results/*' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_classifier_8_18
-	path 'capsule/results/*/extraction/*.h5' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_nwb_9_25
-	path 'capsule/results/*/extraction/*.h5' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_bci_behavior_nwb_capsule_11_30
+	path 'capsule/results/*' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_dff_4_6
+	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_pipeline_processing_metadata_aggregator_7_14
+	path 'capsule/results/*' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_classifier_8_17
+	path 'capsule/results/*/extraction/*.h5' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_nwb_9_24
+	path 'capsule/results/*/extraction/*.h5' into capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_bci_behavior_nwb_capsule_11_29
 
 	script:
 	"""
@@ -208,15 +206,15 @@ process capsule_aind_ophys_dff_4 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_dff_4_7
-	path 'capsule/data/' from ophys_to_aind_ophys_dff_8.collect()
+	path 'capsule/data/' from capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_dff_4_6
+	path 'capsule/data/' from ophys_to_aind_ophys_dff_7.collect()
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*' into capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_10
-	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_dff_4_to_capsule_aind_pipeline_processing_metadata_aggregator_7_13
-	path 'capsule/results/*/dff/*.h5' into capsule_aind_ophys_dff_4_to_capsule_aind_ophys_nwb_9_27
-	path 'capsule/results/*/dff/*.h5' into capsule_aind_ophys_dff_4_to_capsule_aind_bci_behavior_nwb_capsule_11_36
+	path 'capsule/results/*' into capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_9
+	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_dff_4_to_capsule_aind_pipeline_processing_metadata_aggregator_7_12
+	path 'capsule/results/*/dff/*.h5' into capsule_aind_ophys_dff_4_to_capsule_aind_ophys_nwb_9_26
+	path 'capsule/results/*/dff/*.h5' into capsule_aind_ophys_dff_4_to_capsule_aind_bci_behavior_nwb_capsule_11_35
 
 	script:
 	"""
@@ -257,12 +255,12 @@ process capsule_aind_ophys_oasis_event_detection_6 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from ophys_to_aind_ophys_oasis_event_detection_9.collect()
-	path 'capsule/data/' from capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_10
+	path 'capsule/data/' from ophys_to_aind_ophys_oasis_event_detection_8.collect()
+	path 'capsule/data/' from capsule_aind_ophys_dff_4_to_capsule_aind_ophys_oasis_event_detection_6_9
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_oasis_event_detection_6_to_capsule_aind_pipeline_processing_metadata_aggregator_7_12
+	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_oasis_event_detection_6_to_capsule_aind_pipeline_processing_metadata_aggregator_7_11
 
 	script:
 	"""
@@ -303,12 +301,12 @@ process capsule_aind_pipeline_processing_metadata_aggregator_7 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_classifier_8_to_capsule_aind_pipeline_processing_metadata_aggregator_7_11.collect()
-	path 'capsule/data/' from capsule_aind_ophys_oasis_event_detection_6_to_capsule_aind_pipeline_processing_metadata_aggregator_7_12.collect()
-	path 'capsule/data/' from capsule_aind_ophys_dff_4_to_capsule_aind_pipeline_processing_metadata_aggregator_7_13.collect()
-	path 'capsule/data/' from ophys_to_aind_pipeline_processing_metadata_aggregator_14.collect()
-	path 'capsule/data/' from capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_pipeline_processing_metadata_aggregator_7_15.collect()
-	path 'capsule/data/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_pipeline_processing_metadata_aggregator_7_16.collect()
+	path 'capsule/data/' from capsule_aind_ophys_classifier_8_to_capsule_aind_pipeline_processing_metadata_aggregator_7_10.collect()
+	path 'capsule/data/' from capsule_aind_ophys_oasis_event_detection_6_to_capsule_aind_pipeline_processing_metadata_aggregator_7_11.collect()
+	path 'capsule/data/' from capsule_aind_ophys_dff_4_to_capsule_aind_pipeline_processing_metadata_aggregator_7_12.collect()
+	path 'capsule/data/' from ophys_to_aind_pipeline_processing_metadata_aggregator_13.collect()
+	path 'capsule/data/' from capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_pipeline_processing_metadata_aggregator_7_14.collect()
+	path 'capsule/data/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_pipeline_processing_metadata_aggregator_7_15.collect()
 
 	output:
 	path 'capsule/results/*'
@@ -354,13 +352,13 @@ process capsule_aind_ophys_classifier_8 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from ophys_to_aind_ophys_classifier_17.collect()
-	path 'capsule/data/' from capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_classifier_8_18
+	path 'capsule/data/' from ophys_to_aind_ophys_classifier_16.collect()
+	path 'capsule/data/' from capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_classifier_8_17
 
 	output:
-	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_classifier_8_to_capsule_aind_pipeline_processing_metadata_aggregator_7_11
+	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_classifier_8_to_capsule_aind_pipeline_processing_metadata_aggregator_7_10
 	path 'capsule/results/*'
-	path 'capsule/results/*/classification/*classification.h5' into capsule_aind_ophys_classifier_8_to_capsule_aind_ophys_nwb_9_26
+	path 'capsule/results/*/classification/*classification.h5' into capsule_aind_ophys_classifier_8_to_capsule_aind_ophys_nwb_9_25
 
 	script:
 	"""
@@ -401,19 +399,19 @@ process capsule_aind_ophys_nwb_9 {
 	memory '8 GB'
 
 	input:
+	path 'capsule/data/processed/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_18.collect()
 	path 'capsule/data/processed/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_19.collect()
 	path 'capsule/data/processed/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_20.collect()
 	path 'capsule/data/processed/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_21.collect()
 	path 'capsule/data/processed/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_22.collect()
-	path 'capsule/data/processed/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_23.collect()
-	path 'capsule/data/raw' from ophys_to_aind_ophys_nwb_24.collect()
-	path 'capsule/data/processed/' from capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_nwb_9_25.collect()
-	path 'capsule/data/processed/' from capsule_aind_ophys_classifier_8_to_capsule_aind_ophys_nwb_9_26.collect()
-	path 'capsule/data/processed/' from capsule_aind_ophys_dff_4_to_capsule_aind_ophys_nwb_9_27.collect()
-	path 'capsule/data/nwb/' from capsule_nwb_packaging_subject_10_to_capsule_aind_ophys_nwb_9_28.collect()
+	path 'capsule/data/raw' from ophys_to_aind_ophys_nwb_23.collect()
+	path 'capsule/data/processed/' from capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_ophys_nwb_9_24.collect()
+	path 'capsule/data/processed/' from capsule_aind_ophys_classifier_8_to_capsule_aind_ophys_nwb_9_25.collect()
+	path 'capsule/data/processed/' from capsule_aind_ophys_dff_4_to_capsule_aind_ophys_nwb_9_26.collect()
+	path 'capsule/data/nwb/' from capsule_nwb_packaging_subject_10_to_capsule_aind_ophys_nwb_9_27.collect()
 
 	output:
-	path 'capsule/results/*' into capsule_aind_ophys_nwb_9_to_capsule_aind_bci_behavior_nwb_capsule_11_37
+	path 'capsule/results/*' into capsule_aind_ophys_nwb_9_to_capsule_aind_bci_behavior_nwb_capsule_11_36
 
 	script:
 	"""
@@ -454,10 +452,10 @@ process capsule_nwb_packaging_subject_10 {
 	memory '8 GB'
 
 	input:
-	path 'capsule/data/ophys_session' from ophys_to_nwb_packaging_subject_29.collect()
+	path 'capsule/data/ophys_session' from ophys_to_nwb_packaging_subject_28.collect()
 
 	output:
-	path 'capsule/results/*' into capsule_nwb_packaging_subject_10_to_capsule_aind_ophys_nwb_9_28
+	path 'capsule/results/*' into capsule_nwb_packaging_subject_10_to_capsule_aind_ophys_nwb_9_27
 
 	script:
 	"""
@@ -490,7 +488,7 @@ process capsule_nwb_packaging_subject_10 {
 // capsule - aind-bci-behavior-nwb-capsule
 process capsule_aind_bci_behavior_nwb_capsule_11 {
 	tag 'capsule-9627003'
-	container "$REGISTRY_HOST/capsule/8d045ee0-c23d-476f-a188-641161a9eb7e:b2324f5b3e4ebc9b6557ce3fd513637e"
+	container "$REGISTRY_HOST/capsule/8d045ee0-c23d-476f-a188-641161a9eb7e"
 
 	cpus 1
 	memory '8 GB'
@@ -498,15 +496,15 @@ process capsule_aind_bci_behavior_nwb_capsule_11 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/processed/asset/extraction/' from capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_bci_behavior_nwb_capsule_11_30.collect()
+	path 'capsule/data/processed/asset/extraction/' from capsule_aind_ophys_extraction_suite_2_p_3_to_capsule_aind_bci_behavior_nwb_capsule_11_29.collect()
+	path 'capsule/data/processed/asset/motion_correction/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_30.collect()
 	path 'capsule/data/processed/asset/motion_correction/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_31.collect()
 	path 'capsule/data/processed/asset/motion_correction/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_32.collect()
 	path 'capsule/data/processed/asset/motion_correction/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_33.collect()
 	path 'capsule/data/processed/asset/motion_correction/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_34.collect()
-	path 'capsule/data/processed/asset/motion_correction/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_bci_behavior_nwb_capsule_11_35.collect()
-	path 'capsule/data/processed/' from capsule_aind_ophys_dff_4_to_capsule_aind_bci_behavior_nwb_capsule_11_36.collect()
-	path 'capsule/data/nwb/' from capsule_aind_ophys_nwb_9_to_capsule_aind_bci_behavior_nwb_capsule_11_37.collect()
-	path 'capsule/data/raw' from ophys_to_aind_bci_behavior_nwb_capsule_38.collect()
+	path 'capsule/data/processed/' from capsule_aind_ophys_dff_4_to_capsule_aind_bci_behavior_nwb_capsule_11_35.collect()
+	path 'capsule/data/nwb/' from capsule_aind_ophys_nwb_9_to_capsule_aind_bci_behavior_nwb_capsule_11_36.collect()
+	path 'capsule/data/raw' from ophys_to_aind_bci_behavior_nwb_capsule_37.collect()
 
 	output:
 	path 'capsule/results/*'
@@ -527,7 +525,7 @@ process capsule_aind_bci_behavior_nwb_capsule_11 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9627003.git" capsule-repo
-	git -C capsule-repo checkout 0263aacd70508cdbb08c0d92cc3e337773e1047c --quiet
+	git -C capsule-repo checkout d73574ebb40a0c45f35a54af052efa6755d831d7 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
