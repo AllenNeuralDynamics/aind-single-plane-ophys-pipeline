@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:a753b7378dfe163c24bf114274a316e65c32a6d74896954625d0b005d978d441
+// hash:sha256:5ff848dbf1ff0582918d377d87c26cd0ee3724da19ee58564476e41cac214cff
 
 nextflow.enable.dsl = 1
 
@@ -47,7 +47,7 @@ ophys_to_aind_bci_behavior_nwb_capsule_38 = channel.fromPath(params.ophys_url + 
 // capsule - aind-pophys-converter-capsule
 process capsule_aind_pophys_converter_capsule_1 {
 	tag 'capsule-0547799'
-	container "$REGISTRY_HOST/capsule/56956b65-72a4-4248-9718-468df22b23ff"
+	container "$REGISTRY_HOST/capsule/56956b65-72a4-4248-9718-468df22b23ff:1b3224ef4c626ed639d3c9e74d301842"
 
 	cpus 4
 	memory '32 GB'
@@ -148,7 +148,7 @@ process capsule_aind_ophys_motion_correction_2 {
 // capsule - aind-ophys-extraction
 process capsule_aind_ophys_extraction_suite_2_p_3 {
 	tag 'capsule-3592435'
-	container "$REGISTRY_HOST/capsule/c9f136a2-67d7-4adf-b15a-e02af4237fa4"
+	container "$REGISTRY_HOST/capsule/c9f136a2-67d7-4adf-b15a-e02af4237fa4:3d1825eb10b984d0abe5c9b8ebd0175f"
 
 	cpus 8
 	memory '64 GB'
@@ -490,7 +490,7 @@ process capsule_nwb_packaging_subject_10 {
 // capsule - aind-bci-behavior-nwb-capsule
 process capsule_aind_bci_behavior_nwb_capsule_11 {
 	tag 'capsule-9627003'
-	container "$REGISTRY_HOST/capsule/8d045ee0-c23d-476f-a188-641161a9eb7e"
+	container "$REGISTRY_HOST/capsule/8d045ee0-c23d-476f-a188-641161a9eb7e:b2324f5b3e4ebc9b6557ce3fd513637e"
 
 	cpus 1
 	memory '8 GB'
