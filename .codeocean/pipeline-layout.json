@@ -242,7 +242,7 @@
 				"x": -43.179528247161585,
 				"y": 703.7762060866088
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -275,10 +275,10 @@
 			},
 			"id": "capsule_aind_pipeline_processing_metadata_aggregator_7",
 			"position": {
-				"x": -370.6990143702907,
-				"y": 1023.6084992302958
+				"x": -641.6990143702907,
+				"y": 1099.6084992302958
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -369,10 +369,10 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1746749659447,
+	"timestamp": 1746749707370,
 	"viewport": {
-		"x": 844.1877078861457,
-		"y": -333.6223377109644,
-		"zoom": 1.3058258449441869
+		"x": 761.1990143702907,
+		"y": -849.6084992302958,
+		"zoom": 1
 	}
 }
