@@ -8,7 +8,6 @@
 				"name": "aind-pophys-converter-capsule",
 				"slug": "0547799",
 				"commit": "df1edf289e5e0a4d95dd3637cc0c6da6248127f9",
-				"image_tag": "1b3224ef4c626ed639d3c9e74d301842",
 				"app_panel": true
 			},
 			"resources": {
@@ -67,7 +66,6 @@
 				"name": "aind-ophys-extraction",
 				"slug": "3592435",
 				"commit": "56f3af82a0be6a0a08f52aee0d9031b76996f66d",
-				"image_tag": "3d1825eb10b984d0abe5c9b8ebd0175f",
 				"app_panel": true
 			},
 			"resources": {
@@ -113,8 +111,8 @@
 				"version": 4
 			},
 			"resources": {
-				"cpus": 2,
-				"memory": 16
+				"cpus": 4,
+				"memory": 128
 			},
 			"inputs": [
 				{
@@ -174,8 +172,6 @@
 				"id": "2b968496-f5cd-47ce-b2ec-3c9d48c73a14",
 				"name": "aind-pipeline-processing-metadata-aggregator",
 				"slug": "0249670",
-				"commit": "2955081e430e3dee0deec221b8c8eb77c9fe78f5",
-				"image_tag": "f9c4a369ae14832b7d077ce8f15c7134",
 				"app_panel": true
 			},
 			"resources": {
@@ -286,8 +282,8 @@
 				"version": 13
 			},
 			"resources": {
-				"cpus": 1,
-				"memory": 8
+				"cpus": 2,
+				"memory": 16
 			},
 			"inputs": [
 				{
@@ -400,8 +396,8 @@
 				"app_panel": true
 			},
 			"resources": {
-				"cpus": 1,
-				"memory": 8
+				"cpus": 2,
+				"memory": 16
 			},
 			"inputs": [
 				{
@@ -421,12 +417,11 @@
 				"id": "4bc09315-3cdc-4cfa-b9e7-bcc24d76b684",
 				"name": "aind-bci-behavior-nwb-capsule",
 				"slug": "3583868",
-				"commit": "39a63cfe91d138fcb9f5b71c76b9923812a232e8",
-				"image_tag": "b2324f5b3e4ebc9b6557ce3fd513637e"
+				"commit": "39a63cfe91d138fcb9f5b71c76b9923812a232e8"
 			},
 			"resources": {
-				"cpus": 1,
-				"memory": 8
+				"cpus": 2,
+				"memory": 16
 			},
 			"inputs": [
 				{

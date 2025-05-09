@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:5667211bba059e424d4a0cd955ee770cec760efb227000c841417cefe9cf7469
+// hash:sha256:41c7e7e2132d50910a2032d56dbf09436de5ef48fcfa53f2b4316a4805525e52
 
 nextflow.enable.dsl = 1
 
@@ -47,7 +47,7 @@ ophys_to_aind_bci_behavior_nwb_capsule_38 = channel.fromPath(params.ophys_url + 
 // capsule - aind-pophys-converter-capsule
 process capsule_aind_pophys_converter_capsule_1 {
 	tag 'capsule-0547799'
-	container "$REGISTRY_HOST/capsule/56956b65-72a4-4248-9718-468df22b23ff:1b3224ef4c626ed639d3c9e74d301842"
+	container "$REGISTRY_HOST/capsule/56956b65-72a4-4248-9718-468df22b23ff"
 
 	cpus 4
 	memory '32 GB'
@@ -148,7 +148,7 @@ process capsule_aind_ophys_motion_correction_2 {
 // capsule - aind-ophys-extraction
 process capsule_aind_ophys_extraction_suite_2_p_3 {
 	tag 'capsule-3592435'
-	container "$REGISTRY_HOST/capsule/c9f136a2-67d7-4adf-b15a-e02af4237fa4:3d1825eb10b984d0abe5c9b8ebd0175f"
+	container "$REGISTRY_HOST/capsule/c9f136a2-67d7-4adf-b15a-e02af4237fa4"
 
 	cpus 8
 	memory '64 GB'
@@ -202,8 +202,8 @@ process capsule_aind_ophys_dff_4 {
 	tag 'capsule-6574773'
 	container "$REGISTRY_HOST/published/85987e27-601c-4863-811b-71e5b4bdea37:v4"
 
-	cpus 2
-	memory '16 GB'
+	cpus 4
+	memory '128 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
@@ -224,8 +224,8 @@ process capsule_aind_ophys_dff_4 {
 	set -e
 
 	export CO_CAPSULE_ID=85987e27-601c-4863-811b-71e5b4bdea37
-	export CO_CPUS=2
-	export CO_MEMORY=17179869184
+	export CO_CPUS=4
+	export CO_MEMORY=137438953472
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -295,7 +295,7 @@ process capsule_aind_ophys_oasis_event_detection_6 {
 // capsule - aind-pipeline-processing-metadata-aggregator
 process capsule_aind_pipeline_processing_metadata_aggregator_7 {
 	tag 'capsule-0249670'
-	container "$REGISTRY_HOST/capsule/2b968496-f5cd-47ce-b2ec-3c9d48c73a14:f9c4a369ae14832b7d077ce8f15c7134"
+	container "$REGISTRY_HOST/capsule/2b968496-f5cd-47ce-b2ec-3c9d48c73a14"
 
 	cpus 1
 	memory '8 GB'
@@ -329,7 +329,6 @@ process capsule_aind_pipeline_processing_metadata_aggregator_7 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0249670.git" capsule-repo
-	git -C capsule-repo checkout 2955081e430e3dee0deec221b8c8eb77c9fe78f5 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -398,8 +397,8 @@ process capsule_aind_ophys_nwb_9 {
 	tag 'capsule-9383700'
 	container "$REGISTRY_HOST/published/8c436e95-8607-4752-8e9f-2b62024f9326:v13"
 
-	cpus 1
-	memory '8 GB'
+	cpus 2
+	memory '16 GB'
 
 	input:
 	path 'capsule/data/processed/' from capsule_aind_ophys_motion_correction_2_to_capsule_aind_ophys_nwb_9_19.collect()
@@ -422,8 +421,8 @@ process capsule_aind_ophys_nwb_9 {
 	set -e
 
 	export CO_CAPSULE_ID=8c436e95-8607-4752-8e9f-2b62024f9326
-	export CO_CPUS=1
-	export CO_MEMORY=8589934592
+	export CO_CPUS=2
+	export CO_MEMORY=17179869184
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -451,8 +450,8 @@ process capsule_nwb_packaging_subject_10 {
 	tag 'capsule-8198603'
 	container "$REGISTRY_HOST/published/bdc9f09f-0005-4d09-aaf9-7e82abd93f19:v3"
 
-	cpus 1
-	memory '8 GB'
+	cpus 2
+	memory '16 GB'
 
 	input:
 	path 'capsule/data/ophys_session' from ophys_to_nwb_packaging_subject_29.collect()
@@ -466,8 +465,8 @@ process capsule_nwb_packaging_subject_10 {
 	set -e
 
 	export CO_CAPSULE_ID=bdc9f09f-0005-4d09-aaf9-7e82abd93f19
-	export CO_CPUS=1
-	export CO_MEMORY=8589934592
+	export CO_CPUS=2
+	export CO_MEMORY=17179869184
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -491,10 +490,10 @@ process capsule_nwb_packaging_subject_10 {
 // capsule - aind-bci-behavior-nwb-capsule
 process capsule_aind_bci_behavior_nwb_capsule_11 {
 	tag 'capsule-3583868'
-	container "$REGISTRY_HOST/capsule/4bc09315-3cdc-4cfa-b9e7-bcc24d76b684:b2324f5b3e4ebc9b6557ce3fd513637e"
+	container "$REGISTRY_HOST/capsule/4bc09315-3cdc-4cfa-b9e7-bcc24d76b684"
 
-	cpus 1
-	memory '8 GB'
+	cpus 2
+	memory '16 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
@@ -518,8 +517,8 @@ process capsule_aind_bci_behavior_nwb_capsule_11 {
 	set -e
 
 	export CO_CAPSULE_ID=4bc09315-3cdc-4cfa-b9e7-bcc24d76b684
-	export CO_CPUS=1
-	export CO_MEMORY=8589934592
+	export CO_CPUS=2
+	export CO_MEMORY=17179869184
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
