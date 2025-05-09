@@ -19,6 +19,7 @@
 		},
 		{
 			"id": "reactflow__edge-dc671a47-81d6-49f5-8dc3-a8db45389973-capsule_aind_ophys_extraction_suite_2_p_3",
+			"selected": false,
 			"source": "dc671a47-81d6-49f5-8dc3-a8db45389973",
 			"target": "capsule_aind_ophys_extraction_suite_2_p_3"
 		},
@@ -74,6 +75,7 @@
 		},
 		{
 			"id": "xy-edge__dc671a47-81d6-49f5-8dc3-a8db45389973-capsule_aind_ophys_dff_4",
+			"selected": false,
 			"source": "dc671a47-81d6-49f5-8dc3-a8db45389973",
 			"target": "capsule_aind_ophys_dff_4"
 		},
@@ -201,6 +203,12 @@
 			"id": "xy-edge__capsule_aind_ophys_motion_correction_2-capsule_aind_bci_behavior_nwb_capsule_11",
 			"source": "capsule_aind_ophys_motion_correction_2",
 			"target": "capsule_aind_bci_behavior_nwb_capsule_11"
+		},
+		{
+			"id": "xy-edge__dc671a47-81d6-49f5-8dc3-a8db45389973-capsule_aind_ophys_motion_correction_2",
+			"selected": false,
+			"source": "dc671a47-81d6-49f5-8dc3-a8db45389973",
+			"target": "capsule_aind_ophys_motion_correction_2"
 		}
 	],
 	"nodes": [
@@ -219,8 +227,8 @@
 			},
 			"id": "capsule_aind_ophys_motion_correction_2",
 			"position": {
-				"x": -324.83275540703175,
-				"y": 511.0820869010621
+				"x": -341.24164025682416,
+				"y": 531.3348693543637
 			},
 			"selected": false,
 			"type": "capsule"
@@ -231,10 +239,10 @@
 			},
 			"id": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"position": {
-				"x": -9.484376500581902,
-				"y": 703.0104071832775
+				"x": -43.179528247161585,
+				"y": 703.7762060866088
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -243,8 +251,8 @@
 			},
 			"id": "capsule_aind_ophys_dff_4",
 			"position": {
-				"x": 213.46780418462936,
-				"y": 823.2241028287068
+				"x": 143.01430507814456,
+				"y": 910.5251778084814
 			},
 			"selected": false,
 			"type": "capsule"
@@ -350,7 +358,7 @@
 		},
 		{
 			"data": {
-				"capsule_id": "8d045ee0-c23d-476f-a188-641161a9eb7e"
+				"capsule_id": "4bc09315-3cdc-4cfa-b9e7-bcc24d76b684"
 			},
 			"id": "capsule_aind_bci_behavior_nwb_capsule_11",
 			"position": {
@@ -361,10 +369,10 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1746727542392,
+	"timestamp": 1746749659447,
 	"viewport": {
-		"x": 394.4843765005819,
-		"y": -23.010407183277493,
-		"zoom": 1
+		"x": 844.1877078861457,
+		"y": -333.6223377109644,
+		"zoom": 1.3058258449441869
 	}
 }

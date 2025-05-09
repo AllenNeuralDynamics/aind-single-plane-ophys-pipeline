@@ -40,6 +40,14 @@
 			},
 			"inputs": [
 				{
+					"id": "LGbW7p4LpQGOFmvY",
+					"source_id": "dc671a47-81d6-49f5-8dc3-a8db45389973",
+					"type": "dataset",
+					"name": "ophys",
+					"source_path": "ophys/*.json",
+					"collect": true
+				},
+				{
 					"id": "olUgVlUfj5yQrQI6",
 					"source_id": "capsule_aind_pophys_converter_capsule_1",
 					"type": "capsule",
@@ -407,10 +415,10 @@
 		{
 			"name": "capsule_aind_bci_behavior_nwb_capsule_11",
 			"capsule": {
-				"id": "8d045ee0-c23d-476f-a188-641161a9eb7e",
+				"id": "4bc09315-3cdc-4cfa-b9e7-bcc24d76b684",
 				"name": "aind-bci-behavior-nwb-capsule",
-				"slug": "9627003",
-				"commit": "d73574ebb40a0c45f35a54af052efa6755d831d7"
+				"slug": "3583868",
+				"commit": "39a63cfe91d138fcb9f5b71c76b9923812a232e8"
 			},
 			"resources": {
 				"cpus": 1,
@@ -499,7 +507,7 @@
 				}
 			],
 			"results": {
-				"id": "8d045ee0-c23d-476f-a188-641161a9eb7e"
+				"id": "4bc09315-3cdc-4cfa-b9e7-bcc24d76b684"
 			}
 		}
 	]
