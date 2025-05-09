@@ -271,7 +271,7 @@
 		},
 		{
 			"data": {
-				"capsule_id": "d51df783-d892-4304-a129-238a9baea72a"
+				"capsule_id": "2b968496-f5cd-47ce-b2ec-3c9d48c73a14"
 			},
 			"id": "capsule_aind_pipeline_processing_metadata_aggregator_7",
 			"position": {
@@ -369,10 +369,10 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1746749707370,
+	"timestamp": 1746749963110,
 	"viewport": {
-		"x": 761.1990143702907,
-		"y": -849.6084992302958,
+		"x": 1181.1990143702906,
+		"y": -802.6084992302958,
 		"zoom": 1
 	}
 }
