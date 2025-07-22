@@ -7,7 +7,7 @@
 				"id": "56956b65-72a4-4248-9718-468df22b23ff",
 				"name": "aind-pophys-converter-capsule",
 				"slug": "0547799",
-				"commit": "df1edf289e5e0a4d95dd3637cc0c6da6248127f9",
+				"commit": "02fafc1bf9c34a3948b66df6c35f2d6baa3e4a50",
 				"image_tag": "1b3224ef4c626ed639d3c9e74d301842",
 				"app_panel": true
 			},
@@ -66,7 +66,7 @@
 				"id": "c9f136a2-67d7-4adf-b15a-e02af4237fa4",
 				"name": "aind-ophys-extraction",
 				"slug": "3592435",
-				"commit": "df6c65a8fb412bb0f13e6fd848b868ef352b5f07",
+				"commit": "0ecc97a8e3cf4522dcb302d1902489156e2a80ee",
 				"image_tag": "3d1825eb10b984d0abe5c9b8ebd0175f",
 				"app_panel": true
 			},
@@ -80,15 +80,6 @@
 					"source_id": "capsule_aind_ophys_motion_correction_2",
 					"type": "capsule",
 					"name": "aind-ophys-motion-correction",
-					"source_path": "*/motion_correction/*.h5",
-					"collect": true
-				},
-				{
-					"id": "22JQtyQJIw6LYCsL",
-					"source_id": "capsule_aind_ophys_motion_correction_2",
-					"type": "capsule",
-					"name": "aind-ophys-motion-correction",
-					"source_path": "*/motion_correction/*.json",
 					"collect": true
 				},
 				{
@@ -174,8 +165,6 @@
 				"id": "2b968496-f5cd-47ce-b2ec-3c9d48c73a14",
 				"name": "aind-pipeline-processing-metadata-aggregator",
 				"slug": "0249670",
-				"commit": "2955081e430e3dee0deec221b8c8eb77c9fe78f5",
-				"image_tag": "f9c4a369ae14832b7d077ce8f15c7134",
 				"app_panel": true
 			},
 			"resources": {
@@ -280,10 +269,11 @@
 		{
 			"name": "capsule_aind_ophys_nwb_9",
 			"capsule": {
-				"id": "8c436e95-8607-4752-8e9f-2b62024f9326",
+				"id": "0be2aae9-3cda-45de-b5f6-870c0b569819",
 				"name": "aind-ophys-nwb",
-				"slug": "9383700",
-				"version": 13
+				"slug": "7197641",
+				"commit": "561721c136e2cacf3083725ab29bcdfbd4f27db9",
+				"image_tag": "b45bdc4c8bbe3e921199f122fa7cabfa"
 			},
 			"resources": {
 				"cpus": 4,
@@ -421,7 +411,7 @@
 				"id": "4bc09315-3cdc-4cfa-b9e7-bcc24d76b684",
 				"name": "aind-bci-behavior-nwb-capsule",
 				"slug": "3583868",
-				"commit": "39a63cfe91d138fcb9f5b71c76b9923812a232e8",
+				"commit": "82613a6625ecc9f9608f08bc282e866c6f9207c8",
 				"image_tag": "b2324f5b3e4ebc9b6557ce3fd513637e"
 			},
 			"resources": {

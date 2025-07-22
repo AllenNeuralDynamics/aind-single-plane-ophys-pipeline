@@ -236,8 +236,8 @@
 			},
 			"id": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"position": {
-				"x": -43.179528247161585,
-				"y": 703.7762060866088
+				"x": 32.820471752838415,
+				"y": 683.7762060866088
 			},
 			"selected": false,
 			"type": "capsule"
@@ -275,7 +275,7 @@
 				"x": -641.6990143702907,
 				"y": 1099.6084992302958
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -320,7 +320,7 @@
 				"x": 684.8262736002603,
 				"y": 166.00000000000006
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -334,7 +334,7 @@
 		},
 		{
 			"data": {
-				"capsule_id": "8c436e95-8607-4752-8e9f-2b62024f9326"
+				"capsule_id": "0be2aae9-3cda-45de-b5f6-870c0b569819"
 			},
 			"id": "capsule_aind_ophys_nwb_9",
 			"position": {
@@ -365,10 +365,10 @@
 			"type": "dataset"
 		}
 	],
-	"timestamp": 1747246023537,
+	"timestamp": 1753206938789,
 	"viewport": {
-		"x": 0,
-		"y": 0,
-		"zoom": 0.75
+		"x": 499.20332024149496,
+		"y": -129.2165990706983,
+		"zoom": 0.34507036898432825
 	}
 }
