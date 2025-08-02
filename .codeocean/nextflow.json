@@ -7,8 +7,8 @@
 				"id": "56956b65-72a4-4248-9718-468df22b23ff",
 				"name": "aind-pophys-converter-capsule",
 				"slug": "0547799",
-				"commit": "02fafc1bf9c34a3948b66df6c35f2d6baa3e4a50",
-				"image_tag": "1b3224ef4c626ed639d3c9e74d301842",
+				"commit": "983ca89031f5b5cc86f342a01b9d22d1a33cc66d",
+				"image_tag": "b3faaa8ec4fc7f820d2e63229fa3ef7a",
 				"app_panel": true
 			},
 			"resources": {
@@ -165,6 +165,8 @@
 				"id": "2b968496-f5cd-47ce-b2ec-3c9d48c73a14",
 				"name": "aind-pipeline-processing-metadata-aggregator",
 				"slug": "0249670",
+				"commit": "51fbabccca89050e39b674dd1270f00d4977d6bf",
+				"image_tag": "bd71a7af034314ca5a9719efd9c39421",
 				"app_panel": true
 			},
 			"resources": {
@@ -269,15 +271,15 @@
 		{
 			"name": "capsule_aind_ophys_nwb_9",
 			"capsule": {
-				"id": "0be2aae9-3cda-45de-b5f6-870c0b569819",
+				"id": "4c09a8ff-66b1-4dbd-bf60-6fc4f3c5b96b",
 				"name": "aind-ophys-nwb",
-				"slug": "7197641",
-				"commit": "561721c136e2cacf3083725ab29bcdfbd4f27db9",
+				"slug": "2992649",
+				"commit": "fb930b836066f953a445c54008b3f11de536a112",
 				"image_tag": "b45bdc4c8bbe3e921199f122fa7cabfa"
 			},
 			"resources": {
-				"cpus": 4,
-				"memory": 128
+				"cpus": 2,
+				"memory": 32
 			},
 			"inputs": [
 				{
@@ -408,15 +410,15 @@
 		{
 			"name": "capsule_aind_bci_behavior_nwb_capsule_11",
 			"capsule": {
-				"id": "4bc09315-3cdc-4cfa-b9e7-bcc24d76b684",
+				"id": "d4dd20f2-48f6-4591-b2f2-4e046b6b0556",
 				"name": "aind-bci-behavior-nwb-capsule",
-				"slug": "3583868",
-				"commit": "82613a6625ecc9f9608f08bc282e866c6f9207c8",
+				"slug": "0422462",
+				"commit": "8c6e49ff531d74a74181306bf5a3085772343963",
 				"image_tag": "b2324f5b3e4ebc9b6557ce3fd513637e"
 			},
 			"resources": {
-				"cpus": 2,
-				"memory": 16
+				"cpus": 1,
+				"memory": 8
 			},
 			"inputs": [
 				{
@@ -501,7 +503,7 @@
 				}
 			],
 			"results": {
-				"id": "4bc09315-3cdc-4cfa-b9e7-bcc24d76b684"
+				"id": "d4dd20f2-48f6-4591-b2f2-4e046b6b0556"
 			}
 		}
 	]

@@ -114,25 +114,21 @@
 		},
 		{
 			"id": "xy-edge__capsule_aind_ophys_motion_correction_2-capsule_aind_ophys_nwb_9",
-			"selected": false,
 			"source": "capsule_aind_ophys_motion_correction_2",
 			"target": "capsule_aind_ophys_nwb_9"
 		},
 		{
 			"id": "xy-edge__capsule_aind_ophys_dff_4-capsule_aind_ophys_nwb_9",
-			"selected": false,
 			"source": "capsule_aind_ophys_dff_4",
 			"target": "capsule_aind_ophys_nwb_9"
 		},
 		{
 			"id": "xy-edge__capsule_aind_ophys_classifier_8-capsule_aind_ophys_nwb_9",
-			"selected": false,
 			"source": "capsule_aind_ophys_classifier_8",
 			"target": "capsule_aind_ophys_nwb_9"
 		},
 		{
 			"id": "xy-edge__capsule_aind_ophys_extraction_suite_2_p_3-capsule_aind_ophys_nwb_9",
-			"selected": false,
 			"source": "capsule_aind_ophys_extraction_suite_2_p_3",
 			"target": "capsule_aind_ophys_nwb_9"
 		},
@@ -275,7 +271,7 @@
 				"x": -641.6990143702907,
 				"y": 1099.6084992302958
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -284,10 +280,10 @@
 			},
 			"id": "capsule_aind_pophys_converter_capsule_1",
 			"position": {
-				"x": 398.62118681339257,
-				"y": 187.74009048013608
+				"x": 317.47831707811355,
+				"y": 260.18908131520664
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -333,42 +329,37 @@
 			"type": "dataset"
 		},
 		{
-			"data": {
-				"capsule_id": "0be2aae9-3cda-45de-b5f6-870c0b569819"
-			},
-			"id": "capsule_aind_ophys_nwb_9",
-			"position": {
-				"x": 480.22531046733843,
-				"y": 1332.1830041494693
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "4bc09315-3cdc-4cfa-b9e7-bcc24d76b684"
-			},
-			"id": "capsule_aind_bci_behavior_nwb_capsule_11",
-			"position": {
-				"x": 310.9996057913827,
-				"y": 1491.4480750624539
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
 			"id": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
 			"position": {
 				"x": 88.73606897491254,
 				"y": -36.82581785184075
 			},
 			"type": "dataset"
+		},
+		{
+			"data": {
+				"capsule_id": "d4dd20f2-48f6-4591-b2f2-4e046b6b0556"
+			},
+			"id": "capsule_aind_bci_behavior_nwb_capsule_11",
+			"position": {
+				"x": 310.9996057913827,
+				"y": 1491.4480750624539
+			},
+			"selected": true,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "4c09a8ff-66b1-4dbd-bf60-6fc4f3c5b96b"
+			},
+			"id": "capsule_aind_ophys_nwb_9",
+			"position": {
+				"x": 480.22531046733843,
+				"y": 1332.1830041494693
+			},
+			"selected": true,
+			"type": "capsule"
 		}
 	],
-	"timestamp": 1753206938789,
-	"viewport": {
-		"x": 499.20332024149496,
-		"y": -129.2165990706983,
-		"zoom": 0.34507036898432825
-	}
+	"timestamp": 1754004738475
 }
