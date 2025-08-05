@@ -7,8 +7,8 @@
 			"target": "capsule_aind_ophys_motion_correction_2"
 		},
 		{
-			"id": "reactflow__edge-6818fe76-558a-4640-b9ac-626c63c5a2dd-capsule_aind_pophys_converter_capsule_1",
-			"source": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
+			"id": "reactflow__edge-0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e-capsule_aind_pophys_converter_capsule_1",
+			"source": "0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e",
 			"target": "capsule_aind_pophys_converter_capsule_1"
 		},
 		{
@@ -18,8 +18,8 @@
 			"target": "capsule_aind_ophys_extraction_suite_2_p_3"
 		},
 		{
-			"id": "reactflow__edge-6818fe76-558a-4640-b9ac-626c63c5a2dd-capsule_aind_ophys_extraction_suite_2_p_3",
-			"source": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
+			"id": "reactflow__edge-0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e-capsule_aind_ophys_extraction_suite_2_p_3",
+			"source": "0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e",
 			"target": "capsule_aind_ophys_extraction_suite_2_p_3"
 		},
 		{
@@ -50,8 +50,8 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-6818fe76-558a-4640-b9ac-626c63c5a2dd-capsule_aind_pipeline_processing_metadata_aggregator_7",
-			"source": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
+			"id": "reactflow__edge-0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e-capsule_aind_pipeline_processing_metadata_aggregator_7",
+			"source": "0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e",
 			"target": "capsule_aind_pipeline_processing_metadata_aggregator_7"
 		},
 		{
@@ -73,13 +73,13 @@
 			"target": "capsule_aind_pipeline_processing_metadata_aggregator_7"
 		},
 		{
-			"id": "xy-edge__6818fe76-558a-4640-b9ac-626c63c5a2dd-capsule_aind_ophys_dff_4",
-			"source": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
+			"id": "xy-edge__0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e-capsule_aind_ophys_dff_4",
+			"source": "0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e",
 			"target": "capsule_aind_ophys_dff_4"
 		},
 		{
-			"id": "xy-edge__6818fe76-558a-4640-b9ac-626c63c5a2dd-capsule_aind_ophys_oasis_event_detection_6",
-			"source": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
+			"id": "xy-edge__0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e-capsule_aind_ophys_oasis_event_detection_6",
+			"source": "0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e",
 			"target": "capsule_aind_ophys_oasis_event_detection_6"
 		},
 		{
@@ -93,8 +93,8 @@
 			"target": "capsule_aind_ophys_classifier_8"
 		},
 		{
-			"id": "xy-edge__6818fe76-558a-4640-b9ac-626c63c5a2dd-capsule_aind_ophys_classifier_8",
-			"source": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
+			"id": "xy-edge__0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e-capsule_aind_ophys_classifier_8",
+			"source": "0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e",
 			"target": "capsule_aind_ophys_classifier_8"
 		},
 		{
@@ -103,8 +103,8 @@
 			"target": "capsule_aind_pipeline_processing_metadata_aggregator_7"
 		},
 		{
-			"id": "xy-edge__6818fe76-558a-4640-b9ac-626c63c5a2dd-capsule_nwb_packaging_subject_10",
-			"source": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
+			"id": "xy-edge__0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e-capsule_nwb_packaging_subject_10",
+			"source": "0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e",
 			"target": "capsule_nwb_packaging_subject_10"
 		},
 		{
@@ -133,8 +133,8 @@
 			"target": "capsule_aind_ophys_nwb_9"
 		},
 		{
-			"id": "xy-edge__6818fe76-558a-4640-b9ac-626c63c5a2dd-capsule_aind_ophys_nwb_9",
-			"source": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
+			"id": "xy-edge__0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e-capsule_aind_ophys_nwb_9",
+			"source": "0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e",
 			"target": "capsule_aind_ophys_nwb_9"
 		},
 		{
@@ -174,8 +174,8 @@
 			"target": "capsule_aind_bci_behavior_nwb_capsule_11"
 		},
 		{
-			"id": "xy-edge__6818fe76-558a-4640-b9ac-626c63c5a2dd-capsule_aind_bci_behavior_nwb_capsule_11",
-			"source": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
+			"id": "xy-edge__0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e-capsule_aind_bci_behavior_nwb_capsule_11",
+			"source": "0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e",
 			"target": "capsule_aind_bci_behavior_nwb_capsule_11"
 		},
 		{
@@ -199,8 +199,8 @@
 			"target": "capsule_aind_bci_behavior_nwb_capsule_11"
 		},
 		{
-			"id": "xy-edge__6818fe76-558a-4640-b9ac-626c63c5a2dd-capsule_aind_ophys_motion_correction_2",
-			"source": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
+			"id": "xy-edge__0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e-capsule_aind_ophys_motion_correction_2",
+			"source": "0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e",
 			"target": "capsule_aind_ophys_motion_correction_2"
 		}
 	],
@@ -329,14 +329,6 @@
 			"type": "dataset"
 		},
 		{
-			"id": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
-			"position": {
-				"x": 88.73606897491254,
-				"y": -36.82581785184075
-			},
-			"type": "dataset"
-		},
-		{
 			"data": {
 				"capsule_id": "d4dd20f2-48f6-4591-b2f2-4e046b6b0556"
 			},
@@ -359,7 +351,15 @@
 			},
 			"selected": true,
 			"type": "capsule"
+		},
+		{
+			"id": "0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e",
+			"position": {
+				"x": 88.73606897491254,
+				"y": -36.82581785184075
+			},
+			"type": "dataset"
 		}
 	],
-	"timestamp": 1754004738475
+	"timestamp": 1754274829906
 }

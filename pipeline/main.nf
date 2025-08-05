@@ -1,9 +1,9 @@
 #!/usr/bin/env nextflow
-// hash:sha256:baea711fad6a3992bbe8c87e7f6264bbe1be480bd111ec07edb133192497f593
+// hash:sha256:7f2270af891f8ef9cb8cd59e822efb0e2cf950708e9392ced5883f5ab93f97d7
 
 nextflow.enable.dsl = 1
 
-params.ophys_url = 's3://aind-private-data-prod-o5171v/single-plane-ophys_754303_2025-01-23_19-48-32'
+params.ophys_url = 's3://aind-private-data-prod-o5171v/single-plane-ophys_740369_2025-02-21_13-49-53'
 
 ophys_to_aind_pophys_converter_capsule_1 = channel.fromPath(params.ophys_url + "/", type: 'any')
 ophys_to_aind_ophys_motion_correction_2 = channel.fromPath(params.ophys_url + "/*.json", type: 'any')
@@ -77,7 +77,7 @@ process capsule_aind_pophys_converter_capsule_1 {
 	else
 		git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0547799.git" capsule-repo
 	fi
-	git -C capsule-repo checkout 983ca89031f5b5cc86f342a01b9d22d1a33cc66d --quiet
+	git -C capsule-repo checkout a010dca2d2dc371eae09b0f200139cee4ca4aa35 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 

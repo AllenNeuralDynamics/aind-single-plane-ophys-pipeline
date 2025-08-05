@@ -7,7 +7,7 @@
 				"id": "56956b65-72a4-4248-9718-468df22b23ff",
 				"name": "aind-pophys-converter-capsule",
 				"slug": "0547799",
-				"commit": "983ca89031f5b5cc86f342a01b9d22d1a33cc66d",
+				"commit": "a010dca2d2dc371eae09b0f200139cee4ca4aa35",
 				"image_tag": "b3faaa8ec4fc7f820d2e63229fa3ef7a",
 				"app_panel": true
 			},
@@ -18,7 +18,7 @@
 			"inputs": [
 				{
 					"id": "fKbqNfs0GcMCOWHD",
-					"source_id": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
+					"source_id": "0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/",
@@ -42,7 +42,7 @@
 			"inputs": [
 				{
 					"id": "LGbW7p4LpQGOFmvY",
-					"source_id": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
+					"source_id": "0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/*.json",
@@ -84,7 +84,7 @@
 				},
 				{
 					"id": "YZqza7yGxzurXytA",
-					"source_id": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
+					"source_id": "0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/*.json",
@@ -116,7 +116,7 @@
 				},
 				{
 					"id": "PIZqLDX9M0K0RuDC",
-					"source_id": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
+					"source_id": "0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/*.json",
@@ -142,7 +142,7 @@
 			"inputs": [
 				{
 					"id": "ahnIg7kUyl2WiGYi",
-					"source_id": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
+					"source_id": "0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/*.json",
@@ -200,7 +200,7 @@
 				},
 				{
 					"id": "xFV70R8H0bVBJw13",
-					"source_id": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
+					"source_id": "0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/*.json",
@@ -243,7 +243,7 @@
 			"inputs": [
 				{
 					"id": "fZKHcSvcCJ6YEKym",
-					"source_id": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
+					"source_id": "0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/*.json",
@@ -338,7 +338,7 @@
 				},
 				{
 					"id": "pJt5uaBojl71k4BS",
-					"source_id": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
+					"source_id": "0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/",
@@ -398,7 +398,7 @@
 			"inputs": [
 				{
 					"id": "wOuA2F9h31Ph3bqP",
-					"source_id": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
+					"source_id": "0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/",
@@ -494,7 +494,7 @@
 				},
 				{
 					"id": "UzYxTlHhOcn0ZjdN",
-					"source_id": "6818fe76-558a-4640-b9ac-626c63c5a2dd",
+					"source_id": "0dfbcca6-9e2f-4f58-ad22-1ae3d106a64e",
 					"type": "dataset",
 					"name": "ophys",
 					"source_path": "ophys/",
