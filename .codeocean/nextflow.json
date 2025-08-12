@@ -7,8 +7,8 @@
 				"id": "56956b65-72a4-4248-9718-468df22b23ff",
 				"name": "aind-pophys-converter-capsule",
 				"slug": "0547799",
-				"commit": "a010dca2d2dc371eae09b0f200139cee4ca4aa35",
-				"image_tag": "b3faaa8ec4fc7f820d2e63229fa3ef7a",
+				"commit": "6bad15dc71997178ee7b3984804eacb883fc6b51",
+				"image_tag": "c7806a0e35cd578ceecf193d079d3850",
 				"app_panel": true
 			},
 			"resources": {
@@ -165,13 +165,13 @@
 				"id": "2b968496-f5cd-47ce-b2ec-3c9d48c73a14",
 				"name": "aind-pipeline-processing-metadata-aggregator",
 				"slug": "0249670",
-				"commit": "51fbabccca89050e39b674dd1270f00d4977d6bf",
+				"commit": "4d41f9178dbfe9abfbfcfcca037ffafe26a1cf95",
 				"image_tag": "bd71a7af034314ca5a9719efd9c39421",
 				"app_panel": true
 			},
 			"resources": {
-				"cpus": 1,
-				"memory": 8
+				"cpus": 16,
+				"memory": 32
 			},
 			"inputs": [
 				{
@@ -417,8 +417,8 @@
 				"image_tag": "b2324f5b3e4ebc9b6557ce3fd513637e"
 			},
 			"resources": {
-				"cpus": 1,
-				"memory": 8
+				"cpus": 4,
+				"memory": 128
 			},
 			"inputs": [
 				{

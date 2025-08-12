@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:7f2270af891f8ef9cb8cd59e822efb0e2cf950708e9392ced5883f5ab93f97d7
+// hash:sha256:5e6341576e2d60b373f9b957d5d4308bdab04229e884b8be03340588ab116c0b
 
 nextflow.enable.dsl = 1
 
@@ -46,7 +46,7 @@ ophys_to_aind_bci_behavior_nwb_capsule_37 = channel.fromPath(params.ophys_url + 
 // capsule - aind-pophys-converter-capsule
 process capsule_aind_pophys_converter_capsule_1 {
 	tag 'capsule-0547799'
-	container "$REGISTRY_HOST/capsule/56956b65-72a4-4248-9718-468df22b23ff:b3faaa8ec4fc7f820d2e63229fa3ef7a"
+	container "$REGISTRY_HOST/capsule/56956b65-72a4-4248-9718-468df22b23ff:c7806a0e35cd578ceecf193d079d3850"
 
 	cpus 4
 	memory '30 GB'
@@ -77,7 +77,7 @@ process capsule_aind_pophys_converter_capsule_1 {
 	else
 		git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0547799.git" capsule-repo
 	fi
-	git -C capsule-repo checkout a010dca2d2dc371eae09b0f200139cee4ca4aa35 --quiet
+	git -C capsule-repo checkout 6bad15dc71997178ee7b3984804eacb883fc6b51 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -314,8 +314,8 @@ process capsule_aind_pipeline_processing_metadata_aggregator_7 {
 	tag 'capsule-0249670'
 	container "$REGISTRY_HOST/capsule/2b968496-f5cd-47ce-b2ec-3c9d48c73a14:bd71a7af034314ca5a9719efd9c39421"
 
-	cpus 1
-	memory '7.5 GB'
+	cpus 16
+	memory '30 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
@@ -336,8 +336,8 @@ process capsule_aind_pipeline_processing_metadata_aggregator_7 {
 	set -e
 
 	export CO_CAPSULE_ID=2b968496-f5cd-47ce-b2ec-3c9d48c73a14
-	export CO_CPUS=1
-	export CO_MEMORY=8053063680
+	export CO_CPUS=16
+	export CO_MEMORY=32212254720
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -350,7 +350,7 @@ process capsule_aind_pipeline_processing_metadata_aggregator_7 {
 	else
 		git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0249670.git" capsule-repo
 	fi
-	git -C capsule-repo checkout 51fbabccca89050e39b674dd1270f00d4977d6bf --quiet
+	git -C capsule-repo checkout 4d41f9178dbfe9abfbfcfcca037ffafe26a1cf95 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -527,8 +527,8 @@ process capsule_aind_bci_behavior_nwb_capsule_11 {
 	tag 'capsule-0422462'
 	container "$REGISTRY_HOST/capsule/d4dd20f2-48f6-4591-b2f2-4e046b6b0556:b2324f5b3e4ebc9b6557ce3fd513637e"
 
-	cpus 1
-	memory '7.5 GB'
+	cpus 4
+	memory '120 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
@@ -552,8 +552,8 @@ process capsule_aind_bci_behavior_nwb_capsule_11 {
 	set -e
 
 	export CO_CAPSULE_ID=d4dd20f2-48f6-4591-b2f2-4e046b6b0556
-	export CO_CPUS=1
-	export CO_MEMORY=8053063680
+	export CO_CPUS=4
+	export CO_MEMORY=128849018880
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
